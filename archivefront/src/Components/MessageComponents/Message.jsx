@@ -1,5 +1,6 @@
 import React from "react";
-import "./";
+import img from "../Images/meeting.png";
+
 export default function Message() {
   return (
     <>
@@ -9,7 +10,7 @@ export default function Message() {
             <div class="col-lg-12">
               <div class="section-title">
                 <h2>Keep up with Our Most Recent Medical News.</h2>
-                <img src="img/section-img.png" alt="#" />
+                <img src="" alt="#" />
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipiscing elit
                   praesent aliquet. pretiumts
@@ -21,7 +22,7 @@ export default function Message() {
             <div class="col-lg-4 col-md-6 col-12">
               <div class="single-news">
                 <div class="news-head">
-                  <img src="img/blog1.jpg" alt="#" />
+                  <img src={img} alt="#" />
                 </div>
                 <div class="news-body">
                   <div class="news-content">
