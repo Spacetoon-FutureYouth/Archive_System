@@ -10,12 +10,14 @@ import Bubble from "./Components/MessageComponents/Bubble";
 import Message from "./Components/MessageComponents/Message";
 import Register from "./Components/ResgistrationComonents/Regist";
 import LoginForm from "./Components/ResgistrationComonents/Login";
+import AddUser from "./Components/ResgistrationComonents/AddUser";
+import SendMessage from "./Components/MessageComponents/SendMessage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <PreLoad /> */}
-    <LoginForm />
+    <SendMessage />
   </React.StrictMode>
 );
 
