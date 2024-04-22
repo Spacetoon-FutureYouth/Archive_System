@@ -1,7 +1,3 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Message from "./Components/MessageComponents/Message";
-
 function App() {
   return (
     // <div className="App">
@@ -20,10 +16,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <>
-      {" "}
-      <Message />
-    </>
+    <></>
   );
 }
 
