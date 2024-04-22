@@ -8,16 +8,14 @@ import Footer from "./Components/SharedComponents/Footer";
 import PreLoad from "./Components/SharedComponents/PreLoad";
 import Bubble from "./Components/MessageComponents/Bubble";
 import Message from "./Components/MessageComponents/Message";
+import Register from "./Components/ResgistrationComonents/Regist";
+import LoginForm from "./Components/ResgistrationComonents/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <PreLoad /> */}
-    <Header />
-    <Slider />
-    <Bubble />
-    <Footer />
-    <Message />
+    <LoginForm />
   </React.StrictMode>
 );
 
