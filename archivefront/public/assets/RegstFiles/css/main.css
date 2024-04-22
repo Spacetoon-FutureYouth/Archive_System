@@ -36,6 +36,8 @@ body,
 html {
   height: 100%;
   font-family: Montserrat-Regular, sans-serif;
+  text-size-adjust: 100%;
+  /* Added to address the issue */
 }
 
 /*---------------------------------------------*/
@@ -46,9 +48,6 @@ a {
   color: #666666;
   margin: 0px;
   transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
 }
 
 a:focus {
@@ -147,9 +146,6 @@ button:hover {
 iframe {
   border: none !important;
 }
-
-
-
 
 /*//////////////////////////////////////////////////////////////////
 [ Contact 1 ]*/
@@ -386,9 +382,6 @@ textarea.input1+.shadow-input1 {
   transform: translateX(10px);
 }
 
-
-
-
 /*------------------------------------------------------------------
 [ Responsive ]*/
 
@@ -435,7 +428,6 @@ textarea.input1+.shadow-input1 {
     padding: 90px 15px 88px 15px;
   }
 }
-
 
 /*------------------------------------------------------------------
 [ Alert validate ]*/
