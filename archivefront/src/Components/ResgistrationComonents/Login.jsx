@@ -2,7 +2,9 @@ import React from "react";
 
 const LoginForm = () => {
   return (
-    <div className="container">
+    <div className="container login-page">
+      {" "}
+      {/* Added 'login-page' class */}
       <div className="left">
         <div className="header">
           <h2 className="animation a1">Welcome Back</h2>
