@@ -11,7 +11,6 @@ import Message from "./Components/MessageComponents/Message";
 import Register from "./Components/ResgistrationComonents/Regist";
 import LoginForm from "./Components/ResgistrationComonents/Login";
 import AddUser from "./Components/ResgistrationComonents/AddUser";
-import SendMessage from "./Components/MessageComponents/SendMessage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,7 +20,6 @@ root.render(
     <Bubble />
     <Slider />
     <AddUser />
-    <SendMessage />
     <Message />
   </React.StrictMode>
 );
