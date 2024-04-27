@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function AddUser() {
   const [step, setStep] = useState(1);
   const [image, setImage] = useState(null);
+  const [gender, setGender] = useState("");
 
   const nextStep = () => {
     setStep(step + 1);
@@ -11,6 +12,12 @@ function AddUser() {
   const prevStep = () => {
     setStep(step - 1);
   };
+
+  const goToStep = (stepNumber) => {
+    setStep(stepNumber);
+  };
+
+  const submit = () => {};
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -27,19 +34,41 @@ function AddUser() {
     setImage(null);
   };
 
+  const handleGenderChange = (e) => {
+    setGender(e.target.value);
+  };
+
   return (
     <form id="msform">
       {/* progressbar */}
       <ul id="progressbar">
-        <li className={step === 1 ? "active" : ""}>Account Setup</li>
-        <li className={step === 2 ? "active" : ""}>Social Profiles</li>
-        <li className={step === 3 ? "active" : ""}>Upload Image</li>
-        <li className={step === 4 ? "active" : ""}>Personal Details</li>
+        <li
+          className={step === 1 ? "active" : ""}
+          onClick={() => goToStep(1)}
+          style={{ cursor: "pointer" }}
+        >
+          Account Setup
+        </li>
+        <li
+          className={step === 2 ? "active" : ""}
+          onClick={() => goToStep(2)}
+          style={{ cursor: "pointer" }}
+        >
+          Social Profiles
+        </li>
+        <li
+          className={step === 3 ? "active" : ""}
+          onClick={() => goToStep(3)}
+          style={{ cursor: "pointer" }}
+        >
+          Upload Image
+        </li>
       </ul>
       {/* fieldsets */}
       {step === 1 && (
         <fieldset>
           <h2 className="fs-title">Create your account</h2>
+          <input type="text" name="username" placeholder="User Name" />
           <input type="text" name="email" placeholder="Email" />
           <input type="password" name="pass" placeholder="Password" />
           <input type="password" name="cpass" placeholder="Confirm Password" />
@@ -54,9 +83,33 @@ function AddUser() {
       {step === 2 && (
         <fieldset>
           <h2 className="fs-title">More Details</h2>
-          <input type="text" name="twitter" placeholder="Twitter" />
-          <input type="text" name="facebook" placeholder="Facebook" />
-          <input type="text" name="gplus" placeholder="Google Plus" />
+          <input type="text" name="phone" placeholder="Phone Number" />
+          <input type="text" name="department" placeholder="Department" />
+          <input type="text" name="job" placeholder="Job Title" />
+
+          <select
+            id="gender"
+            value={gender}
+            onChange={handleGenderChange}
+            style={{
+              width: "100%",
+              padding: "12px",
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+              backgroundColor: "#fff",
+              fontSize: "16px",
+              color: "gray",
+              appearance: "none",
+              WebkitAppearance: "none",
+              MozAppearance: "none",
+              textAlign: "left", // Align the dropdown to the left
+            }}
+          >
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <br />
           <input
             type="button"
             onClick={prevStep}
@@ -79,7 +132,21 @@ function AddUser() {
           {image && (
             <div>
               <img src={image} alt="Uploaded" className="preview-image" />
-              <button onClick={cancelImage}>Cancel</button>
+              <br />
+              <br />
+              <button
+                onClick={cancelImage}
+                style={{
+                  backgroundColor: "red",
+                  color: "white",
+                  border: "none",
+                  padding: "10px 20px",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                }}
+              >
+                Cancel
+              </button>
             </div>
           )}
           <input
@@ -90,29 +157,8 @@ function AddUser() {
           />
           <input
             type="button"
-            onClick={nextStep}
+            onClick={submit}
             className="next action-button"
-            value="Next"
-          />
-        </fieldset>
-      )}
-      {step === 4 && (
-        <fieldset>
-          <h2 className="fs-title">Personal Details</h2>
-          <h3 className="fs-subtitle">We will never sell it</h3>
-          <input type="text" name="fname" placeholder="First Name" />
-          <input type="text" name="lname" placeholder="Last Name" />
-          <input type="text" name="phone" placeholder="Phone" />
-          <textarea name="address" placeholder="Address"></textarea>
-          <input
-            type="button"
-            onClick={prevStep}
-            className="previous action-button"
-            value="Previous"
-          />
-          <input
-            type="submit"
-            className="submit action-button"
             value="Submit"
           />
         </fieldset>
