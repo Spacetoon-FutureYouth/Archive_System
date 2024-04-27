@@ -11,6 +11,7 @@ import Message from "./Components/MessageComponents/Message";
 import Register from "./Components/ResgistrationComonents/Regist";
 import LoginForm from "./Components/ResgistrationComonents/Login";
 import AddUser from "./Components/ResgistrationComonents/AddUser";
+import Table from "./Components/ADMIN/Data/ShowUsers";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,5 +22,6 @@ root.render(
     <Slider />
     <AddUser />
     <Message />
+    <Table />
   </React.StrictMode>
 );
