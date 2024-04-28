@@ -56,7 +56,7 @@ function Header() {
                   {/*  Start Logo */}
                   <div className="logo">
                     <a href="index.html">
-                      <img src={logo} alt="hellp" />
+                      {/* <img src={logo} alt="hellp" /> */}
                     </a>
                   </div>
                   {/*  End Logo */}

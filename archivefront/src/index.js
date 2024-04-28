@@ -8,16 +8,18 @@ import Footer from "./Components/SharedComponents/Footer";
 import PreLoad from "./Components/SharedComponents/PreLoad";
 import Bubble from "./Components/MessageComponents/Bubble";
 import Message from "./Components/MessageComponents/Message";
+import SendForm from "./Components/MessageComponents/SendFormasset/MsgForm";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <PreLoad /> */}
     <Header />
-    <Slider />
-    <Bubble />
+     {/* <Slider /> */}
+    {/* <Bubble /> */}
+    {/* <Message /> */}
+    {/* <SendForm /> */}
     <Footer />
-    <Message />
   </React.StrictMode>
 );
 
