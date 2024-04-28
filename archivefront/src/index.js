@@ -8,21 +8,34 @@ import Footer from "./Components/SharedComponents/Footer";
 import PreLoad from "./Components/SharedComponents/PreLoad";
 import Bubble from "./Components/MessageComponents/Bubble";
 import Message from "./Components/MessageComponents/Message";
-import SendForm from "./Components/MessageComponents/SendFormasset/MsgForm";
+// confligt 
+// <<<<<<< Shahd
+// import SendForm from "./Components/MessageComponents/SendFormasset/MsgForm";
+// =======
+// import Register from "./Components/ResgistrationComonents/Regist";
+// import LoginForm from "./Components/ResgistrationComonents/Login";
+// import AddUser from "./Components/ResgistrationComonents/AddUser";
+// import Table from "./Components/ADMIN/Data/ShowUsers";
+// >>>>>>> main
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <PreLoad /> */}
     <Header />
-     {/* <Slider /> */}
-    {/* <Bubble /> */}
-    {/* <Message /> */}
-    {/* <SendForm /> */}
-    <Footer />
+  // confligt 
+// <<<<<<< Shahd
+//      {/* <Slider /> */}
+//     {/* <Bubble /> */}
+//     {/* <Message /> */}
+//     {/* <SendForm /> */}
+//     <Footer />
+// =======
+//     <Bubble />
+//     <Slider />
+//     <AddUser />
+//     <Message />
+//     <Table />
+// >>>>>>> main
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

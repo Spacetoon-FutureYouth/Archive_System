@@ -56,7 +56,16 @@ function Header() {
                   {/*  Start Logo */}
                   <div className="logo">
                     <a href="index.html">
-                      {/* <img src={logo} alt="hellp" /> */}
+ // confligt                     
+// <<<<<<< Shahd
+//                       {/* <img src={logo} alt="hellp" /> */}
+// =======
+//                       <img
+//                         src={logo}
+//                         alt="hello"
+//                         style={{ width: "120px", height: "120px" }}
+//                       />
+// >>>>>>> main
                     </a>
                   </div>
                   {/*  End Logo */}
