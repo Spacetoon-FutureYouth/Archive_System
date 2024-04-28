@@ -84,9 +84,57 @@ function AddUser() {
         <fieldset>
           <h2 className="fs-title">More Details</h2>
           <input type="text" name="phone" placeholder="Phone Number" />
-          <input type="text" name="department" placeholder="Department" />
-          <input type="text" name="job" placeholder="Job Title" />
-
+          <br /> <br />
+          <select
+            id="department"
+            name="department"
+            style={{
+              width: "100%",
+              padding: "12px",
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+              backgroundColor: "#fff",
+              fontSize: "16px",
+              color: "gray",
+              appearance: "none",
+              WebkitAppearance: "none",
+              MozAppearance: "none",
+              textAlign: "left",
+            }}
+          >
+            <option value="">Select Department ▼</option>
+            <option value="marketing">Marketing</option>
+            <option value="sales">Sales</option>
+            <option value="finance">Finance</option>
+            {/* Add more options as needed */}
+          </select>
+          <br />
+          <br />
+          <select
+            id="job"
+            name="job"
+            style={{
+              width: "100%",
+              padding: "12px",
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+              backgroundColor: "#fff",
+              fontSize: "16px",
+              color: "gray",
+              appearance: "none",
+              WebkitAppearance: "none",
+              MozAppearance: "none",
+              textAlign: "left",
+            }}
+          >
+            <option value="">Select Job Title ▼</option>
+            <option value="manager">Manager</option>
+            <option value="developer">Developer</option>
+            <option value="designer">Designer</option>
+            {/* Add more options as needed */}
+          </select>
+          <br />
+          <br />
           <select
             id="gender"
             value={gender}
@@ -105,10 +153,11 @@ function AddUser() {
               textAlign: "left", // Align the dropdown to the left
             }}
           >
-            <option value="">Select Gender</option>
+            <option value="">Select Gender ▼</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
+          <br />
           <br />
           <input
             type="button"
@@ -124,11 +173,24 @@ function AddUser() {
           />
         </fieldset>
       )}
+
       {step === 3 && (
         <fieldset>
           <h2 className="fs-title">Upload Image</h2>
           <h3 className="fs-subtitle">Please upload your profile image</h3>
-          <input type="file" accept="image/*" onChange={handleImageChange} />
+          <label htmlFor="upload" style={{ cursor: "pointer" }}>
+            Upload Image{" "}
+            <span role="img" aria-label="up-arrow">
+              ⬆️
+            </span>
+          </label>
+          <input
+            id="upload"
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+            style={{ display: "none" }}
+          />
           {image && (
             <div>
               <img src={image} alt="Uploaded" className="preview-image" />
