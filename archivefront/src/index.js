@@ -31,6 +31,7 @@ root.render(
     <Header />
     <Slider />
     <Schedule />
+    <Bubble />
     <Feature />
     <FunFacts/>
     <WhyChoose />

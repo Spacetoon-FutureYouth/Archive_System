@@ -6,12 +6,12 @@ function Header() {
     <>
       {/* Header Area  */}
       <header className="header">
-        {/*  Topbar */}
+          {/* Topbar 
         <div className="topbar">
           <div className="container">
             <div className="row">
-              <div className="col-lg-6 col-md-5 col-12">
-                {/*  Contact */}
+               <div className="col-lg-6 col-md-5 col-12">
+                  Contact 
                 <ul className="top-link">
                   <li>
                     <a href="#">About</a>
@@ -26,10 +26,10 @@ function Header() {
                     <a href="#">FAQ</a>
                   </li>
                 </ul>
-                {/*  End Contact */}
-              </div>
-              <div className="col-lg-6 col-md-7 col-12">
-                {/*  Top Contact */}
+                  End Contact 
+              </div> 
+              <div className="col-lg-6 col-md-7 col-16">
+                 Top Contact 
                 <ul className="top-contact">
                   <li>
                     <i className="fa fa-phone"></i>+880 1234 56789
@@ -41,12 +41,12 @@ function Header() {
                     </a>
                   </li>
                 </ul>
-                {/*  End Top Contact */}
+                  End Top Contact 
               </div>
             </div>
           </div>
         </div>
-        {/*  End Topbar */}
+         End Topbar  */}
         {/*  Header Inner */}
         <div className="header-inner">
           <div className="container">
