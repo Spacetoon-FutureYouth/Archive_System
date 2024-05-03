@@ -15,7 +15,7 @@ function ContactUs()
                                     <div id="myMap"></div>
                                     {/*/End Google-map */}
                                 </div>
-                            </div>
+                             </div>
                             <div className="col-lg-6">
                                 <div className="contact-us-form">
                                     <h2>Contact With Us</h2>
@@ -30,7 +30,7 @@ function ContactUs()
                                             </div>
                                             <div className="col-lg-6">
                                                 <div className="form-group">
-                                                    <input type="email" name="email" placeholder="Email" required="" />
+                                                    {/* <input type="email" name="email" placeholder="Email" required="" /> */}
                                                 </div>
                                             </div>
                                             <div className="col-lg-6">
@@ -53,7 +53,7 @@ function ContactUs()
                                                     <button className="btn" type="submit">Send</button>
                                                 </div>
                                                 <div className="checkbox">
-                                                    <label className="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">Do you want to subscribe our Newsletter ?</input></label>
+                                                    {/* <label className="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">Do you want to subscribe our Newsletter ?</input></label> */}
                                                 </div>
                                             </div>
                                         </div>
