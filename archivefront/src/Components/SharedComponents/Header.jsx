@@ -113,13 +113,13 @@ function Header() {
                   </div>
                   {/* / End Main Menu */}
                 </div>
-                <div className="col-lg-2 col-12">
+                {/* <div className="col-lg-2 col-12">
                   <div className="get-quote">
                     <a href="appointment.html" className="btn">
                       Book Appointment
                     </a>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
