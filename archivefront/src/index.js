@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import Login from "./Components/ResgistrationComonents/Login";
 import Header from "./Components/SharedComponents/Header";
 import Slider from "./Components/HomeComponents/Slider";
 import Footer from "./Components/SharedComponents/Footer";
@@ -28,6 +29,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <PreLoad /> */}
+    {/* <Login /> */}
     <Header />
     <Slider />
     <Schedule />
