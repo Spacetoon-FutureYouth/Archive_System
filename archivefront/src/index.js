@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import Login from "./Components/ResgistrationComonents/Login";
 import Header from "./Components/SharedComponents/Header";
+import Error404 from "./Components/Error404Components/Error404";
 import Slider from "./Components/HomeComponents/Slider";
 import Footer from "./Components/SharedComponents/Footer";
 import PreLoad from "./Components/SharedComponents/PreLoad";
@@ -15,6 +16,8 @@ import FunFacts from "./Components/HomeComponents/FunFacts";
 import WhyChoose from "./Components/HomeComponents/WhyChoose";
 import CallSection from "./Components/HomeComponents/CallSection";
 import Service from "./Components/HomeComponents/Service";
+import ContactUs from "./Components/ContactComponents/ContactUs";
+import Breadcrumbs from "./Components/SharedComponents/Breadcrumbs";
 // confligt 
 // <<<<<<< Shahd
 // import SendForm from "./Components/MessageComponents/SendFormasset/MsgForm";

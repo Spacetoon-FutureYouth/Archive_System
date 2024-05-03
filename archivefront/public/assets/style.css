@@ -82,13 +82,13 @@ body {
 
 .pro-features li.big-title {
 	font-weight: 600;
-	color: #3a0603;
+	color: #00263B;
 	font-size: 15px;
 }
 
 .pro-features li.title {
 	font-weight: 600;
-	color: #3a0603;
+	color: #00263B;
 	font-size: 15px;
 }
 
@@ -103,11 +103,11 @@ body {
 	font-size: 13px;
 	width: 100%;
 	text-transform: capitalize;
-	background:#8B322C;
+	background:#00263B;
 }
 .pro-features .button .btn::before {
-	background: #4793AF;
-	border: #4793AF;
+	background: #921224;
+	border: #921224;
 }
 .pro-features li {
 	color: #333;
@@ -125,7 +125,7 @@ body {
 	line-height: 45px;
 	font-size: 14px;
 	border-radius: 5px 0 0 5px;
-	background: #DD5746;
+	background: #921224;
 	text-align: center;
 	color: #fff;
 	top: 0;
@@ -139,7 +139,7 @@ body {
 	bottom: 15px;
 	right: 15px;
 	padding: 10px 20px;
-	background: #DD5746;
+	background: #921224;
 	color: #fff;
 	font-size: 25px;
 	width: 45px;
@@ -152,7 +152,7 @@ body {
 }
 
 #scrollUp:hover {
-	background: #8B322C;
+	background: #00263B;
 }
 
 /* Color Plate */
@@ -186,7 +186,7 @@ body {
 	line-height: 45px;
 	font-size: 21px;
 	border-radius: 5px 0 0 5px;
-	background: #8B322C;
+	background: #00263B;
 	text-align: center;
 	color: #fff !important;
 	top: 0;
@@ -221,7 +221,7 @@ body {
 }
 
 .color-plate span.color1 {
-	background: #8B322C;
+	background: #00263B;
 }
 
 .color-plate span.color2 {
@@ -308,13 +308,13 @@ body {
 }
 
 .header .top-link li a {
-	color: #8B322C;
+	color: #00263B;
 	font-size: 14px;
 	font-weight: 400;
 }
 
 .header .top-link li:hover a {
-	color: #8B322C;
+	color: #00263B;
 }
 
 .header .top-contact {
@@ -324,7 +324,7 @@ body {
 .header .top-contact li {
 	display: inline-block;
 	margin-right: 25px;
-	color: #8B322C;
+	color: #00263B;
 }
 
 .header .top-contact li:last-child {
@@ -336,11 +336,11 @@ body {
 }
 
 .header .top-contact li a:hover {
-	color: #8B322C;
+	color: #00263B;
 }
 
 .header .top-contact li i {
-	color: #8B322C;
+	color: #00263B;
 	margin-right: 8px;
 }
 
@@ -383,7 +383,7 @@ body {
 }
 
 .header .nav li a {
-	color: #8B322C;
+	color: #00263B;
 	font-size: 14px;
 	font-weight: 500;
 	text-transform: capitalize;
@@ -400,7 +400,7 @@ body {
 	bottom: 0;
 	height: 3px;
 	width: 0%;
-	background: #DD5746; /* B47B84 */
+	background: #921224; /* B47B84 */
 	border-radius: 5px 5px 0 0;
 	opacity: 0;
 	visibility: hidden;
@@ -416,7 +416,7 @@ body {
 }
 
 .header .nav li.active a {
-	color: #DD5746;
+	color: #921224;
 }
 
 .header .nav li:hover a:before {
@@ -426,7 +426,7 @@ body {
 }
 
 .header .nav li:hover a {
-	color: #DD5746;
+	color: #921224;
 }
 
 .header .nav li a i {
@@ -482,7 +482,7 @@ body {
 	width: 40px;
 	line-height: 40px;
 	color: #fff;
-	background: #8B322C;
+	background: #00263B;
 	border-radius: 4px;
 	text-align: center;
 	font-size: 15px;
@@ -521,7 +521,7 @@ body {
 	opacity: 0;
 	visibility: hidden;
 	top: 74px;
-	border-left: 3px solid #FFC470;
+	border-left: 3px solid #921224;
 }
 
 .header .nav li:hover .dropdown {
@@ -592,7 +592,7 @@ body {
 	width: 35px;
 	line-height: 35px;
 	text-align: center;
-	background: #DD5746;
+	background: #921224;
 	border-radius: 4px;
 	display: block;
 	font-size: 12px;
@@ -642,7 +642,7 @@ body {
 	border-radius: 3px;
 	border: none;
 	background: #fff;
-	color: #2C2D3F;
+	color: #00263B;
 }
 /*//////////////////////////////////////////////////////////////////*/
 .header .search-form button {
@@ -651,7 +651,7 @@ body {
 	height: 50px;
 	top: 0;
 	width: 50px;
-	background: #8B322C;
+	background: #00263B;
 	border: none;
 	color: #fff;
 	border-radius: 0 4px 4px 0;
@@ -660,7 +660,7 @@ body {
 
 .header .search-form button:hover {
 	background: #fff;
-	color: #8B322C;
+	color: #00263B;
 	border-color: #e6e6e6;
 }
 
@@ -701,7 +701,7 @@ body {
 }
 
 .slider .single-slider h1 {
-	color: #8B322C;
+	color: #921224;
 	font-size: 38px;
 	font-weight: 700;
 	margin: 0;
@@ -710,11 +710,11 @@ body {
 }
 
 .slider .single-slider h1 span {
-	color: #4793AF;
+	color: #00263B;
 }
 
 .slider .single-slider p {
-	color: #8B322C;
+	color: #00263B;
 	margin-top: 27px;
 	font-weight: 400;
 }
@@ -725,14 +725,14 @@ body {
 
 .slider .single-slider .btn {
 	color: #fff;
-	background: #4793AF;
+	background: #921224;
 	font-weight: 500;
 	display: inline-block;
 	margin: 0;
 	margin-right: 10px;
 }
 .slider .single-slider .btn::before {
-	background: #8B322C;
+	background: #00263B;
 }
 	
 .slider .single-slider .btn:last-child {
@@ -740,12 +740,12 @@ body {
 }
 
 .slider .single-slider .btn.primary {
-	background: #8B322C;
+	background: #00263B;
 	color: #fff;
 }
 
 .slider .single-slider .btn.primary:before {
-	background: #4793AF;
+	background: #921224;
 }
 
 .slider .owl-carousel .owl-nav {
@@ -761,7 +761,7 @@ body {
 	width: 50px;
 	line-height: 50px;
 	text-align: center;
-	background: #8B322C;
+	background: #921224;
 	color: #fff;
 	font-size: 26px;
 	position: absolute;
@@ -774,7 +774,7 @@ body {
 }
 
 .slider .owl-carousel .owl-nav div:hover {
-	background: #4793AF;
+	background: #00263B;
 	color: #fff;
 }
 
@@ -824,7 +824,7 @@ body {
 	text-align: left;
 	z-index: 3;
 	border-radius: 5px;
-	background: #4793AF;
+	background: #00263B;
 	-webkit-transition: all .3s ease-out 0s;
 	-moz-transition: all .3s ease-out 0s;
 	-ms-transition: all .3s ease-out 0s;
@@ -849,7 +849,7 @@ body {
 	margin: 0 auto;
 	width: 80%;
 	height: 90%;
-	background: #4793AF;
+	background: #00263B;
 	opacity: 0;
 	filter: blur(10px);
 	-webkit-transition: all .3s ease-out 0s;
@@ -870,7 +870,7 @@ body {
 .schedule .single-schedule .icon i {
 	position: absolute;
 	font-size: 110px;
-	color: #8B322C;
+	color: #ffffff;
 	-webkit-transition: all .3s ease-out 0s;
 	-moz-transition: all .3s ease-out 0s;
 	-ms-transition: all .3s ease-out 0s;
@@ -898,7 +898,7 @@ body {
 }
 
 .schedule .single-schedule p {
-	color: #FFC470;
+	color: #fcfbf9;
 	margin-top: 22px;
 }
 
@@ -917,7 +917,7 @@ body {
 	bottom: 0;
 	height: 1px;
 	width: 0%;
-	background: #FFC470;
+	background: #ffffff;
 	-webkit-transition: all 0.4s ease;
 	-moz-transition: all 0.4s ease;
 	transition: all 0.4s ease;
@@ -941,7 +941,7 @@ body {
 
 .schedule .single-schedule .time-sidual li {
 	display: block;
-	color: #FFC470;
+	color: #ffffff;
 	width: 100%;
 	margin-bottom: 3px;
 }
@@ -991,7 +991,7 @@ body {
 	right: -72px;
 	top: 60px;
 	width: 118px;
-	border-bottom: 3px dotted #8B322C;
+	border-bottom: 3px dotted #00263B;
 }
 
 .Feautes .single-features.last::before {
@@ -1004,7 +1004,7 @@ body {
 
 .Feautes .single-features .signle-icon i {
 	font-size: 50px;
-	color: #8B322C;
+	color: #921224;
 	position: absolute;
 	left: 50%;
 	margin-left: -50px;
@@ -1021,14 +1021,14 @@ body {
 }
 
 .Feautes .single-features:hover .signle-icon i {
-	background: #4793AF;
+	background: #00263B;
 	color: #fff;
 	border-color: transparent;
 }
 
 .Feautes .single-features h3 {
 	padding-top: 128px;
-	color: #2C2D3F;
+	color: #00263B;
 	font-weight: 600;
 	font-size: 21px;
 }
@@ -1083,7 +1083,7 @@ body {
 }
 
 .fun-facts .single-fun:hover i {
-	color: #4793AF;
+	color: #921224;
 	background: #fff;
 	border-color: transparent;
 }
@@ -1120,7 +1120,7 @@ body {
 .why-choose .choose-left h3 {
 	font-size: 24px;
 	font-weight: 600;
-	color: #8B322C;
+	color: #00263B;
 	position: relative;
 	padding-bottom: 20px;
 	margin-bottom: 24px;
@@ -1133,7 +1133,7 @@ body {
 	bottom: 0;
 	height: 2px;
 	width: 50px;
-	background: #DD5746;
+	background: #921224;
 }
 
 .why-choose .choose-left p {
@@ -1143,7 +1143,7 @@ body {
 .why-choose .choose-left .list {}
 
 .why-choose .choose-left .list li {
-	color: #660c05;
+	color: #00263B;
 	margin-bottom: 12px;
 }
 
@@ -1156,7 +1156,7 @@ body {
 	width: 15px;
 	line-height: 15px;
 	text-align: center;
-	background: #4793AF;
+	background: #921224;
 	color: #fff;
 	font-size: 14px;
 	border-radius: 100%;
@@ -1192,7 +1192,7 @@ body {
 	margin-left: -35px;
 	margin-top: -35px;
 	font-size: 21px;
-	background: #DD5746;
+	background: #921224;
 	padding-left: 4px;
 }
 
@@ -1274,12 +1274,12 @@ body {
 
 .call-action .content .btn:before {
 	
-	background: #4793AF;
+	background: #921224;
 }
 
 .call-action .content .btn:hover {
-	border:#4793AF;
-	background: #4793AF;
+	border:#921224;
+	background: #921224;
 	color: #fff;
 }
 
@@ -1532,7 +1532,7 @@ body {
 
 .services .single-service i {
 	font-size: 45px;
-	color: #8B322C;
+	color: #921224;
 	position: absolute;
 	left: 0;
 	-webkit-transition: all 0.4s ease;
@@ -1543,17 +1543,17 @@ body {
 .services .single-service h4 {
 	text-transform: capitalize;
 	margin-bottom: 25px;
-	color: #8B322C;
+	color: #921224;
 }
 
 .services .single-service h4 a {
-	color: #4793AF;
+	color: #00263B;
 	font-size: 20px;
 	font-weight: 600;
 }
 
 .services .single-service h4 a:hover {
-	color: #FFC470;
+	color: #b31127;
 }
 
 .services .single-service p {
@@ -1583,7 +1583,7 @@ body {
 .services-details-img blockquote {
 	font-size: 15px;
 	color: #4a6f8a;
-	background-color: #8B322C;
+	background-color: #921224;
 	padding: 30px 75px;
 	line-height: 26px;
 	position: relative;
@@ -3171,7 +3171,7 @@ body {
 /*==========================
 	Start Appointment CSS
 ============================*/
-.appointment {
+/* .appointment {
 	background: #fff;
 	padding-top: 100px;
 }
@@ -3324,7 +3324,7 @@ body {
 .appointment.single-page .day-head .time {
 	font-weight: 400;
 	float: right;
-}
+} */
 
 /*==========================
 	End Appointment CSS
@@ -3333,7 +3333,7 @@ body {
 /*====================
    Start Login CSS
 ======================*/
-.login .inner {
+/* .login .inner {
 	box-shadow: 0px 0px 10px #00000024;
 	border-radius: 5px;
 	overflow: hidden;
@@ -3503,7 +3503,7 @@ body {
 
 .login .login-form .lost-pass:hover {
 	color: #1A76D1;
-}
+} */
 
 /*====================
    End Login CSS
@@ -3512,7 +3512,7 @@ body {
 /*=========================
    Start Register CSS
 ===========================*/
-.register .inner {
+/* .register .inner {
 	box-shadow: 0px 0px 10px #00000024;
 	border-radius: 5px;
 	overflow: hidden;
@@ -3680,7 +3680,7 @@ body {
 
 .register .register-form .terms:hover {
 	color: #2C2D3F;
-}
+} */
 
 /*=========================
    End Register CSS
@@ -3689,7 +3689,7 @@ body {
 /*=====================
    Start Faq CSS
 =======================*/
-.faq-head h2 {
+/* .faq-head h2 {
 	margin-bottom: 35px;
 	font-weight: 600;
 	font-size: 25px;
@@ -3772,7 +3772,7 @@ body {
 	content: "-";
 	font-size: 25px;
 	color: #ffffff;
-}
+} */
 
 /*=====================
    End Faq CSS
@@ -3799,7 +3799,7 @@ body {
 .contact-us .contact-us-form h2 {
 	position: relative;
 	font-size: 32px;
-	color: #333;
+	color: #00263B;
 	font-weight: 600;
 	line-height: 27px;
 	text-transform: capitalize;
@@ -3815,7 +3815,7 @@ body {
 	bottom: 0;
 	height: 2px;
 	width: 50px;
-	background: #1A76D1;
+	background: #921224;
 }
 
 .contact-us .contact-us-form p {
@@ -3840,7 +3840,7 @@ body {
 	border: 1px solid #eee;
 	text-transform: capitalize;
 	padding: 0px 18px;
-	color: #555;
+	color: #00263B;
 	font-size: 14px;
 	font-weight: 400;
 	border-radius: 4px;
@@ -3852,7 +3852,7 @@ body {
 	border: 1px solid #eee;
 	text-transform: capitalize;
 	padding: 18px;
-	color: #555;
+	color: #00263B;
 	font-size: 14px;
 	font-weight: 400;
 	border-radius: 4px;
@@ -3875,7 +3875,7 @@ body {
 }
 
 .contact-us .form .btn:hover {
-	background: #1A76D1;
+	background: #00263B;
 	color: #fff;
 }
 
@@ -3890,7 +3890,7 @@ body {
 .contact-us .contact-us-form .checkbox label {
 	font-size: 14px;
 	font-weight: 400;
-	color: #333;
+	color: #00263B;
 	position: relative;
 	padding-left: 20px;
 }
@@ -3910,7 +3910,7 @@ body {
 	top: 5px;
 	width: 15px;
 	height: 15px;
-	border: 1px solid #1A76D1;
+	border: 1px solid #921224;
 	border-radius: 100%;
 }
 
@@ -3929,7 +3929,7 @@ body {
 	transition: all 0.4s ease;
 	display: block;
 	font-size: 9px;
-	background: #1A76D1;
+	background: #921224;
 	border-radius: 100%;
 }
 
@@ -3944,7 +3944,7 @@ body {
 }
 
 .contact-us .single-info {
-	background: #1a76d1;
+	background: #00263B;
 	padding: 40px 60px;
 	height: 150px;
 	border-radius: 10px;
@@ -3966,7 +3966,7 @@ body {
 	margin: 0 auto;
 	width: 80%;
 	height: 90%;
-	background: #1A76D1;
+	background: #00263B;
 	opacity: 0;
 	filter: blur(10px);
 	-webkit-transition: all .3s ease-out 0s;
@@ -4033,14 +4033,14 @@ body {
 .error-page .error-inner h1 {
 	font-size: 140px;
 	text-shadow: 3px 5px 2px #3333;
-	color: #1A76D1;
+	color: #921224;
 	font-weight: 700;
 }
 
 .error-page .error-inner h1 span {
 	display: block;
 	font-size: 25px;
-	color: #333;
+	color: #00263B;
 	font-weight: 600;
 	text-shadow: none;
 }
@@ -4076,7 +4076,7 @@ body {
 	height: 50px;
 	border-radius: 5px;
 	cursor: pointer;
-	background: #1A76D1;
+	background: #00263B;
 	display: inline-block;
 	position: relative;
 	top: -2px;
@@ -4093,7 +4093,7 @@ body {
 /*===========================
 	Start Mail Success CSS
 =============================*/
-.mail-seccess {
+/* .mail-seccess {
 	text-align: center;
 	background: #fff;
 	border-top: 1px solid #eee;
@@ -4125,7 +4125,7 @@ body {
 
 .mail-seccess .success-inner .btn {
 	color: #fff;
-}
+} */
 
 /*===========================
 	End Mail Success CSS
@@ -4134,7 +4134,7 @@ body {
 /*=========================
 	Start Newsletter CSS
 ===========================*/
-.newsletter {
+/* .newsletter {
 	background: #EDF2FF;
 }
 
@@ -4191,7 +4191,7 @@ body {
 
 .newsletter .button:hover {
 	box-shadow: none;
-}
+} */
 
 /*=========================
 	End Newsletter CSS
@@ -4200,7 +4200,7 @@ body {
 /*===============================
 	Start Doctor Calendar CSS
 =================================*/
-.doctor-calendar-area {
+/* .doctor-calendar-area {
 	position: relative;
 	z-index: 1;
 }
@@ -4302,7 +4302,7 @@ body {
 
 .doctor-calendar-table table tbody tr:last-child td {
 	border-bottom: none;
-}
+} */
 
 /*===============================
 	End Doctor Calendar CSS
@@ -4624,7 +4624,7 @@ body {
 .footer .footer-top {
 	padding: 100px 0px;
 	position: relative;
-	background: #4793AF;
+	background: #00263B;
 }
 
 .footer .footer-top:before {
@@ -4834,7 +4834,7 @@ body {
 }
 
 .footer .copyright {
-	background: #4793AF;
+	background: #00263B;
 	padding: 25px 0px 25px 0px;
 	text-align: center;
 }
