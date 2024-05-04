@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import Login from "./Components/ResgistrationComonents/Login";
 import Header from "./Components/SharedComponents/Header";
 import Error404 from "./Components/Error404Components/Error404";
 import Slider from "./Components/HomeComponents/Slider";
@@ -16,9 +15,8 @@ import WhyChoose from "./Components/HomeComponents/WhyChoose";
 import CallSection from "./Components/HomeComponents/CallSection";
 import Service from "./Components/HomeComponents/Service";
 import ContactUs from "./Components/ContactComponents/ContactUs";
+
 // confligt
-import Breadcrumbs from "./Components/SharedComponents/Breadcrumbs";
-// confligt 
 // <<<<<<< Shahd
 // import SendForm from "./Components/MessageComponents/SendFormasset/MsgForm";
 // =======
@@ -27,7 +25,6 @@ import Breadcrumbs from "./Components/SharedComponents/Breadcrumbs";
 // import AddUser from "./Components/ResgistrationComonents/AddUser";
 import Table from "./Components/ADMIN/Data/ShowUsers";
 import { BrowserRouter } from "react-router-dom";
-// import Table from "./Components/ADMIN/Data/ShowUsers";
 // >>>>>>> main
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -36,17 +33,5 @@ root.render(
     <BrowserRouter>
       <App />
     </BrowserRouter>
-
-    {/* <PreLoad /> */}
-    {/* <Login /> */}
-    <Header />
-    <Slider />
-    <Schedule />
-    <Bubble />
-    <Feature />
-    <FunFacts/>
-    <WhyChoose />
-    <CallSection />
-    <Service />
-    <Footer />
+  </React.StrictMode>
 );

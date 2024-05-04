@@ -65,6 +65,28 @@ export default function Message() {
                 </div>
               </div>
             </div>
+            <div className="col-lg-4 col-md-6 col-12">
+              <div className="single-news">
+                <div className="news-head">
+                  <img src={lettImg} alt="#" />
+                </div>
+                <div className="news-body">
+                  <div className="news-content">
+                    <div className="date">15 Jul, 2020</div>
+                    <h2>
+                      <a href="blog-single.html">
+                        Top five ways for solving teeth problems.
+                      </a>
+                    </h2>
+                    <p className="text">
+                      Lorem ipsum dolor a sit ameti, consectetur adipisicing
+                      elit, sed do eiusmod tempor incididunt sed do incididunt
+                      sed.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

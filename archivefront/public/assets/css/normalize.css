@@ -582,7 +582,6 @@ Preloader Area CSS
 }
 
 /* Overlay */
-
 .overlay {
 	position: relative;
 }
@@ -596,20 +595,6 @@ Preloader Area CSS
 	width: 100%;
 	background: #00263B;
 	opacity: 0.8;
-
-.overlay{
-	position:relative;
-}
-.overlay:before{
-	position:absolute;
-	content:"";
-	left:0;
-	top:0;
-	height:100%;
-	width:100%;
-	background:#00263B;
-	opacity:0.8;
-
 }
 
 /* Bread Crumbs */

@@ -15,39 +15,54 @@ import Register from "./Components/ResgistrationComonents/Regist";
 import AddUser from "./Components/ResgistrationComonents/AddUser";
 import ShowUsers from "./Components/ADMIN/Data/ShowUsers";
 import Breadcrumbs from "./Components/SharedComponents/Breadcrumbs";
+import SendMessage from "./Components/MessageComponents/SendFormasset/MsgForm";
+import Profile from "./Components/ResgistrationComonents/Profile";
+import Message from "./Components/MessageComponents/Message";
 
 function App() {
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <>
-            <Header />
-            <Slider />
-            <Schedule />
-            <Bubble />
-            <Feature />
-            <FunFacts />
-            <WhyChoose />
-            <CallSection />
-            <Service />
-            <ShowUsers />
-            <Footer />
-          </>
-        }
-      />
-      <Route path="/Login" element={<Login />} />
-      <Route
-        path="/AddUser"
-        element={
-          <>
-            <Header />
-            <Breadcrumbs /> <AddUser /> <Footer />
-          </>
-        }
-      />
-    </Routes>
+    <>
+      <Header />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Slider />
+              <Schedule />
+              <Bubble />
+              <Feature />
+              <FunFacts />
+              <WhyChoose />
+              <CallSection />
+              <Service />
+            </>
+          }
+        />
+
+        <Route path="/Login" element={<Login />} />
+        <Route path="/SendMessage" element={<SendMessage />} />
+        <Route path="/Profile" element={<Profile />} />
+        <Route path="/Import" element={<Message />} />
+        <Route
+          path="/ShowUsers"
+          element={
+            <>
+              <Breadcrumbs /> <ShowUsers />
+            </>
+          }
+        />
+        <Route
+          path="/AddUser"
+          element={
+            <>
+              <Breadcrumbs /> <AddUser />
+            </>
+          }
+        />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
