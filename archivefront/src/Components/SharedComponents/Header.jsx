@@ -6,12 +6,12 @@ function Header() {
     <>
       {/* Header Area  */}
       <header className="header">
-        {/*  Topbar */}
+        {/* Topbar 
         <div className="topbar">
           <div className="container">
             <div className="row">
-              <div className="col-lg-6 col-md-5 col-12">
-                {/*  Contact */}
+               <div className="col-lg-6 col-md-5 col-12">
+                  Contact 
                 <ul className="top-link">
                   <li>
                     <a href="#">About</a>
@@ -26,10 +26,10 @@ function Header() {
                     <a href="#">FAQ</a>
                   </li>
                 </ul>
-                {/*  End Contact */}
-              </div>
-              <div className="col-lg-6 col-md-7 col-12">
-                {/*  Top Contact */}
+                  End Contact 
+              </div> 
+              <div className="col-lg-6 col-md-7 col-16">
+                 Top Contact 
                 <ul className="top-contact">
                   <li>
                     <i className="fa fa-phone"></i>+880 1234 56789
@@ -41,12 +41,12 @@ function Header() {
                     </a>
                   </li>
                 </ul>
-                {/*  End Top Contact */}
+                  End Top Contact 
               </div>
             </div>
           </div>
         </div>
-        {/*  End Topbar */}
+         End Topbar  */}
         {/*  Header Inner */}
         <div className="header-inner">
           <div className="container">
@@ -56,11 +56,11 @@ function Header() {
                   {/*  Start Logo */}
                   <div className="logo">
                     <a href="index.html">
-                      <img
+                      {/*<img
                         src={logo}
-                        alt="hello"
-                        style={{ width: "120px", height: "120px" }}
+                        style={{ width: "150px", height: "150px" }}
                       />
+        */}
                     </a>
                   </div>
                   {/*  End Logo */}
@@ -79,16 +79,17 @@ function Header() {
                           </a>
                           <ul className="dropdown">
                             <li>
-                              <a href="index.html">Home Page 1</a>
+                              <a href="index.html">Services</a>
                             </li>
                           </ul>
                         </li>
                         <li>
-                          <a href="#">Doctos </a>
+                          <a href="#">Profile </a>
                         </li>
                         <li>
-                          <a href="#">Services </a>
+                          <a href="#">Users </a>
                         </li>
+
                         <li>
                           <a href="#">
                             Pages <i className="icofont-rounded-down"></i>
@@ -100,6 +101,7 @@ function Header() {
                           </ul>
                         </li>
                         <li>
+                          {/*
                           <a href="#">
                             Blogs <i className="icofont-rounded-down"></i>
                           </a>
@@ -110,6 +112,7 @@ function Header() {
                           </ul>
                         </li>
                         <li>
+                         */}
                           <a href="contact.html">Contact Us</a>
                         </li>
                       </ul>
@@ -120,7 +123,7 @@ function Header() {
                 <div className="col-lg-2 col-12">
                   <div className="get-quote">
                     <a href="appointment.html" className="btn">
-                      Book Appointment
+                      Send Message
                     </a>
                   </div>
                 </div>

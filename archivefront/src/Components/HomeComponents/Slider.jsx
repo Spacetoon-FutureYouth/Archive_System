@@ -1,6 +1,8 @@
 import React from "react";
 
-function Slider() {
+
+
+ function Slider() {
   return (
     <>
       {/* Slider Area */}
@@ -107,6 +109,6 @@ function Slider() {
       {/*/ End Slider Area */}
     </>
   );
-}
+} 
 
 export default Slider;
