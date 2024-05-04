@@ -1,28 +1,28 @@
 import React from "react";
-import "./style.css";
+import "./style.css"; // Import the CSS file
 
 const Table = () => {
   return (
-    <div className="table-container">
-      <table className="container">
+    <div className="table-container-custom">
+      <table className="container-custom">
         <thead>
           <tr>
-            <th className="table-header">
+            <th className="table-header-custom">
               <h1>User name</h1>
             </th>
-            <th className="table-header">
+            <th className="table-header-custom">
               <h1>Email</h1>
             </th>
-            <th className="table-header">
+            <th className="table-header-custom">
               <h1>Job title</h1>
             </th>
-            <th className="table-header">
+            <th className="table-header-custom">
               <h1>Department</h1>
             </th>
-            <th className="table-header">
+            <th className="table-header-custom">
               <h1>Mobile number</h1>
             </th>
-            <th className="table-header">
+            <th className="table-header-custom">
               <h1>Actions</h1>
             </th>
           </tr>

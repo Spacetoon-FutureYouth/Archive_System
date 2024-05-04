@@ -103,6 +103,10 @@ body {
 	font-size: 13px;
 	width: 100%;
 	text-transform: capitalize;
+	background: #00263B;
+}
+
+
 	background:#00263B;
 }
 .pro-features .button .btn::before {
@@ -400,6 +404,8 @@ body {
 	bottom: 0;
 	height: 3px;
 	width: 0%;
+	background: #921224;
+	/* B47B84 */
 	background: #921224; /* B47B84 */
 	border-radius: 5px 5px 0 0;
 	opacity: 0;
@@ -644,6 +650,7 @@ body {
 	background: #fff;
 	color: #00263B;
 }
+
 /*//////////////////////////////////////////////////////////////////*/
 .header .search-form button {
 	position: absolute;
@@ -731,6 +738,11 @@ body {
 	margin: 0;
 	margin-right: 10px;
 }
+
+.slider .single-slider .btn::before {
+	background: #00263B;
+}
+
 .slider .single-slider .btn::before {
 	background: #00263B;
 }
@@ -1053,10 +1065,11 @@ body {
 }
 
 .fun-facts {
-	background: url('img/fun-bg.jpg');
+	background: url('img/back.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
 
 .fun-facts .single-fun {}
 
@@ -1239,7 +1252,7 @@ body {
 	Start Call to action CSS
 =================================*/
 .call-action {
-	background-image: url('img/call-bg.jpg');
+	background-image: url('img/arc.png');
 	background-size: cover;
 	background-position: center;
 	position: relative;
@@ -1273,11 +1286,13 @@ body {
 }
 
 .call-action .content .btn:before {
-	
-	background: #921224;
+
+		background: #921224;
 }
 
 .call-action .content .btn:hover {
+	border: #921224;
+
 	border:#921224;
 	background: #921224;
 	color: #fff;

@@ -6,6 +6,8 @@ function Header() {
     <>
       {/* Header Area  */}
       <header className="header">
+        {/* Topbar 
+
           {/* Topbar 
         <div className="topbar">
           <div className="container">
@@ -56,6 +58,11 @@ function Header() {
                   {/*  Start Logo */}
                   <div className="logo">
                     <a href="index.html">
+                      {/*<img
+                        src={logo}
+                        style={{ width: "150px", height: "150px" }}
+                      />
+        */}
 
                     </a>
                   </div>
@@ -75,16 +82,17 @@ function Header() {
                           </a>
                           <ul className="dropdown">
                             <li>
-                              <a href="index.html">Home Page 1</a>
+                              <a href="index.html">Services</a>
                             </li>
                           </ul>
                         </li>
                         <li>
-                          <a href="#">Doctos </a>
+                          <a href="#">Profile </a>
                         </li>
                         <li>
-                          <a href="#">Services </a>
+                          <a href="#">Users </a>
                         </li>
+
                         <li>
                           <a href="#">
                             Pages <i className="icofont-rounded-down"></i>
@@ -96,6 +104,7 @@ function Header() {
                           </ul>
                         </li>
                         <li>
+                          {/*
                           <a href="#">
                             Blogs <i className="icofont-rounded-down"></i>
                           </a>
@@ -106,6 +115,7 @@ function Header() {
                           </ul>
                         </li>
                         <li>
+                         */}
                           <a href="contact.html">Contact Us</a>
                         </li>
                       </ul>
@@ -116,7 +126,7 @@ function Header() {
                 <div className="col-lg-2 col-12">
                   <div className="get-quote">
                     <a href="appointment.html" className="btn">
-                      Book Appointment
+                      Send Message
                     </a>
                   </div>
                 </div>

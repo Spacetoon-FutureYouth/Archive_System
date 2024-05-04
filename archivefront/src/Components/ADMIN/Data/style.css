@@ -1,56 +1,55 @@
-.table-container {
+.table-container-custom {
     width: 80%;
     margin: 0 auto;
 }
 
-.table-header h1 {
+.table-header-custom h1 {
     font-size: 20px;
     color: #7c7070;
     /* Adjust the color as needed */
 }
 
-.container th.table-header {
+.container-custom th.table-header-custom {
     font-weight: bold;
     font-size: 12px;
     text-align: left;
 }
 
-.container td {
+.container-custom td {
     font-weight: normal;
     font-size: 1em;
 }
 
-.container {
+.container-custom {
     text-align: left;
     overflow: hidden;
     width: 100%;
 }
 
-.container td,
-.container th {
+.container-custom td,
+.container-custom th {
     padding-bottom: 2%;
     padding-top: 2%;
     padding-left: 2%;
 }
 
-.container tr:nth-child(odd) {
+.container-custom tr:nth-child(odd) {
     background-color: #323c50;
 }
 
-.container tr:nth-child(even) {
+.container-custom tr:nth-child(even) {
     background-color: #2c3446;
 }
 
-.container th {
+.container-custom th {
     background-color: #1f2739;
 }
 
-.container td:first-child {
+.container-custom td:first-child {
     color: #fb667a;
 }
 
-
-.container button {
+.container-custom button {
     padding: 8px 16px;
     background-color: #4CAF50;
     /* Green */
@@ -65,7 +64,7 @@
     border-radius: 4px;
 }
 
-.container button:hover {
+.container-custom button:hover {
     background-color: #45a049;
     /* Darker Green */
 }

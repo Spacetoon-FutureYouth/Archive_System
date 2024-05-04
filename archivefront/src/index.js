@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
 import Login from "./Components/ResgistrationComonents/Login";
 import Header from "./Components/SharedComponents/Header";
@@ -17,6 +16,7 @@ import WhyChoose from "./Components/HomeComponents/WhyChoose";
 import CallSection from "./Components/HomeComponents/CallSection";
 import Service from "./Components/HomeComponents/Service";
 import ContactUs from "./Components/ContactComponents/ContactUs";
+// confligt
 import Breadcrumbs from "./Components/SharedComponents/Breadcrumbs";
 // confligt 
 // <<<<<<< Shahd
@@ -25,12 +25,18 @@ import Breadcrumbs from "./Components/SharedComponents/Breadcrumbs";
 // import Register from "./Components/ResgistrationComonents/Regist";
 // import LoginForm from "./Components/ResgistrationComonents/Login";
 // import AddUser from "./Components/ResgistrationComonents/AddUser";
+import Table from "./Components/ADMIN/Data/ShowUsers";
+import { BrowserRouter } from "react-router-dom";
 // import Table from "./Components/ADMIN/Data/ShowUsers";
 // >>>>>>> main
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+
     {/* <PreLoad /> */}
     {/* <Login /> */}
     <Header />
@@ -43,5 +49,4 @@ root.render(
     <CallSection />
     <Service />
     <Footer />
-  </React.StrictMode>
 );
