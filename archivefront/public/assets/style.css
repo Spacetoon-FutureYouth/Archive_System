@@ -106,11 +106,13 @@ body {
 	background: #00263B;
 }
 
+
+	background:#00263B;
+}
 .pro-features .button .btn::before {
 	background: #921224;
 	border: #921224;
 }
-
 .pro-features li {
 	color: #333;
 	margin: 0;
@@ -404,6 +406,7 @@ body {
 	width: 0%;
 	background: #921224;
 	/* B47B84 */
+	background: #921224; /* B47B84 */
 	border-radius: 5px 5px 0 0;
 	opacity: 0;
 	visibility: hidden;
@@ -740,6 +743,10 @@ body {
 	background: #00263B;
 }
 
+.slider .single-slider .btn::before {
+	background: #00263B;
+}
+	
 .slider .single-slider .btn:last-child {
 	margin: 0;
 }
@@ -1280,11 +1287,13 @@ body {
 
 .call-action .content .btn:before {
 
-	background: #921224;
+		background: #921224;
 }
 
 .call-action .content .btn:hover {
 	border: #921224;
+
+	border:#921224;
 	background: #921224;
 	color: #fff;
 }

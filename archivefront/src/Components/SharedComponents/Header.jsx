@@ -7,6 +7,8 @@ function Header() {
       {/* Header Area  */}
       <header className="header">
         {/* Topbar 
+
+          {/* Topbar 
         <div className="topbar">
           <div className="container">
             <div className="row">
@@ -61,6 +63,7 @@ function Header() {
                         style={{ width: "150px", height: "150px" }}
                       />
         */}
+
                     </a>
                   </div>
                   {/*  End Logo */}
