@@ -1,9 +1,15 @@
 import React from "react";
 import "./style.css"; // Import the CSS file
+import Profile from "../../ResgistrationComonents/Profile";
 
 const Table = () => {
+  const handleEditClick = () => {
+    <Profile />;
+  };
   return (
     <div className="table-container-custom">
+      <br />
+      <br />
       <table className="container-custom">
         <thead>
           <tr>
@@ -46,11 +52,10 @@ const Table = () => {
             <td>Design</td>
             <td>987-654-3210</td>
             <td>
-              <button>Edit</button>
+              <button onClick={handleEditClick}>Edit</button>
               <button>Delete</button>
             </td>
           </tr>
-          {/* Add more rows as needed */}
         </tbody>
       </table>
     </div>

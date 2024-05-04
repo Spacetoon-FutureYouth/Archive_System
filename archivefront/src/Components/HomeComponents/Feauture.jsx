@@ -1,10 +1,6 @@
 import React from "react";
 import importimg from "../Images/Import.svg";
 function Feature() {
-
-import React from 'react';
-
-function Feature(){
   return (
     <section className="Feautes section">
       <div className="container">
@@ -16,10 +12,6 @@ function Feature(){
                 Lorem ipsum dolor sit amet consectetur adipiscing elit praesent
                 aliquet. pretiumts
               </p>
-
-              <h2>We Are Always Ready to Help You & Your Family</h2>
-              <img src="img/section-img.png" alt="#" />
-              <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
             </div>
           </div>
         </div>
@@ -34,11 +26,6 @@ function Feature(){
                 Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam
                 vulputate.
               </p>
-
-                <i className="icofont icofont-ambulance-cross"></i>
-              </div>
-              <h3>Emergency Help</h3>
-              <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
             </div>
           </div>
           <div className="col-lg-4 col-12">
@@ -51,10 +38,6 @@ function Feature(){
                 Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam
                 vulputate.
               </p>
-                <i className="icofont icofont-medical-sign-alt"></i>
-              </div>
-              <h3>Enriched Pharmecy</h3>
-              <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
             </div>
           </div>
           <div className="col-lg-4 col-12">
@@ -67,10 +50,6 @@ function Feature(){
                 Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam
                 vulputate.
               </p>
-                <i className="icofont icofont-stethoscope"></i>
-              </div>
-              <h3>Medical Treatment</h3>
-              <p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
             </div>
           </div>
         </div>
