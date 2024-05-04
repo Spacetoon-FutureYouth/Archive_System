@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import {BrowserRouter} from "react-router-dom"; 
 import App from "./App";
 import Login from "./Components/ResgistrationComonents/Login";
 import Header from "./Components/SharedComponents/Header";
@@ -31,17 +32,8 @@ import Breadcrumbs from "./Components/SharedComponents/Breadcrumbs";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <PreLoad /> */}
-    {/* <Login /> */}
-    <Header />
-    <Slider />
-    <Schedule />
-    <Bubble />
-    <Feature />
-    <FunFacts/>
-    <WhyChoose />
-    <CallSection />
-    <Service />
-    <Footer />
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
   </React.StrictMode>
 );
