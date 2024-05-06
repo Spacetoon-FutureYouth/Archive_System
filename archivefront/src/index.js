@@ -16,7 +16,7 @@ import CallSection from "./Components/HomeComponents/CallSection";
 import Service from "./Components/HomeComponents/Service";
 import ContactUs from "./Components/ContactComponents/ContactUs";
 import ShowAttendace from "./Components/MeetingComponents/ShowAttendance";
-
+import MeetingForm from "./Components/MeetingComponents/MeetingForm/MeetingForm";
 // confligt
 // <<<<<<< Shahd
 // import SendForm from "./Components/MessageComponents/SendFormasset/MsgForm";
@@ -33,7 +33,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <MeetingForm />
     </BrowserRouter>
   </React.StrictMode>
 );
