@@ -1,5 +1,6 @@
 import React from "react";
 import importimg from "../Images/Import.svg";
+import { Link } from "react-router-dom";
 function Feature() {
   return (
     <section className="Feautes section">
@@ -45,7 +46,7 @@ function Feature() {
               <div className="signle-icon">
                 <i className="icofont icofont-meeting-add"></i>
               </div>
-              <h3>Create Meeting</h3> {/**add Send Message */}
+              <h3>Meetings Schedule</h3>
               <p>
                 Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam
                 vulputate.

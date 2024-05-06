@@ -20,7 +20,11 @@ const ProfileSettings = () => {
           <div className="p-3 py-5">
             <div className="d-flex justify-content-between align-items-center mb-3">
               <h4 className="text-right">Profile Settings</h4>
+              <button className="btn btn-primary profile-button" type="button">
+                Edit Profile
+              </button>
             </div>
+
             <div className="row mt-2">
               <div className="col-md-6">
                 <label className="labels">Name</label>
@@ -137,7 +141,7 @@ const ProfileSettings = () => {
             </div>
             <div className="mt-5 text-center">
               <button className="btn btn-primary profile-button" type="button">
-                Save Profile
+                Save Changes
               </button>
             </div>
           </div>
