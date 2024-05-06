@@ -18,6 +18,8 @@ import Breadcrumbs from "./Components/SharedComponents/Breadcrumbs";
 import SendMessage from "./Components/MessageComponents/SendFormasset/MsgForm";
 import Profile from "./Components/ResgistrationComonents/Profile";
 import Message from "./Components/MessageComponents/Message";
+import ShowAttendance from "./Components/MeetingComponents/ShowAttendance";
+import ContactUs from "./Components/ContactComponents/ContactUs";
 
 function App() {
   return (
@@ -39,7 +41,7 @@ function App() {
             </>
           }
         />
-
+        <Route path="/Feature" element={<Feature />}></Route>
         <Route path="/Login" element={<Login />} />
         <Route path="/SendMessage" element={<SendMessage />} />
         <Route path="/Profile" element={<Profile />} />
@@ -48,7 +50,7 @@ function App() {
           path="/ShowUsers"
           element={
             <>
-              <Breadcrumbs /> <ShowUsers />
+              <Breadcrumbs currentPage="showusers" /> <ShowUsers />
             </>
           }
         />
@@ -56,7 +58,24 @@ function App() {
           path="/AddUser"
           element={
             <>
-              <Breadcrumbs /> <AddUser />
+              <Breadcrumbs currentPage="addUser" /> <AddUser />
+            </>
+          }
+        />
+        <Route
+          path="/CreateMeeting"
+          element={
+            <>
+              <Breadcrumbs currentPage="createmeeting" />
+              <ShowAttendance />
+            </>
+          }
+        />
+        <Route
+          path="/ContactUs"
+          element={
+            <>
+              <Breadcrumbs currentPage="contactus" /> <ContactUs />
             </>
           }
         />
