@@ -8,8 +8,12 @@ function Header() {
     <>
       {/* Header Area  */}
       <header className="header">
+
         {
         /* Topbar 
+
+        {/* Topbar 
+
           <div className="topbar">
             <div className="container">
               <div className="row">
@@ -63,7 +67,11 @@ function Header() {
                           src={logo}
                           style={{ width: "150px", height: "150px" }}
                         />
+
                       */}
+
+          */}
+
                     </a>
                   </div>
                   {/*  End Logo */}
@@ -134,11 +142,23 @@ function Header() {
                   {/* / End Main Menu */}
                 </div>
                 <div className="col-lg-2 col-12">
+
                   <div className="get-quote" style={{ display: "flex", justifyContent: "flex-end" }}>
                     <Link to="/SendMessage" className="btn" style={{ marginRight: "10px" }}>
                       Send Message
                     </Link>
                     <Link to="/createmeeting" className="btn">
+
+                  <div className="get-quote" style={{ display: "flex" }}>
+                    <Link to="/SendMessage" className="btn">
+                      Send Message
+                    </Link>
+                    <Link
+                      to="/createmeeting"
+                      className="btn"
+                      style={{ marginLeft: "10px" }}
+                    >
+
                       Create Meeting
                     </Link>
                   </div>
