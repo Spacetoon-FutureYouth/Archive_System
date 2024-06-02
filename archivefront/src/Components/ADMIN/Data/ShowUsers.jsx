@@ -1,28 +1,34 @@
 import React from "react";
-import "./style.css";
+import "./style.css"; // Import the CSS file
+import Profile from "../../ResgistrationComonents/Profile";
 
 const Table = () => {
+  const handleEditClick = () => {
+    <Profile />;
+  };
   return (
-    <div className="table-container">
-      <table className="container">
+    <div className="table-container-custom">
+      <br />
+      <br />
+      <table className="container-custom">
         <thead>
           <tr>
-            <th className="table-header">
+            <th className="table-header-custom">
               <h1>User name</h1>
             </th>
-            <th className="table-header">
+            <th className="table-header-custom">
               <h1>Email</h1>
             </th>
-            <th className="table-header">
+            <th className="table-header-custom">
               <h1>Job title</h1>
             </th>
-            <th className="table-header">
+            <th className="table-header-custom">
               <h1>Department</h1>
             </th>
-            <th className="table-header">
+            <th className="table-header-custom">
               <h1>Mobile number</h1>
             </th>
-            <th className="table-header">
+            <th className="table-header-custom">
               <h1>Actions</h1>
             </th>
           </tr>
@@ -46,11 +52,10 @@ const Table = () => {
             <td>Design</td>
             <td>987-654-3210</td>
             <td>
-              <button>Edit</button>
+              <button onClick={handleEditClick}>Edit</button>
               <button>Delete</button>
             </td>
           </tr>
-          {/* Add more rows as needed */}
         </tbody>
       </table>
     </div>

@@ -1,17 +1,37 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
-function Breadcrumbs () {
+function Breadcrumbs({ currentPage }) {
+  const getBreadcrumbName = () => {
+    switch (currentPage) {
+      case "addUser":
+        return "Add User";
+      case "createmeeting":
+        return "Create Meeting";
+      case "showusers":
+        return "Show Users";
+      case "contactus":
+        return "Contact US";
+      default:
+        return "Unknown Page";
+    }
+  };
+
   return (
     <div className="breadcrumbs overlay">
       <div className="container">
         <div className="bread-inner">
           <div className="row">
             <div className="col-12">
-              <h2>Blog Single</h2>
+              <h2>{getBreadcrumbName()}</h2>
               <ul className="bread-list">
-                <li><a href="index.html">Home</a></li>
-                <li><i className="icofont-simple-right"></i></li>
-                <li className="active">Blog Single</li>
+                <li>
+                  <Link to={"/"}>Home</Link>
+                </li>
+                <li>
+                  <i className="icofont-simple-right"></i>
+                </li>
+                <li className="active">{getBreadcrumbName()}</li>
               </ul>
             </div>
           </div>
