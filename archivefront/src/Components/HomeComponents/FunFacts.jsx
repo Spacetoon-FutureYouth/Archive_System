@@ -1,50 +1,44 @@
 import React from 'react';
 
-function FunFacts() {
-  return (
-    <div id="fun-facts" className="fun-facts section overlay">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-3 col-md-6 col-12">
-            <div className="single-fun">
-              <i className="icofont icofont-home"></i>
-              <div className="content">
-                <span className="counter">3468</span>
-                <p>Hospital Rooms</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-12">
-            <div className="single-fun">
-              <i className="icofont icofont-user-alt-3"></i>
-              <div className="content">
-                <span className="counter">557</span>
-                <p>Specialist Doctors</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-12">
-            <div className="single-fun">
-              <i className="icofont-simple-smile"></i>
-              <div className="content">
-                <span className="counter">4379</span>
-                <p>Happy Patients</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-md-6 col-12">
-            <div className="single-fun">
-              <i className="icofont icofont-table"></i>
-              <div className="content">
-                <span className="counter">32</span>
-                <p>Years of Experience</p>
-              </div>
-            </div>
-          </div>
-        </div>
+const FunFactItem = ({ iconClass, counter, description }) => (
+  <div className="col-lg-3 col-md-6 col-12">
+    <div className="single-fun">
+      <i className={iconClass}></i>
+      <div className="content">
+        <span className="counter">{counter}</span>
+        <p>{description}</p>
       </div>
     </div>
-  );
-}
+  </div>
+);
+
+const FunFacts = () => (
+  <div id="fun-facts" className="fun-facts section overlay">
+    <div className="container">
+      <div className="row">
+        <FunFactItem
+          iconClass="icofont icofont-home"
+          counter="3468"
+          description="Hospital Rooms"
+        />
+        <FunFactItem
+          iconClass="icofont icofont-user-alt-3"
+          counter="557"
+          description="Specialist Doctors"
+        />
+        <FunFactItem
+          iconClass="icofont-simple-smile"
+          counter="4379"
+          description="Happy Patients"
+        />
+        <FunFactItem
+          iconClass="icofont icofont-table"
+          counter="32"
+          description="Years of Experience"
+        />
+      </div>
+    </div>
+  </div>
+);
 
 export default FunFacts;
