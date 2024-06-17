@@ -1,0 +1,6 @@
+@ArchiveSystem_HostAddress = http://localhost:5029
+
+GET {{ArchiveSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
