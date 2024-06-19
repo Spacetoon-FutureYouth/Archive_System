@@ -1,10 +1,20 @@
-﻿namespace ArchiveSystem
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ArchiveSystem
 {
     public class UserMessage
     {
+        [Key]
         public int UserMessageId { get; set; }
-        public int UserId { get; set; }
+
+        [ForeignKey("User")]
+        public Guid UserId { get; set; }  
+
+        [ForeignKey("Message")]
         public int MessageId { get; set; }
+
         public DateTime SentDate { get; set; }
 
         // Navigation properties

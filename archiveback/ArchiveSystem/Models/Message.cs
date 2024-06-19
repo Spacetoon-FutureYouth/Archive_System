@@ -2,7 +2,9 @@
 {
     public class Message
     {
+        [Key]
         public int MessageId { get; set; }
+
         public MessageType MessageType { get; set; }
 
         // Navigation properties
@@ -14,7 +16,6 @@
             UserMessages = new List<UserMessage>();
             Attachments = new List<Attachment>();
         }
-
     }
 
     public enum MessageType

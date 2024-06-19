@@ -2,9 +2,15 @@
 {
     public class MeetingAttendance
     {
+        [Key]
         public int MeetingAttendanceId { get; set; }
+
+        [ForeignKey("Meeting")]
         public int MeetingId { get; set; }
-        public int UserId { get; set; }
+
+        [ForeignKey("User")]
+        public Guid UserId { get; set; }  // Changed to GUID
+
         public DateTime AttendanceDate { get; set; }
 
         // Navigation properties
