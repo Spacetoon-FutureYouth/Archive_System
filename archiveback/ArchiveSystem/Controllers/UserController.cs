@@ -8,9 +8,9 @@ namespace ArchiveSystem.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly ApplicationDBContext _context;
+        private readonly ArchiveContext _context;
 
-        public UsersController(ApplicationDBContext context)
+        public UsersController(ArchiveContext context)
         {
             _context = context;
         }
