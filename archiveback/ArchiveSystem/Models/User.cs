@@ -17,8 +17,8 @@ namespace ArchiveSystem
         [MaxLength(100)]
         public string Username { get; set; }
 
-        public bool Gender { get; set; }
-
+        public UserGender Gender  { get; set; }
+        public bool Active { get; set; }
         [Required]
         [MaxLength(15)]
         public string PhoneNumber { get; set; }
@@ -39,5 +39,11 @@ namespace ArchiveSystem
             CreatedMeetings = new List<Meeting>();
         }
 
+    }
+
+    public enum UserGender
+    {
+        Male,
+        Female
     }
 }
