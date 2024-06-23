@@ -21,11 +21,6 @@
     public enum MessageType
     {
         Report,
-        MeetingInfo
-    }
-    public enum MessageState
-    {
-        Send,
-        Receive
+        MeetingDate
     }
 }
