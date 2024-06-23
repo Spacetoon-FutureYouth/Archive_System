@@ -1,19 +1,17 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace ArchiveSystem.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class MeetingController : ControllerBase
     {
-        private readonly ApplicationDBContext _context;
+        private readonly ArchiveContext _context;
 
-        public UsersController(ApplicationDBContext context)
+        public MeetingController(ArchiveContext context)
         {
             _context = context;
         }
-
     }
 }

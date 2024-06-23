@@ -2,9 +2,9 @@
 
 namespace ArchiveSystem.Models
 {
-    public class ApplicationDBContext : DbContext
+    public class ArchiveContext : DbContext
     {
-        public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
+        public ArchiveContext(DbContextOptions<ArchiveContext> options) : base(options)
         {
         }
 

@@ -19,7 +19,7 @@
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Username must be between 3 and 100 characters.")]
         public string Username { get; set; }
 
-        public bool Gender { get; set; }
+        public UserGender Gender { get; set; }
 
         [MaxLength(15)]
         public string PhoneNumber { get; set; }
@@ -38,5 +38,10 @@
             MeetingAttendances = new List<MeetingAttendance>();
             CreatedMeetings = new List<Meeting>();
         }
+    }
+    public enum UserGender
+    {
+        Male,
+        Female
     }
 }
