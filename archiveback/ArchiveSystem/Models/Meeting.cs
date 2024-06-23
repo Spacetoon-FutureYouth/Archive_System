@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace ArchiveSystem
+﻿namespace ArchiveSystem
 {
     public class Meeting
     {
         [Key]
         public int MeetingId { get; set; }
 
-        [Required]
-        [MaxLength(256)]
-        public string MeetingAddress { get; set; }
+        [StringLength(256, MinimumLength = 3, ErrorMessage = "Meeting title must be between 3 and 256 characters.")]
+        public string MeetingTitle { get; set; }
 
         [ForeignKey("User")]
         public Guid CreatorUserId { get; set; }  // Changed to GUID

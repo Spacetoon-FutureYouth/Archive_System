@@ -15,12 +15,5 @@ namespace ArchiveSystem.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAllUsers()
-        {
-            var Users = await _context.Users.ToListAsync();
-
-            return Ok(Users);
-        }
     }
 }

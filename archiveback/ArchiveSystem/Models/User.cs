@@ -1,25 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace ArchiveSystem
+﻿namespace ArchiveSystem
 {
     public class User
     {
         [Key]
-        public Guid UserId { get; set; }  
+        public Guid UserId { get; set; }
 
-        [Required]
+        public byte[] UserImage { get; set; }  
+
         [MaxLength(256)]
-        public string Email { get; set; }  
+        public string Email { get; set; }
 
-        [Required]
-        [MaxLength(100)]
+        [StringLength(100, MinimumLength = 8, ErrorMessage = "Password must be between 8 and 100 characters.")]
+        public string Password { get; set; }
+
+        [StringLength(100, MinimumLength = 8, ErrorMessage = "Confirm Password must be between 8 and 100 characters.")]
+        public string ConfirmPassword { get; set; }
+
+        [StringLength(100, MinimumLength = 3, ErrorMessage = "Username must be between 3 and 100 characters.")]
         public string Username { get; set; }
 
         public bool Gender { get; set; }
 
-        [Required]
         [MaxLength(15)]
         public string PhoneNumber { get; set; }
 
@@ -29,7 +30,6 @@ namespace ArchiveSystem
         public ICollection<MeetingAttendance> MeetingAttendances { get; set; }
         public ICollection<Meeting> CreatedMeetings { get; set; }
 
-        // Constructor
         public User()
         {
             UserId = Guid.NewGuid();  // Assign a new GUID upon creation
@@ -38,6 +38,5 @@ namespace ArchiveSystem
             MeetingAttendances = new List<MeetingAttendance>();
             CreatedMeetings = new List<Meeting>();
         }
-
     }
 }

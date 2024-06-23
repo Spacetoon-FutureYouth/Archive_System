@@ -5,8 +5,7 @@
         [Key]
         public int DepartmentId { get; set; }
 
-        [Required]
-        [MaxLength(100)]
+        [StringLength(100, MinimumLength = 3, ErrorMessage = "Department name must be between 3 and 100 characters.")]
         public string DepartmentName { get; set; }
 
         // Navigation properties
