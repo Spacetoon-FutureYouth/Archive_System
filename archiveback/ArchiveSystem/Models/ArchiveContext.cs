@@ -31,7 +31,13 @@ namespace ArchiveSystem.Models
                 .HasOne(ma => ma.User)
                 .WithMany(u => u.MeetingAttendances)
                 .HasForeignKey(ma => ma.UserId)
-                .OnDelete(DeleteBehavior.Restrict); 
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<MeetingAttendance>()
+                .HasKey(A => new { A.UserId, A.MeetingId });
+
+            modelBuilder.Entity<UserMessage>()
+                .HasKey(M => new { M.UserId, M.MessageId });
 
         }
     }

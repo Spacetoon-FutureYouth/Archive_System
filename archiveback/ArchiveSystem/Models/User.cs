@@ -17,7 +17,7 @@
         public string ConfirmPassword { get; set; }
 
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Username must be between 3 and 100 characters.")]
-        public string Username { get; set; }
+        public string UserName { get; set; }
 
         public UserGender Gender { get; set; }
 
@@ -43,5 +43,21 @@
     {
         Male,
         Female
+    }
+
+    public class LoginUser
+    {
+        public string Email { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+    }
+
+    public class GetUser
+    {
+        public int UserId { get; set; }
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public byte[] UserImage { get; set; }
     }
 }

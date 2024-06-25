@@ -7,9 +7,9 @@ namespace ArchiveSystem.Controllers
     [ApiController]
     public class AdminsController : ControllerBase
     {
-        private readonly ApplicationDBContext _context;
+        private readonly ArchiveContext _context;
 
-        public AdminsController(ApplicationDBContext context)
+        public AdminsController(ArchiveContext context)
         {
             _context = context;
         }
@@ -17,7 +17,7 @@ namespace ArchiveSystem.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {
-            var users = await _context.Users.OrderBy(u => u.Username).ToListAsync();
+            var users = await _context.Users.OrderBy(u => u.UserName).ToListAsync();
             return Ok(users);
         }
 
@@ -26,7 +26,7 @@ namespace ArchiveSystem.Controllers
         {
             var user = new User
             {
-                Username = dto.Username,
+                UserName = dto.Username,
                 Email = dto.Email,
                 Password = dto.Password,
                 ConfirmPassword = dto.ConfirmPassword,
@@ -61,7 +61,7 @@ namespace ArchiveSystem.Controllers
                 user.UserImage = dataStream.ToArray();
             }
 
-            user.Username = dto.Username;
+            user.UserName = dto.Username;
             user.Email = dto.Email;
             user.Password = dto.Password;
             user.ConfirmPassword = dto.ConfirmPassword;
