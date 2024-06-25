@@ -11,9 +11,6 @@
         [ForeignKey("User")]
         public Guid CreatorUserId { get; set; }  // Changed to GUID
 
-        [Required]
-        public DateTime Date { get; set; }
-
         // Navigation properties
         public User Creator { get; set; }
         public ICollection<MeetingAttendance> MeetingAttendances { get; set; }

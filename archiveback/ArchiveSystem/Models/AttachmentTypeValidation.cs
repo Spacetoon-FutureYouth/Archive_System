@@ -1,6 +1,4 @@
-﻿using System;
-
-public class AttachmentTypeValidation : ValidationAttribute
+﻿public class AttachmentTypeValidation : ValidationAttribute
 {
     private readonly string[] _allowedTypes = { "image", "document" };
 
