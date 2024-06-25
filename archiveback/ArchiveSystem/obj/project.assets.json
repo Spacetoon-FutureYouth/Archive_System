@@ -2434,19 +2434,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ITC\\.nuget\\packages\\": {}
+    "C:\\Users\\Gehad\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\123life\\programming\\Graduation_Project\\clone\\3.3\\Archive_System\\archiveback\\ArchiveSystem\\ArchiveSystem.csproj",
+      "projectUniqueName": "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\ArchiveSystem\\ArchiveSystem.csproj",
       "projectName": "ArchiveSystem",
-      "projectPath": "E:\\123life\\programming\\Graduation_Project\\clone\\3.3\\Archive_System\\archiveback\\ArchiveSystem\\ArchiveSystem.csproj",
-      "packagesPath": "C:\\Users\\ITC\\.nuget\\packages\\",
-      "outputPath": "E:\\123life\\programming\\Graduation_Project\\clone\\3.3\\Archive_System\\archiveback\\ArchiveSystem\\obj\\",
+      "projectPath": "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\ArchiveSystem\\ArchiveSystem.csproj",
+      "packagesPath": "C:\\Users\\Gehad\\.nuget\\packages\\",
+      "outputPath": "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\ArchiveSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ITC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gehad\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2515,7 +2515,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
       }
     }
   }

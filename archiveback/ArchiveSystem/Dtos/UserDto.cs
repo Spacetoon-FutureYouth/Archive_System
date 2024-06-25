@@ -2,8 +2,7 @@
 {
     public class UserDto
     {
-        [MaxLength(256)]
-        public IFormFile UserImage { get; set; }
+        public string Image { get; set; }
 
         [MaxLength(256)]
         public string Email { get; set; }
@@ -16,10 +15,10 @@
 
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Username must be between 3 and 100 characters.")]
         public string Username { get; set; }
+
         public UserGender Gender { get; set; }
 
         [MaxLength(15)]
         public string PhoneNumber { get; set; }
-
     }
 }

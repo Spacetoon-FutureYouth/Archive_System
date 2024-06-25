@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace ArchiveSystem.Controllers
 {
@@ -7,9 +9,11 @@ namespace ArchiveSystem.Controllers
     [ApiController]
     public class AdminsController : ControllerBase
     {
-        private readonly ArchiveContext _context;
+        private readonly ApplicationDBContext _context;
+        private readonly long _maxFileSize = 2 * 1024 * 1024; // 2 MB
+        private readonly string[] _allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
 
-        public AdminsController(ArchiveContext context)
+        public AdminsController(ApplicationDBContext context)
         {
             _context = context;
         }
@@ -17,64 +21,85 @@ namespace ArchiveSystem.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {
-            var users = await _context.Users.OrderBy(u => u.UserName).ToListAsync();
+            var users = await _context.Users.AsNoTracking().OrderBy(u => u.Username).ToListAsync();
             return Ok(users);
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserById(Guid id)
+        {
+            var user = await _context.Users.AsNoTracking().SingleOrDefaultAsync(u=>u.UserId == id);
+            return Ok(user);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddUser([FromForm]UserDto dto)
+        public async Task<IActionResult> AddUser([FromForm] UserDto dto)
         {
+            if (dto.Password != dto.ConfirmPassword)
+            {
+                return BadRequest("Password and Confirm Password do not match.");
+            }           
+
+            string hashedPassword = HashPassword(dto.Password);
+
             var user = new User
             {
-                UserName = dto.Username,
+                Username = dto.Username,
                 Email = dto.Email,
-                Password = dto.Password,
-                ConfirmPassword = dto.ConfirmPassword,
                 PhoneNumber = dto.PhoneNumber,
                 Gender = dto.Gender,
+                Image = dto.Image,
+                Password = hashedPassword
             };
-            if (dto.UserImage != null)
-            {
-                using var dataStream = new MemoryStream();
-                await dto.UserImage.CopyToAsync(dataStream);
-                user.UserImage = dataStream.ToArray();
-            }
 
             await _context.AddAsync(user);
-            await _context.SaveChangesAsync(); 
+            await _context.SaveChangesAsync();
 
             return Ok(user);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser(Guid id, UserDto dto)
+        public async Task<IActionResult> UpdateUser(Guid id, [FromForm] UserDto dto)
         {
             var user = await _context.Users.FindAsync(id);
 
             if (user == null)
                 return NotFound($"No user with ID:{id}");
 
-            if (dto.UserImage != null)
+            if (dto.Password != dto.ConfirmPassword)
             {
-                using var dataStream = new MemoryStream();
-                await dto.UserImage.CopyToAsync(dataStream);
-                user.UserImage = dataStream.ToArray();
+                return BadRequest("Password and Confirm Password do not match.");
             }
 
-            user.UserName = dto.Username;
-            user.Email = dto.Email;
-            user.Password = dto.Password;
-            user.ConfirmPassword = dto.ConfirmPassword;
-            user.PhoneNumber = dto.PhoneNumber;
+            user.Username = dto.Username ?? user.Username;
+            user.Email = dto.Email ?? user.Email;
+            user.PhoneNumber = dto.PhoneNumber ?? user.PhoneNumber;
+            user.Image = dto.Image ?? user.Image;
             user.Gender = dto.Gender;
+            if (!string.IsNullOrEmpty(dto.Password) && user.Password != HashPassword(dto.Password))
+            {
+                user.Password = HashPassword(dto.Password);
+            }
 
             await _context.SaveChangesAsync();
-
             return Ok(user);
         }
 
+        [HttpPost("AddProfileImage")]
+        public async Task<ActionResult> AddProfileImage(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest("No file uploaded.");
 
-        [HttpDelete]
+            if (!IsImage(file) || file.Length > _maxFileSize)
+            {
+                return BadRequest("Invalid image file.");
+            }
+
+            string uniqueFileName = await SaveImageAsync(file);
+            return Ok(new { FileName = uniqueFileName });
+        }
+
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(Guid id)
         {
             var user = await _context.Users.FindAsync(id);
@@ -82,10 +107,40 @@ namespace ArchiveSystem.Controllers
             if (user == null)
                 return NotFound($"No user with ID:{id}");
 
-            _context.Remove(id);
-            _context.SaveChanges();
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
 
             return Ok(user);
+        }
+
+        private async Task<string> SaveImageAsync(IFormFile file)
+        {
+            string imagesDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Images");
+            if (!Directory.Exists(imagesDirectory))
+            {
+                Directory.CreateDirectory(imagesDirectory);
+            }
+
+            string uniqueFileName = DateTime.Now.Ticks.ToString() + Path.GetExtension(file.FileName);
+            string filePath = Path.Combine(imagesDirectory, uniqueFileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            return uniqueFileName;
+        }
+
+        private bool IsImage(IFormFile file)
+        {
+            string extension = Path.GetExtension(file.FileName).ToLowerInvariant();
+            return _allowedExtensions.Contains(extension);
+        }
+
+        private string HashPassword(string password)
+        {
+            return password; // Replace this with actual hashing logic
         }
     }
 }
