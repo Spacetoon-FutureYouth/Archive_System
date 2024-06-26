@@ -1,4 +1,7 @@
-﻿namespace ArchiveSystem
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ArchiveSystem
 {
     public class Attachment
     {
@@ -9,15 +12,13 @@
         public string AttachmentType { get; set; }
 
         [MaxLength(256)]
-        public string FilePath { get; set; } 
+        public string FilePath { get; set; }
 
-        public string FileName { get; set; } 
+        public string FileName { get; set; }
 
-        // Foreign key relationship
-        [ForeignKey("Message")]
+        [ForeignKey("MessageAttach")]
         public int MessageId { get; set; }
 
-        // Navigation property
         public Message Message { get; set; }
     }
 }

@@ -27,6 +27,8 @@
         public ICollection<UserMessage> UserMessages { get; set; }
         public ICollection<MeetingAttendance> MeetingAttendances { get; set; }
         public ICollection<Meeting> CreatedMeetings { get; set; }
+        public ICollection<Message> Messages { get; set; }
+
 
         public User()
         {
@@ -35,6 +37,7 @@
             UserMessages = new List<UserMessage>();
             MeetingAttendances = new List<MeetingAttendance>();
             CreatedMeetings = new List<Meeting>();
+            Messages = new List<Message>();
         }
     }
     public enum UserGender
