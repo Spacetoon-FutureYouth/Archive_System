@@ -5,7 +5,7 @@
 
 .table-header-custom h1 {
     font-size: 20px;
-    color: #7c7070;
+    color: #ffffff;
     /* Adjust the color as needed */
 }
 
@@ -34,19 +34,19 @@
 }
 
 .container-custom tr:nth-child(odd) {
-    background-color: #d5d2a3;
+    background-color: #5586a0;
 }
 
 .container-custom tr:nth-child(even) {
-    background-color: #e8d5d5;
+    background-color: #edaaaa;
 }
 
 .container-custom th {
-    background-color: rgb(14, 1, 1);
+    background-color: #012235;
 }
 
 .container-custom td:first-child {
-    color: #fb667a;
+    color: #ffffff;
 }
 
 .container-custom button {
