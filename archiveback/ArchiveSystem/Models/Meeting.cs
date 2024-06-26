@@ -7,9 +7,10 @@
 
         [StringLength(256, MinimumLength = 3, ErrorMessage = "Meeting title must be between 3 and 256 characters.")]
         public string MeetingTitle { get; set; }
+        public DateTime AttendanceDate { get; set; }
 
         [ForeignKey("User")]
-        public Guid CreatorUserId { get; set; }  // Changed to GUID
+        public Guid CreatorUserId { get; set; }
 
         // Navigation properties
         public User Creator { get; set; }
