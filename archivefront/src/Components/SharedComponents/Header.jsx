@@ -1,83 +1,55 @@
-import React from "react";
-import logo from "../Images/logo.png";
-import { Link } from "react-router-dom";
-import SendMessage from "../MessageComponents/SendFormasset/MsgForm";
+import { Link, useNavigate } from "react-router-dom";
 
-function Header() {
+function Header({ handleLogout }) {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    handleLogout();
+    navigate("/");
+  };
+
   return (
     <>
-      {/* Header Area  */}
       <header className="header">
-        {
-        /* Topbar 
-          <div className="topbar">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-6 col-md-5 col-12">
-                    Contact 
-                  <ul className="top-link">
-                    <li>
-                      <a href="#">About</a>
-                    </li>
-                    <li>
-                      <a href="#">Doctors</a>
-                    </li>
-                    <li>
-                      <a href="#">Contact</a>
-                    </li>
-                    <li>
-                      <a href="#">FAQ</a>
-                    </li>
-                  </ul>
-                    End Contact 
-                </div> 
-                <div className="col-lg-6 col-md-7 col-16">
-                  Top Contact 
-                  <ul className="top-contact">
-                    <li>
-                      <i className="fa fa-phone"></i>+880 1234 56789
-                    </li>
-                    <li>
-                      <i className="fa fa-envelope"></i>
-                      <a href="mailto:support@yourmail.com">
-                        support@yourmail.com
-                      </a>
-                    </li>
-                  </ul>
-                    End Top Contact 
-                </div>
-              </div>
-            </div>
-          </div>
-          End Topbar  */}
-        {/*  Header Inner */}
+        {/* Header Inner */}
         <div className="header-inner">
           <div className="container">
             <div className="inner">
               <div className="row">
                 <div className="col-lg-3 col-md-3 col-12">
-                  {/*  Start Logo */}
-                  <div className="logo">
-                    <a href="index.html">
-                      {/*<img
-                          src={logo}
-                          style={{ width: "150px", height: "150px" }}
-                        />
-                      */}
-                    </a>
+                  <div className="logo" style={{ position: "relative" }}>
+                    <Link to="/Home">
+                      <img
+                        src={"logo"}
+                        style={{ width: "150px", height: "150px" }}
+                        alt="Logo"
+                      />
+                    </Link>
+                    <div
+                      className="logout-button"
+                      style={{
+                        position: "absolute",
+                        top: "90%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        backgroundColor: "blue",
+                        color: "white",
+                        padding: "10px",
+                        borderRadius: "5px",
+                        cursor: "pointer",
+                      }}
+                      onClick={logout}
+                    >
+                      Logout
+                    </div>
                   </div>
-                  {/*  End Logo */}
-                  {/*  Mobile Nav */}
-                  <div className="mobile-nav"></div>
-                  {/*  End Mobile Nav */}
                 </div>
                 <div className="col-lg-7 col-md-9 col-12">
-                  {/*  Main Menu */}
                   <div className="main-menu">
                     <nav className="navigation">
                       <ul className="nav menu">
                         <li className="active">
-                          <Link to="/">
+                          <Link to="/Home">
                             Home <i className="icofont-rounded-down"></i>
                           </Link>
                           <ul className="dropdown">
@@ -86,11 +58,9 @@ function Header() {
                             </li>
                           </ul>
                         </li>
-
                         <li>
                           <a href="#">Users </a>
                         </li>
-
                         <li>
                           <a href="#">
                             Pages <i className="icofont-rounded-down"></i>
@@ -114,31 +84,29 @@ function Header() {
                           <Link to="/Profile">Profile </Link>
                         </li>
                         <li>
-                          {/*
-                            <a href="#">
-                              Blogs <i className="icofont-rounded-down"></i>
-                            </a>
-                            <ul className="dropdown">
-                              <li>
-                                <a href="blog-single.html">Blog Details</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                          */}
                           <Link to="/ContactUs">Contact Us</Link>
                         </li>
                       </ul>
                     </nav>
                   </div>
-                  {/* / End Main Menu */}
                 </div>
                 <div className="col-lg-2 col-12">
-                  <div className="get-quote" style={{ display: "flex", justifyContent: "flex-end" }}>
-                    <Link to="/SendMessage" className="btn" style={{ marginRight: "10px" }}>
+                  <div
+                    className="get-quote"
+                    style={{ display: "flex", justifyContent: "flex-end" }}
+                  >
+                    <Link
+                      to="/SendMessage"
+                      className="btn"
+                      style={{ marginRight: "10px" }}
+                    >
                       Send Message
                     </Link>
-                    <Link to="/createmeeting" className="btn">
+                    <Link
+                      to="/createmeeting"
+                      className="btn"
+                      style={{ marginRight: "10px" }}
+                    >
                       Create Meeting
                     </Link>
                   </div>
@@ -147,9 +115,7 @@ function Header() {
             </div>
           </div>
         </div>
-        {/* / End Header Inner */}
       </header>
-      {/*  End Header Area */}
     </>
   );
 }

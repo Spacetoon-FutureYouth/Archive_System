@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const LoginForm = () => {
+const LoginForm = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
@@ -19,10 +19,9 @@ const LoginForm = () => {
         }),
       });
 
-      console.log("Response:", response);
-
       if (response.ok) {
-        alert(`Login Success: `);
+        onLoginSuccess();
+        navigate("/Home");
       } else {
         const errorText = await response.text();
         alert(`Login failed: ${response.status} - ${errorText}`);
@@ -32,7 +31,6 @@ const LoginForm = () => {
       alert("An error occurred during login.");
     }
   };
-
   return (
     <div className="login-page">
       <div className="container">
@@ -59,7 +57,7 @@ const LoginForm = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
             <p className="animation a5">
-              <a href="#">Forgot Password</a>
+              <a href="/">Forgot Password</a>
             </p>
             <button className="animation a6" onClick={handleLogin}>
               LOGIN
