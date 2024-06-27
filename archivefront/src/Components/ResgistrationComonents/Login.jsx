@@ -20,7 +20,9 @@ const LoginForm = ({ onLoginSuccess }) => {
       });
 
       if (response.ok) {
-        onLoginSuccess();
+        const data = await response.json();
+        const userId = data.userId; // Extract the userId from the response
+        onLoginSuccess(userId); // Pass the userId to the parent component
         navigate("/Home");
       } else {
         const errorText = await response.text();
@@ -31,6 +33,7 @@ const LoginForm = ({ onLoginSuccess }) => {
       alert("An error occurred during login.");
     }
   };
+
   return (
     <div className="login-page">
       <div className="container">

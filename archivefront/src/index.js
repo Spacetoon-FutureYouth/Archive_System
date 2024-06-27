@@ -1,8 +1,10 @@
+// RootComponent.js
+
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
+import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import LoginForm from "./Components/ResgistrationComonents/Login";
+import App from "./App";
 
 const RootComponent = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -54,3 +56,5 @@ const RootComponent = () => {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RootComponent />);
+
+export default RootComponent;
