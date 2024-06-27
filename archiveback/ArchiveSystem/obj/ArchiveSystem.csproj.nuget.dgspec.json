@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\ArchiveSystem\\ArchiveSystem.csproj": {}
+    "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\ArchiveSystem.csproj": {}
   },
   "projects": {
-    "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\ArchiveSystem\\ArchiveSystem.csproj": {
+    "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\ArchiveSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\ArchiveSystem\\ArchiveSystem.csproj",
+        "projectUniqueName": "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\ArchiveSystem.csproj",
         "projectName": "ArchiveSystem",
-        "projectPath": "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\ArchiveSystem\\ArchiveSystem.csproj",
+        "projectPath": "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\ArchiveSystem.csproj",
         "packagesPath": "C:\\Users\\Gehad\\.nuget\\packages\\",
-        "outputPath": "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\ArchiveSystem\\obj\\",
+        "outputPath": "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gehad\\AppData\\Roaming\\NuGet\\NuGet.Config",
