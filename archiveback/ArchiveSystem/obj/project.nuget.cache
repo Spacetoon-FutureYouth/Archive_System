@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qO8EO6f41gGNvPOjp0o5naMHzLXIRPh+fnjKO+Mjrr2INwOK0BTvLPk2Kb2cRTLnn98JP3qVf06EFuGmw9ptjQ==",
+  "dgSpecHash": "MS0bwKxXOHkB4mDQfnTZmNhqkaGUreBSTcQkDmHk6LwtB3VZh4/Cse0MTv4o/JIOhUDX101OcRwJl1R+Fr8foQ==",
   "success": true,
-  "projectFilePath": "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\ArchiveSystem\\ArchiveSystem.csproj",
+  "projectFilePath": "E:\\Pojects\\مشروع التخرج\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\ArchiveSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gehad\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Gehad\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

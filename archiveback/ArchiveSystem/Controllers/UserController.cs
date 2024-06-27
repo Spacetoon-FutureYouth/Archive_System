@@ -43,7 +43,7 @@ namespace ArchiveSystem.Controllers
                 account.Image
             });
         }
-
+      
         [HttpPost("Logout")]
         public IActionResult LogOut()
         {

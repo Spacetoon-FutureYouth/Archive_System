@@ -1,25 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\ArchiveSystem\\",
+  "WorkspaceRootPath": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|e:\\pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\archive\\archive_system-main\\archivesystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|e:\\pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\archive\\archive_system-main\\archiveback\\archivesystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|e:\\pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\archive\\archive_system-main\\archivesystem\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|e:\\pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\archive\\archive_system-main\\archivesystem\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|e:\\pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\archive\\archive_system-main\\archivesystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|e:\\pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\archive\\archive_system-main\\archivesystem\\services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:services\\usersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -44,63 +44,59 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "UsersService.cs",
-              "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\ArchiveSystem\\Services\\UsersService.cs",
+              "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Services\\UsersService.cs",
               "RelativeDocumentMoniker": "Services\\UsersService.cs",
-              "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\ArchiveSystem\\Services\\UsersService.cs",
+              "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Services\\UsersService.cs",
               "RelativeToolTip": "Services\\UsersService.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAjwB0AAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T17:07:37.688Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-26T17:07:37.688Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "UserDto.cs",
-              "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\ArchiveSystem\\Dtos\\UserDto.cs",
+              "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Dtos\\UserDto.cs",
               "RelativeDocumentMoniker": "Dtos\\UserDto.cs",
-              "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\ArchiveSystem\\Dtos\\UserDto.cs",
+              "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Dtos\\UserDto.cs",
               "RelativeToolTip": "Dtos\\UserDto.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAIAxwCAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T16:40:55.483Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-26T16:40:55.483Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "User.cs",
-              "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\ArchiveSystem\\Models\\User.cs",
+              "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\ArchiveSystem\\Models\\User.cs",
+              "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T16:48:26.76Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-26T16:48:26.76Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "AdminController.cs",
-              "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\ArchiveSystem\\Controllers\\AdminController.cs",
+              "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
-              "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\ArchiveSystem\\Controllers\\AdminController.cs",
+              "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Controllers\\AdminController.cs",
               "RelativeToolTip": "Controllers\\AdminController.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T16:48:02.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-26T16:48:02.623Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "UserController.cs",
-              "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\ArchiveSystem\\Controllers\\UserController.cs",
+              "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\ArchiveSystem\\Controllers\\UserController.cs",
+              "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAAACAAAAANAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAACMAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-26T16:44:28.928Z",
               "EditorCaption": ""
