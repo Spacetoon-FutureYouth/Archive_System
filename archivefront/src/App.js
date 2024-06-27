@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useState } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Header from "./Components/SharedComponents/Header";
 import Footer from "./Components/SharedComponents/Footer";
 import Slider from "./Components/HomeComponents/Slider/Slider";
@@ -20,51 +20,58 @@ import ShowAttendance from "./Components/MeetingComponents/ShowAttendance";
 import ContactUs from "./Components/ContactComponents/ContactUs";
 import Blog from "./Components/BlogComponent/Blog";
 import Error404 from "./Components/Error404Components/Error404";
+import LoginForm from "./Components/ResgistrationComonents/Login";
 
-function App({ isLoggedIn, handleLogout }) {
-  const [shouldReload, setShouldReload] = useState(false);
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userId, setUserId] = useState(null);
+  const navigate = useNavigate();
 
-  // Effect to handle the initial login and reload
-  useEffect(() => {
-    if (isLoggedIn && !shouldReload) {
-      setShouldReload(true); // Trigger reload
-    }
-  }, [isLoggedIn, shouldReload]);
+  const handleLoginSuccess = (id) => {
+    setUserId(id);
+    setIsLoggedIn(true);
+    navigate("/Home");
+  };
 
-  // Effect to perform the actual reload
-  useEffect(() => {
-    if (shouldReload) {
-      window.location.reload();
-      setShouldReload(false); // Reset after reload
-    }
-  }, [shouldReload]);
-
-  if (!isLoggedIn) {
-    return null;
-  }
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUserId(null);
+    navigate("/");
+  };
 
   return (
     <>
-      <Header handleLogout={handleLogout} />
+      {isLoggedIn && <Header handleLogout={handleLogout} />}
       <Routes>
+        <Route
+          path="/"
+          element={<LoginForm onLoginSuccess={handleLoginSuccess} />}
+        />
         <Route
           path="/Home"
           element={
-            <>
-              <Slider />
-              <Schedule />
-              <Bubble />
-              <Feature />
-              <FunFacts />
-              <WhyChoose />
-              <CallSection />
-              <Service />
-            </>
+            isLoggedIn ? (
+              <>
+                <Slider />
+                <Schedule />
+                <Bubble />
+                <Feature />
+                <FunFacts />
+                <WhyChoose />
+                <CallSection />
+                <Service />
+                <ShowUsers />
+                <SendMessage />
+                <Message />
+              </>
+            ) : (
+              <LoginForm onLoginSuccess={handleLoginSuccess} />
+            )
           }
         />
         <Route path="/Feature" element={<Feature />} />
         <Route path="/SendMessage" element={<SendMessage />} />
-        <Route path="/Profile" element={<Profile />} />
+        <Route path="/Profile" element={<Profile userId={userId} />} />
         <Route path="/Import" element={<Message />} />
         <Route
           path="/ShowUsers"
@@ -107,9 +114,10 @@ function App({ isLoggedIn, handleLogout }) {
             </>
           }
         />
-        <Route path="*" element={<Error404 />} />
+        <Route path="*" element={<Error404 />} />{" "}
+        {/* Catch-all route for 404 */}
       </Routes>
-      <Footer />
+      {isLoggedIn && <Footer />}
     </>
   );
 }
