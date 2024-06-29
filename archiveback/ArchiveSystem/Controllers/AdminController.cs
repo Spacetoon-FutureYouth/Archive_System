@@ -136,6 +136,24 @@ namespace ArchiveSystem.Controllers
 
             return uniqueFileName;
         }
+        [HttpGet("{id}/image")]
+        public async Task<IActionResult> GetUserImage(Guid id)
+        {
+            var user = await _context.Users.FindAsync(id);
+
+            if (user == null)
+                return NotFound($"No user with ID:{id}");
+
+            string imagesDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Images");
+            string imagePath = Path.Combine(imagesDirectory, user.Image);
+
+            if (!System.IO.File.Exists(imagePath))
+                return NotFound("Image not found.");
+
+            // Return the image file
+            var fileBytes = await System.IO.File.ReadAllBytesAsync(imagePath);
+            return File(fileBytes, "image/jpeg"); // Adjust the content type based on your image type
+        }
 
         private bool IsImage(IFormFile file)
         {
