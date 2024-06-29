@@ -1,14 +1,15 @@
-﻿using System;
+﻿using ArchiveSystem;
 
-namespace ArchiveSystem
+public class MeetingAttendance
 {
-    public class MeetingAttendance
-    {
-        public Guid UserId { get; set; }
-        public int MeetingId { get; set; }
+    [Key]
+    public int MeetingAttendanceId { get; set; }
 
-        // Navigation properties
-        public User User { get; set; }
-        public Meeting Meeting { get; set; }
-    }
+    public int MeetingId { get; set; }
+    public Meeting Meeting { get; set; }
+
+    public Guid UserId { get; set; }
+    public User User { get; set; }
+
+    public bool IsAttended { get; set; }
 }

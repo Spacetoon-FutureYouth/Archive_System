@@ -4,6 +4,7 @@ using ArchiveSystem.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ArchiveSystem.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240629164405_editMeetAttrib")]
+    partial class editMeetAttrib
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -105,6 +107,21 @@ namespace ArchiveSystem.Migrations
                     b.HasIndex("CreatorUserId");
 
                     b.ToTable("Meetings");
+                });
+
+            modelBuilder.Entity("ArchiveSystem.MeetingAttendance", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("MeetingId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "MeetingId");
+
+                    b.HasIndex("MeetingId");
+
+                    b.ToTable("MeetingAttendances");
                 });
 
             modelBuilder.Entity("ArchiveSystem.Message", b =>
@@ -205,27 +222,6 @@ namespace ArchiveSystem.Migrations
                     b.ToTable("UserRoles");
                 });
 
-            modelBuilder.Entity("MeetingAttendance", b =>
-                {
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("MeetingId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsAttended")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("MeetingAttendanceId")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId", "MeetingId");
-
-                    b.HasIndex("MeetingId");
-
-                    b.ToTable("MeetingAttendances");
-                });
-
             modelBuilder.Entity("ArchiveSystem.Attachment", b =>
                 {
                     b.HasOne("ArchiveSystem.Message", "Message")
@@ -246,6 +242,25 @@ namespace ArchiveSystem.Migrations
                         .IsRequired();
 
                     b.Navigation("Creator");
+                });
+
+            modelBuilder.Entity("ArchiveSystem.MeetingAttendance", b =>
+                {
+                    b.HasOne("ArchiveSystem.Meeting", "Meeting")
+                        .WithMany("MeetingAttendances")
+                        .HasForeignKey("MeetingId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ArchiveSystem.User", "User")
+                        .WithMany("MeetingAttendances")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Meeting");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ArchiveSystem.Message", b =>
@@ -293,25 +308,6 @@ namespace ArchiveSystem.Migrations
                         .IsRequired();
 
                     b.Navigation("Department");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("MeetingAttendance", b =>
-                {
-                    b.HasOne("ArchiveSystem.Meeting", "Meeting")
-                        .WithMany("MeetingAttendances")
-                        .HasForeignKey("MeetingId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("ArchiveSystem.User", "User")
-                        .WithMany("MeetingAttendances")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Meeting");
 
                     b.Navigation("User");
                 });
