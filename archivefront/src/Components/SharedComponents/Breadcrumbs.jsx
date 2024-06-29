@@ -13,9 +13,11 @@ function Breadcrumbs({ currentPage }) {
       case "contactus":
         return "Contact US";
       case "adddepart":
-        return "Add Deparment/Role";
+        return "Add Deparment-Role";
       case "editUser":
         return "Edit User";
+      case "editDepartment":
+        return "Edit Department-Role";
       default:
         return "Unknown Page";
     }
