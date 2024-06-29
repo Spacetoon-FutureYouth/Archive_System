@@ -22,9 +22,8 @@ import Blog from "./Components/BlogComponent/Blog";
 import Error404 from "./Components/Error404Components/Error404";
 import LoginForm from "./Components/ResgistrationComonents/Login";
 import DepartmentUserRoleComponent from "./Components/ADMIN/Data/DepartmentUserRoleComponent";
-import EditDepRole from "./Components/ADMIN/EditDepRole";
-import EditUser from "./Components/ResgistrationComonents/EditUser";
 import Edit from "./Components/ResgistrationComonents/EditUser";
+import EditDep from "./Components/ADMIN/EditDepRole";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -114,6 +113,15 @@ function App() {
             <>
               <Breadcrumbs currentPage="adddepart" />
               <DepartmentUserRoleComponent />
+            </>
+          }
+        />
+        <Route
+          path="/EditDepartment"
+          element={
+            <>
+              <Breadcrumbs currentPage="editDepartment" />
+              <EditDep />
             </>
           }
         />

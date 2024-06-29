@@ -988,19 +988,7 @@ body {
 	text-align: center;
 	position: relative;
 	padding: 10px 20px;
-}
-
-.Feautes .single-features::before {
-	position: absolute;
-	content: "";
-	right: -72px;
-	top: 60px;
-	width: 118px;
-	border-bottom: 3px dotted #00263B;
-}
-
-.Feautes .single-features.last::before {
-	display: none;
+	flex: 1;
 }
 
 .Feautes .single-features .signle-icon {
@@ -1026,20 +1014,25 @@ body {
 }
 
 .Feautes .single-features:hover .signle-icon i {
-	background: #00263B;
+	background: #00263b;
 	color: #fff;
 	border-color: transparent;
 }
 
 .Feautes .single-features h3 {
 	padding-top: 128px;
-	color: #00263B;
+	color: #00263b;
 	font-weight: 600;
 	font-size: 21px;
 }
 
 .Feautes .single-features p {
 	margin-top: 20px;
+}
+
+.features-row {
+	display: flex;
+	justify-content: space-between;
 }
 
 /*=============================
