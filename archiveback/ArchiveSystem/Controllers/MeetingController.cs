@@ -7,9 +7,9 @@ namespace ArchiveSystem.Controllers
     [ApiController]
     public class MeetingController : ControllerBase
     {
-        private readonly ArchiveContext _context;
+        private readonly ApplicationDBContext _context;
 
-        public MeetingController(ArchiveContext context)
+        public MeetingController(ApplicationDBContext context)
         {
             _context = context;
         }

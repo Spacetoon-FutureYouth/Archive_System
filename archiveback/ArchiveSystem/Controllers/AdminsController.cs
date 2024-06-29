@@ -43,7 +43,7 @@ namespace ArchiveSystem.Controllers
 
             var user = new User
             {
-                Username = dto.Username,
+                Username = dto.UserName,
                 Email = dto.Email,
                 PhoneNumber = dto.PhoneNumber,
                 Gender = dto.Gender,
@@ -70,7 +70,142 @@ namespace ArchiveSystem.Controllers
                 return BadRequest("Password and Confirm Password do not match.");
             }
 
-            user.Username = dto.Username ?? user.Username;
+            user.Username = dto.UserNpublic async Task<IActionResult> GetDelUserMesg(Guid adminId, Guid userId)
+            {
+                // Check if the user is an admin
+                var admin = await _context.Users
+                    .Where(u => u.UserId == adminId && u.UserAutho == UserAutho.Admin)
+                    .FirstOrDefaultAsync();
+
+                if (admin == null)
+                {
+                    return Unauthorized("Access denied. User is not an admin.");
+                }
+
+                // Retrieve deleted messages for the specific user
+                var deletedUserMessages = await _context.UserMessages
+                    .Where(um => um.UserId == userId && um.Message.User.UserState == UserState.Deleted) // Filter based on UserState.Deleted
+                    .Include(um => um.Message)
+                    .ThenInclude(m => m.User) // Include sender details if needed
+                    .Select(um => new
+                    {
+                        MessageId = um.MessageId,
+                        SenderName = um.Message.User.Username,
+                        SenderEmail = um.Message.User.Email,
+                        DateOfSend = um.Message.DateOfSend,
+                        MessageType = um.Message.MessageType,
+                        Seen = um.State == MessageState.Seen, // Adjust as per your logic for UserMessage state
+                        DateOfSeen = um.DateOfSeen // Adjust as per your logic for UserMessage state
+                                                   // Add more properties as needed
+                    })
+                    .ToListAsync();
+
+                return Ok(deletedUserMessages);
+            }
+            public async Task<IActionResult> GetDelUserMesg(Guid adminId, Guid userId)
+            {
+                // Check if the user is an admin
+                var admin = await _context.Users
+                    .Where(u => u.UserId == adminId && u.UserAutho == UserAutho.Admin)
+                    .FirstOrDefaultAsync();
+
+                if (admin == null)
+                {
+                    return Unauthorized("Access denied. User is not an admin.");
+                }
+
+                // Retrieve deleted messages for the specific user
+                var deletedUserMessages = await _context.UserMessages
+                    .Where(um => um.UserId == userId && um.Message.User.UserState == UserState.Deleted) // Filter based on UserState.Deleted
+                    .Include(um => um.Message)
+                    .ThenInclude(m => m.User) // Include sender details if needed
+                    .Select(um => new
+                    {
+                        MessageId = um.MessageId,
+                        SenderName = um.Message.User.Username,
+                        SenderEmail = um.Message.User.Email,
+                        DateOfSend = um.Message.DateOfSend,
+                        MessageType = um.Message.MessageType,
+                        Seen = um.State == MessageState.Seen, // Adjust as per your logic for UserMessage state
+                        DateOfSeen = um.DateOfSeen // Adjust as per your logic for UserMessage state
+                                                   // Add more properties as needed
+                    })
+                    .ToListAsync();
+
+                return Ok(deletedUserMessages);
+            }
+            public async Task<IActionResult> GetDelUserMesg(Guid adminId, Guid userId)
+            {
+                // Check if the user is an admin
+                var admin = await _context.Users
+                    .Where(u => u.UserId == adminId && u.UserAutho == UserAutho.Admin)
+                    .FirstOrDefaultAsync();
+
+                if (admin == null)
+                {
+                    return Unauthorized("Access denied. User is not an admin.");
+                }
+
+                // Retrieve deleted messages for the specific user
+                var deletedUserMessages = await _context.UserMessages
+                    .Where(um => um.UserId == userId && um.Message.User.UserState == UserState.Deleted) // Filter based on UserState.Deleted
+                    .Include(um => um.Message)
+                    .ThenInclude(m => m.User) // Include sender details if needed
+                    .Select(um => new
+                    {
+                        MessageId = um.MessageId,
+                        SenderName = um.Message.User.Username,
+                        SenderEmail = um.Message.User.Email,
+                        DateOfSend = um.Message.DateOfSend,
+                        MessageType = um.Message.MessageType,
+                        Seen = um.State == MessageState.Seen, // Adjust as per your logic for UserMessage state
+                        DateOfSeen = um.DateOfSeen // Adjust as per your logic for UserMessage state
+                                                   // Add more properties as needed
+                    })
+                    .ToListAsync();
+
+                return Ok(deletedUserMessages);
+            }
+            public async Task<IActionResult> GetDelUserMesg(Guid adminId, Guid userId)
+            {
+                // Check if the user is an admin
+                var admin = await _context.Users
+                    .Where(u => u.UserId == adminId && u.UserAutho == UserAutho.Admin)
+                    .FirstOrDefaultAsync();
+
+                if (admin == null)
+                {
+                    return Unauthorized("Access denied. User is not an admin.");
+                }
+
+                // Retrieve deleted messages for the specific user
+                var deletedUserMessages = await _context.UserMessages
+                    .Where(um => um.UserId == userId && um.Message.User.UserState == UserState.Deleted) // Filter based on UserState.Deleted
+                    .Include(um => um.Message)
+                    .ThenInclude(m => m.User) // Include sender details if needed
+                    .Select(um => new
+                    {
+                        MessageId = um.MessageId,
+                        SenderName = um.Message.User.Username,
+                        SenderEmail = um.Message.User.Email,
+                        DateOfSend = um.Message.DateOfSend,
+                        MessageType = um.Message.MessageType,
+                        Seen = um.State == MessageState.Seen, // Adjust as per your logic for UserMessage state
+                        DateOfSeen = um.DateOfSeen // Adjust as per your logic for UserMessage state
+                                                   // Add more properties as needed
+                    })
+                    .ToListAsync();
+
+                return Ok(deletedUserMessages);
+            }
+            ame ?? user.Username;
+            ame ?? user.Username;
+            ame ?? user.Username;
+            ame ?? user.Username;
+            ame ?? user.Username;
+            ame ?? user.Username;
+            ame ?? user.Username;
+            ame[HttpGet("GetImport ?? user.Username;
             user.Email = dto.Email ?? user.Email;
             user.PhoneNumber = dto.PhoneNumber ?? user.PhoneNumber;
             user.Image = dto.Image ?? user.Image;

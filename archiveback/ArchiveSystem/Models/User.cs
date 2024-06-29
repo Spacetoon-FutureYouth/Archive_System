@@ -19,7 +19,8 @@
         public string PhoneNumber { get; set; }
 
         public UserGender Gender { get; set; }
-
+        public UserState UserState { get; set; }
+        public UserAutho UserAutho { get; set; }
       
 
         // Navigation properties
@@ -44,5 +45,16 @@
     {
         Male,
         Female
+    }
+
+    public enum UserState
+    {
+        Active,
+        Deleted
+    }
+    public enum UserAutho
+    {
+        User,
+        Admin
     }
 }
