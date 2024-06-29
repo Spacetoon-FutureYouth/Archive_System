@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-
+import logo from "../Images/logo.png";
 function Header({ handleLogout }) {
   const navigate = useNavigate();
 
@@ -20,11 +20,12 @@ function Header({ handleLogout }) {
                   <div className="logo" style={{ position: "relative" }}>
                     <Link to="/Home">
                       <img
-                        src={"logo"}
-                        style={{ width: "150px", height: "150px" }}
+                        src={logo}
+                        style={{ width: "100px", height: "100px" }}
                         alt="Logo"
                       />
                     </Link>
+
                     <div
                       className="logout-button"
                       style={{
@@ -37,6 +38,10 @@ function Header({ handleLogout }) {
                         padding: "10px",
                         borderRadius: "5px",
                         cursor: "pointer",
+                        width: "75px",
+                        height: "40px",
+                        textAlign: "center",
+                        marginTop: "10px",
                       }}
                       onClick={logout}
                     >
@@ -44,10 +49,17 @@ function Header({ handleLogout }) {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-7 col-md-9 col-12">
+                <div
+                  className="col-lg-7 col-md-9 col-12"
+                  style={{ marginLeft: "-80px" }}
+                >
                   <div className="main-menu">
                     <nav className="navigation">
                       <ul className="nav menu">
+                        <li>
+                          <a href="#services">User Name</a>
+                        </li>
+
                         <li className="active">
                           <Link to="/Home">
                             Home <i className="icofont-rounded-down"></i>
@@ -90,7 +102,7 @@ function Header({ handleLogout }) {
                     </nav>
                   </div>
                 </div>
-                <div className="col-lg-2 col-12">
+                <div className="col-lg-2 col-12" style={{ marginLeft: "80px" }}>
                   <div
                     className="get-quote"
                     style={{ display: "flex", justifyContent: "flex-end" }}

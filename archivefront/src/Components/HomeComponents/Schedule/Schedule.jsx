@@ -1,5 +1,5 @@
-import React from 'react';
-import ScheduleItem from './ScheduleItem';
+import React from "react";
+import ScheduleItem from "./ScheduleItem";
 
 const Schedule = () => (
   <section className="schedule">
@@ -12,7 +12,9 @@ const Schedule = () => (
             title="Emergency Cases"
             description="Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales."
           >
-            <a href="#">LEARN MORE<i className="fa fa-long-arrow-right"></i></a>
+            <a href="#">
+              LEARN MORE<i className="fa fa-long-arrow-right"></i>
+            </a>
           </ScheduleItem>
           <ScheduleItem
             iconClass="icofont-prescription"
@@ -20,7 +22,9 @@ const Schedule = () => (
             title="Doctors Timetable"
             description="Lorem ipsum sit amet consectetur adipiscing elit. Vivamus et erat in lacus convallis sodales."
           >
-            <a href="#">LEARN MORE<i className="fa fa-long-arrow-right"></i></a>
+            <a href="#">
+              LEARN MORE<i className="fa fa-long-arrow-right"></i>
+            </a>
           </ScheduleItem>
           <ScheduleItem
             iconClass="icofont-ui-clock"
@@ -29,11 +33,19 @@ const Schedule = () => (
             description=""
           >
             <ul className="time-sidual">
-              <li className="day">Monday - Friday <span>8.00-20.00</span></li>
-              <li className="day">Saturday <span>9.00-18.30</span></li>
-              <li className="day">Monday - Thursday <span>9.00-15.00</span></li>
+              <li className="day">
+                Monday - Friday <span>8.00-20.00</span>
+              </li>
+              <li className="day">
+                Saturday <span>9.00-18.30</span>
+              </li>
+              <li className="day">
+                Monday - Thursday <span>9.00-15.00</span>
+              </li>
             </ul>
-            <a href="#">LEARN MORE<i className="fa fa-long-arrow-right"></i></a>
+            <a href="#">
+              LEARN MORE<i className="fa fa-long-arrow-right"></i>
+            </a>
           </ScheduleItem>
         </div>
       </div>
