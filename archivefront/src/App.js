@@ -21,6 +21,10 @@ import ContactUs from "./Components/ContactComponents/ContactUs";
 import Blog from "./Components/BlogComponent/Blog";
 import Error404 from "./Components/Error404Components/Error404";
 import LoginForm from "./Components/ResgistrationComonents/Login";
+import DepartmentUserRoleComponent from "./Components/ADMIN/Data/DepartmentUserRoleComponent";
+import EditDepRole from "./Components/ADMIN/EditDepRole";
+import EditUser from "./Components/ResgistrationComonents/EditUser";
+import Edit from "./Components/ResgistrationComonents/EditUser";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -59,10 +63,7 @@ function App() {
                 <FunFacts />
                 <WhyChoose />
                 <CallSection />
-                <Service />
-                <ShowUsers />
-                <SendMessage />
-                <Message />
+                <Service />{" "}
               </>
             ) : (
               <LoginForm onLoginSuccess={handleLoginSuccess} />
@@ -90,11 +91,29 @@ function App() {
           }
         />
         <Route
+          path="/EditUser"
+          element={
+            <>
+              <Breadcrumbs currentPage="editUser" /> <Edit />
+            </>
+          }
+        />
+        <Route path="/EditUser/:userId" element={<Edit />} />
+        <Route
           path="/CreateMeeting"
           element={
             <>
               <Breadcrumbs currentPage="createmeeting" />
               <ShowAttendance />
+            </>
+          }
+        />
+        <Route
+          path="/AddDepartment"
+          element={
+            <>
+              <Breadcrumbs currentPage="adddepart" />
+              <DepartmentUserRoleComponent />
             </>
           }
         />

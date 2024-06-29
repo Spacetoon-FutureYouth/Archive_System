@@ -1,0 +1,139 @@
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.slide-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.image-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+}
+
+.image-title p {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.department-role-component-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.department-role-component-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.department-role-component-vl {
+    border-left: 6px solid rgb(51, 198, 198);
+    height: 600px;
+    /* Adjust as needed */
+    margin: 0 20px;
+    /* Adjust as needed */
+}
+
+.department-role-component-h2 {
+    margin-bottom: 10px;
+}
+
+.department-role-component-input,
+.department-role-component-select {
+    display: block;
+    width: calc(200% - 10px);
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-left: -100px;
+}
+
+.clickable-header {
+    cursor: pointer;
+    color: rgb(72, 72, 151);
+    text-decoration: underline;
+}
+
+.clickable-header.active {
+    font-weight: bold;
+    color: rgb(72, 72, 151);
+}
+
+.department-role-component-button,
+.edit-button,
+.delete-button {
+    padding: 12px 24px;
+    /* Adjust padding for larger buttons */
+    background-color: rgb(205, 165, 79);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 10px;
+    /* Ensure consistent alignment */
+    width: auto;
+    /* Set width to auto for dynamic sizing */
+}
+
+.save-button {
+    padding: 12px 24px;
+    /* Adjust padding for larger buttons */
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 0;
+    /* Ensure consistent alignment */
+    width: auto;
+    /* Set width to auto for dynamic sizing */
+}
