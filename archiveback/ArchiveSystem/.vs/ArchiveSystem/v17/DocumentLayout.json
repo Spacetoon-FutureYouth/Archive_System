@@ -3,28 +3,36 @@
   "WorkspaceRootPath": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|e:\\pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\archive\\archive_system-main\\archiveback\\archivesystem\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|e:\\pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\archive\\archive_system-main\\archiveback\\archivesystem\\controllers\\meetingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\controllers\\meetingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:controllers\\meetingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|e:\\pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\archive\\archive_system-main\\archiveback\\archivesystem\\models\\meetingattendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|e:\\pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\archive\\archive_system-main\\archiveback\\archivesystem\\migrations\\20240630014524_returnattribfrommeetingattendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:migrations\\20240630014524_returnattribfrommeetingattendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\models\\meetingattendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:models\\meetingattendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|e:\\pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\archive\\archive_system-main\\archiveback\\archivesystem\\models\\meeting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:models\\meeting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|e:\\pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\archive\\archive_system-main\\archiveback\\archivesystem\\dtos\\meetingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\dtos\\meetingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:dtos\\meetingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|e:\\pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\archive\\archive_system-main\\archiveback\\archivesystem\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\dtos\\meetingattendancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:dtos\\meetingattendancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\models\\meeting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:models\\meeting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26398F40-B40D-42CB-A1D1-7DF59EB399CD}|ArchiveSystem.csproj|E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,29 +58,52 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20240630014524_returnAttribFromMeetingAttendance.cs",
+              "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Migrations\\20240630014524_returnAttribFromMeetingAttendance.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240630014524_returnAttribFromMeetingAttendance.cs",
+              "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Migrations\\20240630014524_returnAttribFromMeetingAttendance.cs",
+              "RelativeToolTip": "Migrations\\20240630014524_returnAttribFromMeetingAttendance.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAmwAoAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T01:45:24.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MeetingAttendanceDto.cs",
+              "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Dtos\\MeetingAttendanceDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\MeetingAttendanceDto.cs",
+              "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Dtos\\MeetingAttendanceDto.cs",
+              "RelativeToolTip": "Dtos\\MeetingAttendanceDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T01:00:37.818Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "MeetingAttendance.cs",
               "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Models\\MeetingAttendance.cs",
               "RelativeDocumentMoniker": "Models\\MeetingAttendance.cs",
               "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Models\\MeetingAttendance.cs",
               "RelativeToolTip": "Models\\MeetingAttendance.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T19:21:39.223Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T19:21:39.223Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "MeetingDto.cs",
               "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Dtos\\MeetingDto.cs",
               "RelativeDocumentMoniker": "Dtos\\MeetingDto.cs",
               "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Dtos\\MeetingDto.cs",
               "RelativeToolTip": "Dtos\\MeetingDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAsAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T16:58:17.913Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T16:58:17.913Z"
             },
             {
               "$type": "Document",
@@ -84,51 +115,48 @@
               "RelativeToolTip": "Models\\ApplicationDBContext.cs",
               "ViewState": "AQIAACMAAAAAAAAAAAAUwC0AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T16:55:36.122Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T16:55:36.122Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MeetingController.cs",
               "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Controllers\\MeetingController.cs",
               "RelativeDocumentMoniker": "Controllers\\MeetingController.cs",
               "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Controllers\\MeetingController.cs",
               "RelativeToolTip": "Controllers\\MeetingController.cs",
-              "ViewState": "AQIAALMAAAAAAAAAAAAkwLoAAAA2AAAA",
+              "ViewState": "AQIAAL0AAAAAAAAAAAAiwBMBAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-29T16:54:02.593Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Meeting.cs",
               "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Models\\Meeting.cs",
               "RelativeDocumentMoniker": "Models\\Meeting.cs",
               "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Models\\Meeting.cs",
               "RelativeToolTip": "Models\\Meeting.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAA+wCgAAAAAAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAA9wCcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T16:33:13.846Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T16:33:13.846Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "AdminController.cs",
               "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
               "ToolTip": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Controllers\\AdminController.cs",
               "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AQIAAJQAAAAAAAAAAAAgwKIAAAAAAAAA",
+              "ViewState": "AQIAAJQAAAAAAAAAAAAgwKAAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T16:48:02.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-26T16:48:02.623Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "UserController.cs",
               "DocumentMoniker": "E:\\Pojects\\\u0645\u0634\u0631\u0648\u0639 \u0627\u0644\u062A\u062E\u0631\u062C\\Archive\\Archive_System-main\\archiveback\\ArchiveSystem\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",

@@ -36,5 +36,8 @@ namespace ArchiveSystem
         // Computed property to get the number of attendees
         [NotMapped]
         public int AttendeesCount => MeetingAttendances.Count(ma => ma.IsAttended);
+
+
+
     }
 }

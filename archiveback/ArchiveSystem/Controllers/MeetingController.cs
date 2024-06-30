@@ -196,5 +196,114 @@ namespace ArchiveSystem.Controllers
 
             return NoContent();
         }
+
+        [HttpPost("attend")]
+        public async Task<IActionResult> MarkAttendance(AttendanceDto attendanceDto)
+        {
+            try
+            {
+                var meeting = await _context.Meetings.FindAsync(attendanceDto.MeetingId);
+                if (meeting == null)
+                {
+                    return NotFound($"Meeting with ID {attendanceDto.MeetingId} not found.");
+                }
+
+                var user = await _context.Users.FindAsync(attendanceDto.UserId);
+                if (user == null)
+                {
+                    return NotFound($"User with ID {attendanceDto.UserId} not found.");
+                }
+
+                var existingAttendance = await _context.MeetingAttendances
+                    .FirstOrDefaultAsync(ma => ma.MeetingId == attendanceDto.MeetingId && ma.UserId == attendanceDto.UserId);
+
+                if (existingAttendance != null)
+                {
+                    existingAttendance.MarkAttendance();
+                }
+                else
+                {
+                    var newAttendance = new MeetingAttendance
+                    {
+                        MeetingId = attendanceDto.MeetingId,
+                        UserId = attendanceDto.UserId,
+                        IsAttended = true // Assuming default to true for attendance
+                    };
+                    _context.MeetingAttendances.Add(newAttendance);
+                }
+
+                await _context.SaveChangesAsync();
+
+                return Ok("Attendance marked successfully.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [HttpGet("invitationcount/{meetingId}")]
+        public async Task<IActionResult> GetInvitationCount(int meetingId)
+        {
+            try
+            {
+                // Retrieve the meeting from the database
+                var meeting = await _context.Meetings
+                    .Include(m => m.MeetingAttendances)
+                    .FirstOrDefaultAsync(m => m.MeetingId == meetingId);
+
+                if (meeting == null)
+                    return NotFound($"Meeting with ID {meetingId} not found.");
+
+                // Calculate the invitation count
+                int invitationCount = meeting.MeetingAttendances.Count();
+
+                // Create a DTO to return the result
+                var invitationCountDto = new MeetingInvitationCountDto
+                {
+                    MeetingId = meeting.MeetingId,
+                    InvitationCount = invitationCount
+                };
+
+                return Ok(invitationCountDto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [HttpGet("acceptedinvitationcount/{meetingId}")]
+        public async Task<IActionResult> GetAcceptedInvitationCount(int meetingId)
+        {
+            try
+            {
+                var meeting = await _context.Meetings
+                    .Include(m => m.MeetingAttendances)
+                    .FirstOrDefaultAsync(m => m.MeetingId == meetingId);
+
+                if (meeting == null)
+                    return NotFound($"Meeting with ID {meetingId} not found.");
+
+                // Calculate the accepted invitation count
+                int acceptedInvitationCount = meeting.MeetingAttendances
+                    .Count(ma => ma.IsAttended); // Assuming IsAccepted indicates acceptance
+
+                // Create a DTO to return the result
+                var acceptedInvitationCountDto = new MeetingAcceptedInvitationCountDto
+                {
+                    MeetingId = meeting.MeetingId,
+                    AcceptedInvitationCount = acceptedInvitationCount
+                };
+
+                return Ok(acceptedInvitationCountDto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+
     }
 }
