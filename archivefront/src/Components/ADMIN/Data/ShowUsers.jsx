@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
-import "./style.css"; // Import the CSS file
+import { Link, Routes, Route, Navigate } from "react-router-dom"; // Import Navigate from react-router-dom
 
-const Table = () => {
+const ShowUsers = () => {
   const [users, setUsers] = useState([]);
-  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -15,7 +13,8 @@ const Table = () => {
             accept: "*/*",
           },
         });
-        setUsers(response.data);
+        console.log("API Response:", response.data);
+        setUsers(response.data.$values);
       } catch (error) {
         console.error("Error fetching users:", error);
       }
@@ -24,34 +23,15 @@ const Table = () => {
     fetchUsers();
   }, []);
 
-  const handleEditClick = (userId) => {
-    navigate(`/EditUser/${userId}`); // Navigate to EditUser path with userId
-  };
-
-  const handleDeleteClick = (userId) => {
-    console.log(`Delete user with ID: ${userId}`);
-    // Add your delete logic here
-  };
-
   return (
-    <div className="table-container-custom">
-      <br />
-      <br />
+    <div className="table-container-custom" style={{ marginTop: "50px" }}>
       <table className="container-custom">
         <thead>
           <tr>
-            <th className="table-header-custom">
-              <h1>User name</h1>
-            </th>
-            <th className="table-header-custom">
-              <h1>Email</h1>
-            </th>
-            <th className="table-header-custom">
-              <h1>Phone number</h1>
-            </th>
-            <th className="table-header-custom">
-              <h1>Actions</h1>
-            </th>
+            <th className="table-header-custom">Username</th>
+            <th className="table-header-custom">Email</th>
+            <th className="table-header-custom">Phone Number</th>
+            <th className="table-header-custom">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -61,12 +41,10 @@ const Table = () => {
               <td>{user.email}</td>
               <td>{user.phoneNumber}</td>
               <td>
-                <button onClick={() => handleEditClick(user.userId)}>
+                <Link className="btn" to={`/EditUser/${user.userId}`}>
                   Edit
-                </button>
-                <button onClick={() => handleDeleteClick(user.userId)}>
-                  Delete
-                </button>
+                </Link>
+                <button>Delete</button>
               </td>
             </tr>
           ))}
@@ -76,4 +54,4 @@ const Table = () => {
   );
 };
 
-export default Table;
+export default ShowUsers;

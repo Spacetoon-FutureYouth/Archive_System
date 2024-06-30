@@ -1,9 +1,20 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function AddUser() {
   const [step, setStep] = useState(1);
-  const [image, setImage] = useState(null);
-  const [gender, setGender] = useState("");
+  const [formData, setFormData] = useState({
+    image: null,
+    email: "",
+    password: "",
+    confirmPassword: "",
+    username: "",
+    phoneNumber: "",
+    gender: "",
+  });
+  const [imagePreviewUrl, setImagePreviewUrl] = useState("");
+  const navigate = useNavigate();
 
   const nextStep = () => {
     setStep(step + 1);
@@ -17,25 +28,99 @@ function AddUser() {
     setStep(stepNumber);
   };
 
-  const submit = () => {};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImage(reader.result);
-      };
-      reader.readAsDataURL(file);
+      setFormData({
+        ...formData,
+        image: file,
+      });
+      setImagePreviewUrl(URL.createObjectURL(file));
     }
   };
 
   const cancelImage = () => {
-    setImage(null);
+    setFormData({
+      ...formData,
+      image: null,
+    });
+    setImagePreviewUrl("");
   };
 
-  const handleGenderChange = (e) => {
-    setGender(e.target.value);
+  const submit = async () => {
+    if (formData.image) {
+      const imageData = new FormData();
+      imageData.append("file", formData.image);
+
+      try {
+        const imageResponse = await axios.post(
+          "https://localhost:7103/api/Admin/AddProfileImage",
+          imageData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+
+        const { fileName } = imageResponse.data;
+        const userData = new FormData();
+        userData.append("Image", fileName);
+        userData.append("Email", formData.email);
+        userData.append("Password", formData.password);
+        userData.append("ConfirmPassword", formData.confirmPassword);
+        userData.append("UserName", formData.username);
+        userData.append("Gender", formData.gender);
+        userData.append("PhoneNumber", formData.phoneNumber);
+
+        const userResponse = await axios.post(
+          "https://localhost:7103/api/Admin",
+          userData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+        console.log(userResponse.data);
+        navigate("/ShowUsers");
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      const userData = new FormData();
+      userData.append("Image", formData.image);
+      userData.append("Email", formData.email);
+      userData.append("Password", formData.password);
+      userData.append("ConfirmPassword", formData.confirmPassword);
+      userData.append("UserName", formData.username);
+      userData.append("Gender", formData.gender);
+      userData.append("PhoneNumber", formData.phoneNumber);
+
+      try {
+        const userResponse = await axios.post(
+          "https://localhost:7103/api/Admin",
+          userData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+        console.log(userResponse.data);
+        navigate("/ShowUsers");
+      } catch (error) {
+        console.error(error);
+      }
+    }
   };
 
   return (
@@ -68,10 +153,34 @@ function AddUser() {
       {step === 1 && (
         <fieldset>
           <h2 className="fs-title">Create your account</h2>
-          <input type="text" name="username" placeholder="User Name" />
-          <input type="text" name="email" placeholder="Email" />
-          <input type="password" name="pass" placeholder="Password" />
-          <input type="password" name="cpass" placeholder="Confirm Password" />
+          <input
+            type="text"
+            name="username"
+            placeholder="User Name"
+            value={formData.username}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+          />
           <input
             type="button"
             onClick={nextStep}
@@ -83,11 +192,19 @@ function AddUser() {
       {step === 2 && (
         <fieldset>
           <h2 className="fs-title">More Details</h2>
-          <input type="text" name="phone" placeholder="Phone Number" />
-          <br /> <br />
+          <input
+            type="text"
+            name="phoneNumber"
+            placeholder="Phone Number"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+          />
+          <br />
+          <br />
           <select
-            id="department"
-            name="department"
+            name="gender"
+            value={formData.gender}
+            onChange={handleChange}
             style={{
               width: "100%",
               padding: "12px",
@@ -100,62 +217,11 @@ function AddUser() {
               WebkitAppearance: "none",
               MozAppearance: "none",
               textAlign: "left",
-            }}
-          >
-            <option value="">Select Department ▼</option>
-            <option value="marketing">Marketing</option>
-            <option value="sales">Sales</option>
-            <option value="finance">Finance</option>
-            {/* Add more options as needed */}
-          </select>
-          <br />
-          <br />
-          <select
-            id="job"
-            name="job"
-            style={{
-              width: "100%",
-              padding: "12px",
-              border: "1px solid #ccc",
-              borderRadius: "5px",
-              backgroundColor: "#fff",
-              fontSize: "16px",
-              color: "gray",
-              appearance: "none",
-              WebkitAppearance: "none",
-              MozAppearance: "none",
-              textAlign: "left",
-            }}
-          >
-            <option value="">Select Job Title ▼</option>
-            <option value="manager">Manager</option>
-            <option value="developer">Developer</option>
-            <option value="designer">Designer</option>
-            {/* Add more options as needed */}
-          </select>
-          <br />
-          <br />
-          <select
-            id="gender"
-            value={gender}
-            onChange={handleGenderChange}
-            style={{
-              width: "100%",
-              padding: "12px",
-              border: "1px solid #ccc",
-              borderRadius: "5px",
-              backgroundColor: "#fff",
-              fontSize: "16px",
-              color: "gray",
-              appearance: "none",
-              WebkitAppearance: "none",
-              MozAppearance: "none",
-              textAlign: "left", // Align the dropdown to the left
             }}
           >
             <option value="">Select Gender ▼</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
           </select>
           <br />
           <br />
@@ -173,7 +239,6 @@ function AddUser() {
           />
         </fieldset>
       )}
-
       {step === 3 && (
         <fieldset>
           <h2 className="fs-title">Upload Image</h2>
@@ -191,9 +256,13 @@ function AddUser() {
             onChange={handleImageChange}
             style={{ display: "none" }}
           />
-          {image && (
+          {imagePreviewUrl && (
             <div>
-              <img src={image} alt="Uploaded" className="preview-image" />
+              <img
+                src={imagePreviewUrl}
+                alt="Uploaded"
+                className="preview-image"
+              />
               <br />
               <br />
               <button

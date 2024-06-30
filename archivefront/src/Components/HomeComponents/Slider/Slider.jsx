@@ -48,7 +48,7 @@ const Slider = () => {
           <p
             className="title-text"
             style={{
-              marginTop: "-190px",
+              marginTop: "-100px",
               fontSize: "40px",
               color: "#D78968",
             }}
@@ -68,14 +68,12 @@ const Slider = () => {
         style={{
           textAlign: "center",
           marginTop: "100px",
-          marginBottom: "200px",
+          marginBottom: "50px",
           fontSize: "50px",
           backgroundColor: "#1565",
           color: "white",
         }}
-      >
-        Meeting Coming Soon!
-      </h2>
+      ></h2>
     </div>
   );
 };

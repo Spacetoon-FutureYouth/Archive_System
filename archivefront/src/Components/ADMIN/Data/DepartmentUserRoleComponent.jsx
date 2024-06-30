@@ -17,11 +17,18 @@ const DepartmentRoleComponent = () => {
         const response = await axios.get(
           "https://localhost:7103/api/Department"
         );
-        const departments = response.data.map((department) => ({
-          value: department.departmentId,
-          label: department.departmentName,
-        }));
-        setDepartmentOptions(departments);
+
+        // Check if $values array exists in the response
+        if (response.data.$values && Array.isArray(response.data.$values)) {
+          const departments = response.data.$values.map((department) => ({
+            value: department.departmentId,
+            label: department.departmentName,
+          }));
+          setDepartmentOptions(departments);
+        } else {
+          console.error("No $values array found in response:", response.data);
+          // Handle the case where $values array is missing or not an array
+        }
       } catch (error) {
         console.error("There was an error fetching the departments!", error);
       }

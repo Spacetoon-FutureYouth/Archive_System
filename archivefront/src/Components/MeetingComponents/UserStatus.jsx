@@ -1,9 +1,7 @@
 import React from "react";
 import "./tableStyel.css";
 
-const Table = () => {
-  const handleEditClick = () => {};
-
+const UserTable = ({ userData }) => {
   return (
     <div className="table-container-custom">
       <br />
@@ -20,25 +18,25 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>User1</td>
-            <td>
-              <span
-                className="icofont-ui-check"
-                style={{ color: "green" }}
-              ></span>
-            </td>
-          </tr>
-          <tr>
-            <td>User2</td>
-            <td>
-              <span className="icofont-ban" style={{ color: "red" }}></span>
-            </td>
-          </tr>
+          {userData.map((user) => (
+            <tr key={user.userId}>
+              <td>{user.userName}</td>
+              <td>
+                {user.isAttended ? (
+                  <span
+                    className="icofont-ui-check"
+                    style={{ color: "green" }}
+                  ></span>
+                ) : (
+                  <span className="icofont-ban" style={{ color: "red" }}></span>
+                )}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
   );
 };
 
-export default Table;
+export default UserTable;

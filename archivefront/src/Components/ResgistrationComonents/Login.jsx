@@ -22,7 +22,8 @@ const LoginForm = ({ onLoginSuccess }) => {
       if (response.ok) {
         const data = await response.json();
         const userId = data.userId; // Extract the userId from the response
-        onLoginSuccess(userId); // Pass the userId to the parent component
+        const username = data.username; // Extract the username from the response
+        onLoginSuccess(userId, username); // Pass userId and username to the parent component
         navigate("/Home");
       } else {
         const errorText = await response.text();

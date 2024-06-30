@@ -17,10 +17,28 @@ const EditDepRole = () => {
         const response = await axios.get(
           "https://localhost:7103/api/Department"
         );
-        const departments = response.data.map((department) => ({
-          value: department.departmentId,
-          label: department.departmentName,
-        }));
+
+        let departments = [];
+        if (Array.isArray(response.data)) {
+          // If response.data is already an array, use it directly
+          departments = response.data.map((department) => ({
+            value: department.departmentId,
+            label: department.departmentName,
+          }));
+        } else if (
+          response.data.$values &&
+          Array.isArray(response.data.$values)
+        ) {
+          // If response.data.$values exists and is an array, use it
+          departments = response.data.$values.map((department) => ({
+            value: department.departmentId,
+            label: department.departmentName,
+          }));
+        } else {
+          console.error("No valid array found in response:", response.data);
+          // Handle the case where neither response.data nor response.data.$values is an array
+        }
+
         setDepartmentOptions(departments);
       } catch (error) {
         console.error("There was an error fetching the departments!", error);
@@ -109,10 +127,26 @@ const EditDepRole = () => {
         const response = await axios.get(
           "https://localhost:7103/api/Department"
         );
-        const updatedDepartments = response.data.map((department) => ({
-          value: department.departmentId,
-          label: department.departmentName,
-        }));
+
+        // Ensure response.data is an array or extract the array from the response
+        let updatedDepartments = [];
+        if (Array.isArray(response.data)) {
+          updatedDepartments = response.data.map((department) => ({
+            value: department.departmentId,
+            label: department.departmentName,
+          }));
+        } else if (
+          response.data.$values &&
+          Array.isArray(response.data.$values)
+        ) {
+          updatedDepartments = response.data.$values.map((department) => ({
+            value: department.departmentId,
+            label: department.departmentName,
+          }));
+        } else {
+          console.error("Unexpected response structure:", response.data);
+          // Handle unexpected structure, such as logging an error or setting a default value
+        }
 
         // Update departmentOptions state with the updated data
         setDepartmentOptions(updatedDepartments);

@@ -24,6 +24,10 @@ import LoginForm from "./Components/ResgistrationComonents/Login";
 import DepartmentUserRoleComponent from "./Components/ADMIN/Data/DepartmentUserRoleComponent";
 import Edit from "./Components/ResgistrationComonents/EditUser";
 import EditDep from "./Components/ADMIN/EditDepRole";
+import UserFeatures from "./Components/HomeComponents/UserFeatures";
+import AppointmentRequestForm from "./Components/MeetingComponents/MeetingForm/MeetingForm";
+import ShowMeetings from "./Components/HomeComponents/ShowMeetings";
+import EditMeeting from "./Components/MeetingComponents/MeetingForm/EditMeeting";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -56,9 +60,28 @@ function App() {
             isLoggedIn ? (
               <>
                 <Slider />
+                <UserFeatures />
+                <Schedule userId={userId} />
+                <Bubble />
+                <FunFacts />
+                <WhyChoose />
+                <CallSection />
+                <Service />{" "}
+              </>
+            ) : (
+              <LoginForm onLoginSuccess={handleLoginSuccess} />
+            )
+          }
+        />
+        <Route
+          path="/HomePage"
+          element={
+            isLoggedIn ? (
+              <>
+                <Slider />
                 <Schedule />
                 <Bubble />
-                <Feature />
+                <UserFeatures />
                 <FunFacts />
                 <WhyChoose />
                 <CallSection />
@@ -99,11 +122,48 @@ function App() {
         />
         <Route path="/EditUser/:userId" element={<Edit />} />
         <Route
+          path="/MeetingStatus/:meetingId"
+          element={
+            <>
+              <Breadcrumbs currentPage="meetingStatus" />
+              <ShowAttendance />
+            </>
+          }
+        />
+        <Route
+          path="/EditMeeting/:meetingId"
+          element={
+            <>
+              <Breadcrumbs currentPage="editMeeting" />
+              <EditMeeting />
+            </>
+          }
+        />
+        <Route
           path="/CreateMeeting"
           element={
             <>
               <Breadcrumbs currentPage="createmeeting" />
+              <AppointmentRequestForm userId={userId} />
+            </>
+          }
+        />
+        <Route
+          path="/MeetingStatus"
+          element={
+            <>
+              <Breadcrumbs currentPage="meetingStatus" />
               <ShowAttendance />
+              <AddUser />
+            </>
+          }
+        />
+        <Route
+          path="/ShowMeetings"
+          element={
+            <>
+              <Breadcrumbs currentPage="showMeetings" />
+              <ShowMeetings />
             </>
           }
         />

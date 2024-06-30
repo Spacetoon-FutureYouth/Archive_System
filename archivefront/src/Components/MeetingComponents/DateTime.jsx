@@ -1,12 +1,13 @@
-// DateTime.js
 import React, { useState, useEffect } from "react";
 import "./date.css";
 
-function DateTime() {
+function DateTime({ meetingTime }) {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
+    const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     updateDate();
+    return () => clearInterval(timer);
   }, []);
 
   const updateDate = () => {
@@ -52,15 +53,47 @@ function DateTime() {
     });
   };
 
+  const formatTime = (time) => {
+    return time.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  };
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+  };
+
   return (
     <div className="dateTimeContainer">
       <div className="displayDate">
-        <span id="day">day</span>,<span id="daynum">00</span>
-        <span id="month">month</span>
-        <span id="year">0000</span>
+        <span id="day">
+          {meetingTime
+            ? new Date(meetingTime).toLocaleDateString("en-US", {
+                weekday: "long",
+              })
+            : "day"}
+        </span>
+        ,{" "}
+        <span id="daynum">
+          {meetingTime ? new Date(meetingTime).getDate() : "00"}
+        </span>{" "}
+        <span id="month">
+          {meetingTime
+            ? new Date(meetingTime).toLocaleDateString("en-US", {
+                month: "long",
+              })
+            : "month"}
+        </span>{" "}
+        <span id="year">
+          {meetingTime ? new Date(meetingTime).getFullYear() : "0000"}
+        </span>
       </div>
       <div className="displayTime">
-        {currentTime.toLocaleTimeString("en-US", { hour12: false })}
+        {meetingTime
+          ? formatTime(new Date(meetingTime))
+          : formatTime(currentTime)}
       </div>
     </div>
   );
