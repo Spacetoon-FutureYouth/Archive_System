@@ -4,6 +4,7 @@ using ArchiveSystem.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ArchiveSystem.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240630013945_removeAttribFromMeetingAttendance")]
+    partial class removeAttribFromMeetingAttendance
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -212,9 +214,6 @@ namespace ArchiveSystem.Migrations
 
                     b.Property<int>("MeetingId")
                         .HasColumnType("int");
-
-                    b.Property<bool>("InvitationSent")
-                        .HasColumnType("bit");
 
                     b.Property<bool>("IsAttended")
                         .HasColumnType("bit");
