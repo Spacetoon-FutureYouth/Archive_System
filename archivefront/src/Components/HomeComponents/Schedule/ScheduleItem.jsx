@@ -1,8 +1,16 @@
-import React from 'react';
+import React from "react";
 
-const ScheduleItem = ({ iconClass, spanText, title, description, children }) => (
+const ScheduleItem = ({
+  iconClass,
+  spanText,
+  title,
+  description,
+  children,
+}) => (
   <div className="col-lg-4 col-md-6 col-12">
-    <div className={`single-schedule ${spanText.toLowerCase().replace(' ', '-')}`}>
+    <div
+      className={`single-schedule ${spanText.toLowerCase().replace(" ", "-")}`}
+    >
       <div className="inner">
         <div className="icon">
           <i className={iconClass}></i>

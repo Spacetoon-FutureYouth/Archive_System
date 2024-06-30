@@ -1,6 +1,8 @@
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../Images/logo.png";
-function Header({ handleLogout }) {
+
+function Header({ handleLogout, username }) {
   const navigate = useNavigate();
 
   const logout = () => {
@@ -17,7 +19,10 @@ function Header({ handleLogout }) {
             <div className="inner">
               <div className="row">
                 <div className="col-lg-3 col-md-3 col-12">
-                  <div className="logo" style={{ position: "relative" }}>
+                  <div
+                    className="logo"
+                    style={{ position: "relative", display: "flex" }}
+                  >
                     <Link to="/Home">
                       <img
                         src={logo}
@@ -25,7 +30,6 @@ function Header({ handleLogout }) {
                         alt="Logo"
                       />
                     </Link>
-
                     <div
                       className="logout-button"
                       style={{
@@ -57,9 +61,8 @@ function Header({ handleLogout }) {
                     <nav className="navigation">
                       <ul className="nav menu">
                         <li>
-                          <a href="#services">User Name</a>
+                          <a href="#services">{username}ok</a>
                         </li>
-
                         <li className="active">
                           <Link to="/Home">
                             Home <i className="icofont-rounded-down"></i>

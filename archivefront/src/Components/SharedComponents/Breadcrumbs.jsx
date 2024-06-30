@@ -18,6 +18,12 @@ function Breadcrumbs({ currentPage }) {
         return "Edit User";
       case "editDepartment":
         return "Edit Department-Role";
+      case "meetingStatus":
+        return "Meeting Status";
+      case "showMeetings":
+        return "Show Meetings";
+      case "editMeeting":
+        return "Edit Meeting";
       default:
         return "Unknown Page";
     }

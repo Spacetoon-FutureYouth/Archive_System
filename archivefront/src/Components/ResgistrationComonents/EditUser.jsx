@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Edit() {
   const { userId } = useParams();
@@ -8,6 +8,8 @@ function Edit() {
   const [userData, setUserData] = useState({});
   const [image, setImage] = useState(null);
   const [gender, setGender] = useState("");
+
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -126,6 +128,7 @@ function Edit() {
       );
 
       console.log("Update successful:", response.data);
+      navigate(`/ShowUsers`); // Navigate to EditUser path with userId
       // Optionally, you can redirect or show a success message after successful update
     } catch (error) {
       console.error("Error updating user:", error);

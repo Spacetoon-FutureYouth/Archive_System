@@ -808,33 +808,25 @@ body {
 	End Hero Area CSS
 =============================*/
 
+
+
 /*=============================
 	Start Schedule CSS
 ===============================*/
-.schedule {
-	background: #fff;
-	margin: 0;
-	padding: 0;
-	height: 230px;
-}
-
-.schedule .schedule-inner {
-	position: relative;
-	transform: translateY(-50%);
-	z-index: 9;
-}
-
 .schedule .single-schedule {
+	width: 100%;
+	height: 350px;
+	/* Adjust the height as per your design */
 	position: relative;
 	text-align: left;
 	z-index: 3;
 	border-radius: 5px;
 	background: #00263B;
-	-webkit-transition: all .3s ease-out 0s;
-	-moz-transition: all .3s ease-out 0s;
-	-ms-transition: all .3s ease-out 0s;
-	-o-transition: all .3s ease-out 0s;
 	transition: all .3s ease-out 0s;
+	overflow: hidden;
+	/* Ensure content doesn't overflow */
+	margin-bottom: 20px;
+	/* Add margin-bottom to create space between cards */
 }
 
 .schedule .single-schedule .inner {
@@ -842,44 +834,18 @@ body {
 	position: relative;
 	padding: 30px;
 	z-index: 2;
-}
-
-.schedule .single-schedule:before {
-	position: absolute;
-	z-index: -1;
-	content: '';
-	bottom: -10px;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
-	width: 80%;
-	height: 90%;
-	background: #00263B;
-	opacity: 0;
-	filter: blur(10px);
-	-webkit-transition: all .3s ease-out 0s;
-	-moz-transition: all .3s ease-out 0s;
-	-ms-transition: all .3s ease-out 0s;
-	-o-transition: all .3s ease-out 0s;
-	transition: all .3s ease-out 0s;
+	height: 100%;
+	/* Ensure inner content stays within the fixed height */
 }
 
 .schedule .single-schedule:hover:before {
 	opacity: 0.8;
 }
 
-.schedule .single-schedule:hover {
-	transform: translateY(-5px);
-}
-
 .schedule .single-schedule .icon i {
 	position: absolute;
 	font-size: 110px;
 	color: #ffffff;
-	-webkit-transition: all .3s ease-out 0s;
-	-moz-transition: all .3s ease-out 0s;
-	-ms-transition: all .3s ease-out 0s;
-	-o-transition: all .3s ease-out 0s;
 	transition: all .3s ease-out 0s;
 	z-index: -1;
 	visibility: visible;
@@ -899,12 +865,19 @@ body {
 	display: inline-block;
 	text-transform: capitalize;
 	color: #fff;
-	margin-top: 13px;
+	margin-top: 5px;	overflow: hidden;
+	/* Ensure title does not overflow */
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .schedule .single-schedule p {
 	color: #fcfbf9;
 	margin-top: 22px;
+	overflow: hidden;
+	/* Ensure description does not overflow */
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .schedule .single-schedule a {
@@ -923,21 +896,12 @@ body {
 	height: 1px;
 	width: 0%;
 	background: #ffffff;
-	-webkit-transition: all 0.4s ease;
-	-moz-transition: all 0.4s ease;
 	transition: all 0.4s ease;
 }
 
 .schedule .single-schedule a:hover:before {
 	width: 100%;
-	width: 100%;
 }
-
-.schedule .single-schedule a i {
-	margin-left: 10px;
-}
-
-.schedule .single-schedule .time-sidual {}
 
 .schedule .single-schedule .time-sidual {
 	overflow: hidden;
@@ -957,11 +921,6 @@ body {
 
 .schedule .single-schedule .time-sidual li span {
 	display: inline-block;
-	float: right;
-}
-
-.schedule .single-schedule .day-head .time {
-	font-weight: 400;
 	float: right;
 }
 

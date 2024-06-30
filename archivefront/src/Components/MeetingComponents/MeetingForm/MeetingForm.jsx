@@ -1,101 +1,133 @@
-import React from "react";
-import "./style.css"; // Import the CSS file
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./AppointmentRequestForm.css"; // Import the CSS file
 
-function AppointmentRequestForm() {
+const AppointmentRequestForm = ({ userId }) => {
+  const [meetingTitle, setMeetingTitle] = useState("");
+  const [attendanceDate, setAttendanceDate] = useState("");
+  const [location, setLocation] = useState("");
+  const [description, setDescription] = useState("");
+  const [creator, setCreator] = useState(null);
+
+  useEffect(() => {
+    const fetchCreatorData = async () => {
+      try {
+        const response = await axios.get(
+          `https://localhost:7103/api/Admin/${userId}`
+        );
+        const data = response.data;
+        const creatorData = {
+          image: data.image,
+          email: data.email,
+          password: data.password,
+          confirmPassword: data.password, // assuming the same password for confirmPassword
+          userName: data.username,
+          gender: data.gender,
+          phoneNumber: data.phoneNumber,
+        };
+        setCreator(creatorData);
+      } catch (error) {
+        console.error("Error fetching creator data:", error);
+      }
+    };
+
+    fetchCreatorData();
+  }, [userId]);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!creator) {
+      console.error("Creator data not loaded yet.");
+      return;
+    }
+
+    const meetingAttendances = [
+      {
+        userId: userId,
+        user: creator,
+      },
+    ];
+
+    const invitedUsers = [
+      {
+        userId: "1f908bde-5dce-403d-899d-7a49f4ba1bdb",
+        username: "7065f75d9b@boxmail.lol",
+        email: "khietgiauco@gmail.com",
+        image: "638552918202035679.jpeg",
+        gender: "Male",
+        phoneNumber: "010666",
+      },
+      {
+        userId: "21489f20-c254-4cb0-b14c-892dc8d808df",
+        username: "Lana",
+        email: "Jihad.20377391@compit.aun.edu.eg",
+        image: "638552598196639767.jpeg",
+        gender: "Male",
+        phoneNumber: "01016384816",
+      },
+    ];
+
+    const newMeeting = {
+      meetingTitle,
+      attendanceDate,
+      location,
+      description,
+      creatorUserId: userId,
+      creator,
+      meetingAttendances,
+      invitedUsers,
+    };
+
+    try {
+      const response = await axios.post(
+        "https://localhost:7103/api/Meeting",
+        newMeeting
+      );
+      console.log("Meeting created:", response.data);
+    } catch (error) {
+      console.error("Error creating meeting:", error);
+    }
+  };
+
   return (
-    <div className="appointment-request-form appointment-request-form-container">
-      <div id="body_header">
-        <h1>Appointment Request Form</h1>
-        <p>Make your appointments easier</p>
-      </div>
-      <form action="index.html" method="post">
-        <fieldset>
-          <legend>
-            <span className="appointment-request-form number">1</span>Your basic
-            details
-          </legend>
-          <label htmlFor="name">Name*:</label>
-          <input
-            type="text"
-            id="name"
-            name="user_name"
-            placeholder="Atchyut (only first names)"
-            required
-            pattern="[a-zA-Z0-9]+"
-          />
-
-          <label htmlFor="mail">Email*:</label>
-          <input
-            type="email"
-            id="mail"
-            name="user_email"
-            placeholder="abc@xyz.com"
-            required
-          />
-
-          <label htmlFor="tel">Contact Num:</label>
-          <input
-            type="tel"
-            id="tel"
-            placeholder="Include country code"
-            name="user_num"
-          />
-
-          <label htmlFor="skype_name">Skype username:</label>
-          <input
-            type="text"
-            id="skype_name"
-            name="skype_name"
-            placeholder="@atchyutn"
-            pattern="[a-zA-Z0-9]+"
-          />
-        </fieldset>
-
-        <fieldset>
-          <legend>
-            <span className="appointment-request-form number">2</span>
-            Appointment Details
-          </legend>
-          <div>
-            <label htmlFor="appointment_for">Appointment for*:</label>
-          </div>
-          <div>
-            <select id="appointment_for" name="appointment_for" required>
-              <option value="meeting">Meeting</option>
-              <option value="Business">Business</option>
-              <option value="skype">Skype</option>
-            </select>
-          </div>
-          <div>
-            <br />
-            <br />
-            <br />
-
-            <label htmlFor="appointment_description">
-              Appointment Description:
-            </label>
-            <textarea
-              id="appointment_description"
-              name="appointment_description"
-              placeholder="I wish to get an appointment to skype for resolving a software problem."
-            ></textarea>
-          </div>
-          <label htmlFor="date">Date*:</label>
-          <input type="date" name="date" value="" required />
-          <br />
-          <label htmlFor="time">Time*:</label>
-          <input type="time" name="time" value="" required />
-          <br />
-          <label htmlFor="duration">How Long??(Minutes)</label>
-          <input type="radio" name="duration" value="30" defaultChecked /> 30
-          <input type="radio" name="duration" value="60" /> 60
-          <input type="radio" name="duration" value="90" /> 90
-          <input type="radio" name="duration" value="more" /> more
-        </fieldset>
-        <button type="submit">Request For Appointment</button>
-      </form>
-    </div>
+    <form className="appointment-form" onSubmit={handleSubmit}>
+      <label>
+        Meeting Title:
+        <input
+          type="text"
+          value={meetingTitle}
+          onChange={(e) => setMeetingTitle(e.target.value)}
+        />
+      </label>
+      <label>
+        Attendance Date:
+        <input
+          type="datetime-local"
+          value={attendanceDate}
+          onChange={(e) => setAttendanceDate(e.target.value)}
+        />
+      </label>
+      <label>
+        Location:
+        <input
+          type="text"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+        />
+      </label>
+      <label>
+        Description:
+        <textarea
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+      </label>
+      <button type="submit" disabled={!creator}>
+        Create Meeting
+      </button>
+    </form>
   );
-}
+};
 
 export default AppointmentRequestForm;

@@ -1,4 +1,4 @@
-/* style.css */
+/* Existing styles */
 
 /* Styles for the container of the AppointmentRequestForm component */
 .appointment-request-form-container form {
@@ -104,4 +104,61 @@
     text-align: center;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
     border-radius: 100%;
+}
+
+/* New styles */
+
+/* Styles for the button group */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.show-recipients-button,
+.add-recipient-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.show-recipients-button:hover,
+.add-recipient-button:hover {
+    background-color: darkgreen;
+}
+
+/* Styles for the selected recipients list */
+.selected-recipients-list {
+    margin-top: 20px;
+}
+
+.selected-recipients-list h3 {
+    margin-bottom: 10px;
+}
+
+.selected-recipients-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.selected-recipients-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.remove-recipient-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.remove-recipient-button:hover {
+    background-color: darkred;
 }

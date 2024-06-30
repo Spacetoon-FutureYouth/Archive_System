@@ -11,8 +11,11 @@
 
 .container-custom th.table-header-custom {
     font-weight: bold;
-    font-size: 12px;
+    font-size: 16px;
+    /* Increased font size */
     text-align: left;
+    color: white;
+    /* Updated to white */
 }
 
 .container-custom td {
@@ -34,11 +37,11 @@
 }
 
 .container-custom tr:nth-child(odd) {
-    background-color: #323c50;
+    background-color: #DBD1D0;
 }
 
 .container-custom tr:nth-child(even) {
-    background-color: #2c3446;
+    background-color: #DBD1D0;
 }
 
 .container-custom th {
@@ -51,7 +54,7 @@
 
 .container-custom button {
     padding: 8px 16px;
-    background-color: #4CAF50;
+    background-color: #ba8447;
     /* Green */
     border: none;
     color: white;
