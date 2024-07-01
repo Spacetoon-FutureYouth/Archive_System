@@ -3,7 +3,6 @@ import ScheduleItem from "./ScheduleItem";
 import axios from "axios";
 
 const Schedule = ({ userId }) => {
-  // Receive userId as a prop
   const [meetings, setMeetings] = useState([]);
 
   useEffect(() => {
@@ -13,13 +12,20 @@ const Schedule = ({ userId }) => {
   const fetchUserMeetings = async () => {
     try {
       const response = await axios.get(
-        `https://localhost:7103/api/Meeting/usermeetings/${userId}`
+        `https://localhost:7103/api/Meeting/user/${userId}`
       );
-      console.log("API Response:", response.data); // Log the API response to inspect its structure
 
-      // Check if response.data.$values is an array
+      // Assuming response.data is structured as { $values: [...] }
       if (Array.isArray(response.data.$values)) {
-        setMeetings(response.data.$values); // Update state with the array of meetings
+        const filteredMeetings = response.data.$values.filter(
+          (meeting) =>
+            meeting.creatorUserId !== userId && // Exclude meetings where creatorUserId matches userId
+            !meeting.meetingAttendances.$values.some(
+              (attendance) =>
+                attendance.userId === userId && attendance.isAttended
+            )
+        );
+        setMeetings(filteredMeetings);
       } else {
         console.error("Unexpected API response:", response.data);
       }
@@ -37,9 +43,8 @@ const Schedule = ({ userId }) => {
           userId: userId,
         }
       );
-      console.log("Attend API Response:", response.data); // Log the API response after attending
+      console.log("Attend API Response:", response.data);
 
-      // Filter out the attended meeting from the state
       const updatedMeetings = meetings.filter(
         (meeting) => meeting.meetingId !== meetingId
       );
@@ -56,7 +61,7 @@ const Schedule = ({ userId }) => {
           <div className="row">
             {meetings.map((meeting) => (
               <ScheduleItem
-                key={meeting.meetingId} // Assuming meetingId is unique
+                key={meeting.meetingId}
                 iconClass="icofont-ui-clock"
                 spanText=""
                 title={meeting.meetingTitle}
@@ -75,6 +80,13 @@ const Schedule = ({ userId }) => {
                   </li>
                   <li className="day">
                     Location: <span>{meeting.location}</span>
+                  </li>
+                  <li className="day">
+                    <br />
+                  </li>
+
+                  <li className="day">
+                    Creator User Name: <span>{meeting.creatorUserName}</span>
                   </li>
                 </ul>
                 <a

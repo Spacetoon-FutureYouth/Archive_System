@@ -37,31 +37,26 @@ function ShowAttendance() {
         setAttendees(acceptedInvitationsCount);
         setNonAttendees(nonAttendeesCount);
 
-        // Fetch user data if needed
-        const attendanceResponse = await axios.get(
-          `https://localhost:7103/api/Meeting/invitations/${meetingId}`
-        );
-        console.log(attendanceResponse.data); // Log the response to check its structure
-
-        // Ensure the correct path to $values
-        const invitations = attendanceResponse.data.$values;
-        console.log(invitations); // Log the invitations array to check its structure
-
-        const processedUserData = invitations.map((attendance) => ({
-          userId: attendance.userId,
-          userName: attendance.userName, // Ensure this field exists in the response
-          isAttended: attendance.isAttended, // Ensure this field exists in the response
-        }));
-
-        setUserData(processedUserData);
-
-        // Fetch meeting details including time
+        // Fetch meeting details including time and attendees
         const meetingDetailsResponse = await axios.get(
           `https://localhost:7103/api/Meeting/${meetingId}`
         );
-        const fetchedMeetingTime = meetingDetailsResponse.data.attendanceDate;
-        setMeetingTime(fetchedMeetingTime);
-        console.log("Meeting Time:", fetchedMeetingTime); // Log the fetched meeting time
+        const { attendanceDate, meetingAttendances } =
+          meetingDetailsResponse.data;
+
+        // Set meeting time
+        setMeetingTime(attendanceDate);
+
+        // Process attendees data
+        const processedUserData = meetingAttendances.$values.map(
+          (attendance) => ({
+            userId: attendance.userId,
+            userName: attendance.userName || "N/A", // You may need to adjust this based on actual data structure
+            isAttended: attendance.isAttended || false,
+          })
+        );
+
+        setUserData(processedUserData);
       } catch (error) {
         console.error("Error fetching attendance data:", error);
       }

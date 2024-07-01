@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Header from "./Components/SharedComponents/Header";
 import Footer from "./Components/SharedComponents/Footer";
@@ -32,23 +32,45 @@ import EditMeeting from "./Components/MeetingComponents/MeetingForm/EditMeeting"
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setUserId] = useState(null);
+  const [username, setUsername] = useState("");
   const navigate = useNavigate();
 
-  const handleLoginSuccess = (id) => {
+  // Check localStorage on component mount
+  useEffect(() => {
+    const storedUserId = localStorage.getItem("userId");
+    const storedUsername = localStorage.getItem("username");
+    const storedIsLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if (storedIsLoggedIn === "true" && storedUserId && storedUsername) {
+      setIsLoggedIn(true);
+      setUserId(storedUserId);
+      setUsername(storedUsername);
+    }
+  }, []);
+
+  const handleLoginSuccess = (id, name) => {
+    localStorage.setItem("userId", id);
+    localStorage.setItem("username", name);
+    localStorage.setItem("isLoggedIn", "true");
     setUserId(id);
+    setUsername(name);
     setIsLoggedIn(true);
     navigate("/Home");
   };
 
   const handleLogout = () => {
+    localStorage.removeItem("userId");
+    localStorage.removeItem("username");
+    localStorage.removeItem("isLoggedIn");
     setIsLoggedIn(false);
     setUserId(null);
+    setUsername("");
     navigate("/");
   };
 
   return (
     <>
-      {isLoggedIn && <Header handleLogout={handleLogout} />}
+      {isLoggedIn && <Header handleLogout={handleLogout} username={username} />}
       <Routes>
         <Route
           path="/"
@@ -60,8 +82,7 @@ function App() {
             isLoggedIn ? (
               <>
                 <Slider />
-                <UserFeatures />
-                <Schedule userId={userId} />
+                <Feature />
                 <Bubble />
                 <FunFacts />
                 <WhyChoose />
@@ -79,7 +100,7 @@ function App() {
             isLoggedIn ? (
               <>
                 <Slider />
-                <Schedule />
+                <Schedule userId={userId} />
                 <Bubble />
                 <UserFeatures />
                 <FunFacts />
@@ -163,7 +184,7 @@ function App() {
           element={
             <>
               <Breadcrumbs currentPage="showMeetings" />
-              <ShowMeetings />
+              <ShowMeetings userId={userId} />
             </>
           }
         />

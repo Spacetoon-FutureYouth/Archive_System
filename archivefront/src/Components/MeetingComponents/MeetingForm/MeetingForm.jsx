@@ -8,6 +8,10 @@ const AppointmentRequestForm = ({ userId }) => {
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
   const [creator, setCreator] = useState(null);
+  const [usersList, setUsersList] = useState([]);
+  const [selectedUserId, setSelectedUserId] = useState(""); // Store selected user ID
+  const [invitedUsers, setInvitedUsers] = useState([]);
+  const [showInvitedUsers, setShowInvitedUsers] = useState(false); // State for toggling invited users
 
   useEffect(() => {
     const fetchCreatorData = async () => {
@@ -31,8 +35,46 @@ const AppointmentRequestForm = ({ userId }) => {
       }
     };
 
+    const fetchUsersList = async () => {
+      try {
+        const response = await axios.get("https://localhost:7103/api/Admin");
+        const data = response.data;
+
+        // Check if data is an array or contains the array
+        if (Array.isArray(data)) {
+          // Filter out the current user from the users list
+          const filteredUsers = data.filter((user) => user.userId !== userId);
+          setUsersList(filteredUsers);
+        } else if (data.$values && Array.isArray(data.$values)) {
+          const filteredUsers = data.$values.filter(
+            (user) => user.userId !== userId
+          );
+          setUsersList(filteredUsers);
+        } else {
+          console.error("Unexpected data format for users list:", data);
+          setUsersList([]);
+        }
+      } catch (error) {
+        console.error("Error fetching users list:", error);
+      }
+    };
+
     fetchCreatorData();
+    fetchUsersList();
   }, [userId]);
+
+  const handleAddUser = () => {
+    const selectedUser = usersList.find(
+      (user) => user.userId === selectedUserId
+    );
+
+    if (selectedUser) {
+      // Check if the user is already invited
+      if (!invitedUsers.some((user) => user.userId === selectedUser.userId)) {
+        setInvitedUsers([...invitedUsers, selectedUser]);
+      }
+    }
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -42,31 +84,10 @@ const AppointmentRequestForm = ({ userId }) => {
       return;
     }
 
-    const meetingAttendances = [
-      {
-        userId: userId,
-        user: creator,
-      },
-    ];
-
-    const invitedUsers = [
-      {
-        userId: "1f908bde-5dce-403d-899d-7a49f4ba1bdb",
-        username: "7065f75d9b@boxmail.lol",
-        email: "khietgiauco@gmail.com",
-        image: "638552918202035679.jpeg",
-        gender: "Male",
-        phoneNumber: "010666",
-      },
-      {
-        userId: "21489f20-c254-4cb0-b14c-892dc8d808df",
-        username: "Lana",
-        email: "Jihad.20377391@compit.aun.edu.eg",
-        image: "638552598196639767.jpeg",
-        gender: "Male",
-        phoneNumber: "01016384816",
-      },
-    ];
+    const meetingAttendances = invitedUsers.map((user) => ({
+      userId: user.userId,
+      isAttended: false,
+    }));
 
     const newMeeting = {
       meetingTitle,
@@ -74,9 +95,7 @@ const AppointmentRequestForm = ({ userId }) => {
       location,
       description,
       creatorUserId: userId,
-      creator,
       meetingAttendances,
-      invitedUsers,
     };
 
     try {
@@ -88,6 +107,10 @@ const AppointmentRequestForm = ({ userId }) => {
     } catch (error) {
       console.error("Error creating meeting:", error);
     }
+  };
+
+  const toggleInvitedUsers = () => {
+    setShowInvitedUsers(!showInvitedUsers);
   };
 
   return (
@@ -123,6 +146,51 @@ const AppointmentRequestForm = ({ userId }) => {
           onChange={(e) => setDescription(e.target.value)}
         />
       </label>
+
+      <div className="user-dropdown">
+        <select
+          value={selectedUserId}
+          onChange={(e) => setSelectedUserId(e.target.value)}
+          style={{ marginBottom: "30px" }}
+        >
+          <option value="">Select User</option>
+          {usersList.map((user) => (
+            <option key={user.userId} value={user.userId}>
+              {user.username}
+            </option>
+          ))}
+        </select>
+        <button
+          type="button"
+          onClick={handleAddUser}
+          style={{ marginBottom: "30px" }}
+        >
+          Add
+        </button>
+      </div>
+
+      <div className="button-group">
+        <button
+          className="show-invited-users-button"
+          type="button"
+          onClick={toggleInvitedUsers}
+          style={{ marginBottom: "30px" }}
+        >
+          {showInvitedUsers ? "Hide Invited Users" : "Show Invited Users"}
+        </button>
+      </div>
+
+      {showInvitedUsers && (
+        <div className="invited-users">
+          <h3>Invited Users:</h3>
+          <ul>
+            {invitedUsers.map((user) => (
+              <li key={user.userId}>{user.username}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <button type="submit" disabled={!creator}>
         Create Meeting
       </button>

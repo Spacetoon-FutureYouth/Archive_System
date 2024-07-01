@@ -2,14 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const DepartmentRoleComponent = () => {
-  const [currentOption, setCurrentOption] = useState("department");
-  const [currentSelection, setCurrentSelection] = useState("");
   const [enterName, setEnterName] = useState("");
   const [departmentOptions, setDepartmentOptions] = useState([]);
-  const [roleOptions, setRoleOptions] = useState([
-    { value: "role1", label: "Role 1" },
-    { value: "role2", label: "Role 2" },
-  ]);
+  const [currentSelection, setCurrentSelection] = useState("");
+  const [currentOption, setCurrentOption] = useState("department");
 
   useEffect(() => {
     const fetchDepartments = async () => {
@@ -37,64 +33,38 @@ const DepartmentRoleComponent = () => {
     fetchDepartments();
   }, []);
 
-  const handleOptionChange = (event) => {
-    setCurrentOption(event.target.value);
-    setCurrentSelection("");
-    setEnterName("");
-  };
-
-  const handleSelectionChange = (event) => {
-    setCurrentSelection(event.target.value);
-  };
-
   const handleEnterNameChange = (event) => {
     setEnterName(event.target.value);
   };
 
-  const handleAddOption = async () => {
+  const handleAddDepartment = async () => {
     if (enterName.trim() !== "") {
-      const options =
-        currentOption === "department" ? departmentOptions : roleOptions;
-      const exists = options.some(
+      const exists = departmentOptions.some(
         (option) => option.label.toLowerCase() === enterName.toLowerCase()
       );
 
       if (!exists) {
         try {
-          if (currentOption === "department") {
-            const response = await axios.post(
-              "https://localhost:7103/api/Department",
-              { DepartmentName: enterName },
-              { headers: { "Content-Type": "multipart/form-data" } }
-            );
-            const newDepartment = response.data;
-            const newOption = {
-              value: newDepartment.departmentId,
-              label: newDepartment.departmentName,
-            };
-            setDepartmentOptions([...departmentOptions, newOption]);
-          } else {
-            const newOption = {
-              value: enterName.toLowerCase(),
-              label: enterName,
-            };
-            setRoleOptions([...roleOptions, newOption]);
-          }
+          const response = await axios.post(
+            "https://localhost:7103/api/Department",
+            { DepartmentName: enterName }
+          );
+          const newDepartment = response.data;
+          const newOption = {
+            value: newDepartment.departmentId,
+            label: newDepartment.departmentName,
+          };
+          setDepartmentOptions([...departmentOptions, newOption]);
           setEnterName("");
         } catch (error) {
-          console.error(
-            `There was an error adding the ${currentOption}!`,
-            error
-          );
-          alert(
-            `There was an error adding the ${currentOption}. Please try again.`
-          );
+          console.error("Error adding department:", error);
+          alert("Error adding department. Please try again.");
         }
       } else {
-        alert(`This ${currentOption} already exists!`);
+        alert(`This department already exists: ${enterName}`);
       }
     } else {
-      alert(`Please enter a valid ${currentOption} name.`);
+      alert("Please enter a valid department name.");
     }
   };
 
@@ -108,7 +78,7 @@ const DepartmentRoleComponent = () => {
           color: "grey",
         }}
       >
-        Add New{" "}
+        Add{" "}
         <span
           className={`clickable-header ${
             currentOption === "department" ? "active" : ""
@@ -117,65 +87,36 @@ const DepartmentRoleComponent = () => {
         >
           Department
         </span>
-        /
-        <span
-          className={`clickable-header ${
-            currentOption === "role" ? "active" : ""
-          }`}
-          onClick={() => setCurrentOption("role")}
-        >
-          Role
-        </span>
       </h1>
       <div className="department-role-component-section">
-        <div className="section-left" style={{ marginLeft: "100px" }}>
-          <h2 className="department-role-component-h2">
-            Add {currentOption.charAt(0).toUpperCase() + currentOption.slice(1)}
-          </h2>
+        <div className="section-right">
+          <h2 className="department-role-component-h2">Existing Departments</h2>
           <br />
-          <select
-            className="department-role-component-select"
-            value={currentOption}
-            onChange={handleOptionChange}
-          >
-            <option value="department">Department</option>
-            <option value="role">Role</option>
-          </select>
-          <br />
-          <select
-            className="department-role-component-select"
-            value={currentSelection}
-            onChange={handleSelectionChange}
-          >
-            <option value="">
-              Current{" "}
-              {currentOption.charAt(0).toUpperCase() + currentOption.slice(1)}
-            </option>
-            {(currentOption === "department"
-              ? departmentOptions
-              : roleOptions
-            ).map((option) => (
+          <select className="department-role-component-select">
+            {departmentOptions.map((option) => (
               <option key={option.value} value={option.value}>
                 {option.label}
               </option>
             ))}
           </select>
+        </div>
+        <div className="section-left" style={{ marginLeft: "100px" }}>
           <br />
           <input
             type="text"
-            placeholder={`Enter ${
-              currentOption.charAt(0).toUpperCase() + currentOption.slice(1)
-            }`}
+            placeholder="Enter Department Name"
             value={enterName}
             onChange={handleEnterNameChange}
             className="department-role-component-input"
+            style={{ marginLeft: ".055px", width: "600px" }}
           />
           <br />
           <button
             className="department-role-component-button"
-            onClick={handleAddOption}
+            onClick={handleAddDepartment}
+            style={{ marginLeft: "180px" }}
           >
-            Add {currentOption.charAt(0).toUpperCase() + currentOption.slice(1)}
+            Add Department
           </button>
         </div>
       </div>

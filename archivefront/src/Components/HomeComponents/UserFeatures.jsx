@@ -16,9 +16,6 @@ function UserFeature() {
     navigate("/ShowMeetings");
   };
 
-  const handleEditDepartmentClick = () => {
-    navigate("/EditDepartment");
-  };
   return (
     <section className="Feautes section">
       <div className="container">
@@ -52,16 +49,6 @@ function UserFeature() {
               <i className="icofont icofont-edit"></i>
             </div>
             <h3>Show All Meetings</h3>
-            <p>
-              Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam
-              vulputate.
-            </p>
-          </div>
-          <div className="single-features" onClick={handleEditDepartmentClick}>
-            <div className="signle-icon">
-              <i className="icofont icofont-users-social"></i>
-            </div>
-            <h3>Edit Department/Role</h3>
             <p>
               Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam
               vulputate.
