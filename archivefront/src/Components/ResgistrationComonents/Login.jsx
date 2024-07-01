@@ -21,10 +21,18 @@ const LoginForm = ({ onLoginSuccess }) => {
 
       if (response.ok) {
         const data = await response.json();
-        const userId = data.userId; // Extract the userId from the response
-        const username = data.username; // Extract the username from the response
-        onLoginSuccess(userId, username); // Pass userId and username to the parent component
-        navigate("/Home");
+        const { userId, username, userAutho } = data;
+        console.log("User Autho:", userAutho);
+
+        onLoginSuccess(userId, username);
+
+        if (userAutho === 1) {
+          navigate("/Home");
+        } else if (userAutho === 0) {
+          navigate("/HomePage");
+        } else {
+          // Handle other cases or unexpected values
+        }
       } else {
         const errorText = await response.text();
         alert(`Login failed: ${response.status} - ${errorText}`);

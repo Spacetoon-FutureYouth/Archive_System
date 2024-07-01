@@ -51,7 +51,7 @@ function Feature() {
             <div className="signle-icon">
               <i className="icofont icofont-edit"></i>
             </div>
-            <h3>Add Department/Role</h3>
+            <h3>Add Department</h3>
             <p>
               Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam
               vulputate.
@@ -61,7 +61,7 @@ function Feature() {
             <div className="signle-icon">
               <i className="icofont icofont-users-social"></i>
             </div>
-            <h3>Edit Department/Role</h3>
+            <h3>Edit Department</h3>
             <p>
               Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam
               vulputate.

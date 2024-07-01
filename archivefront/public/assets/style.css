@@ -865,7 +865,8 @@ body {
 	display: inline-block;
 	text-transform: capitalize;
 	color: #fff;
-	margin-top: 5px;	overflow: hidden;
+	margin-top: 5px;
+	overflow: hidden;
 	/* Ensure title does not overflow */
 	white-space: nowrap;
 	text-overflow: ellipsis;
