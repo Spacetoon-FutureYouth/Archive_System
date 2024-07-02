@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const FunFactItem = ({ iconClass, counter, description }) => (
   <div className="col-lg-3 col-md-6 col-12">
@@ -18,23 +18,23 @@ const FunFacts = () => (
       <div className="row">
         <FunFactItem
           iconClass="icofont icofont-home"
-          counter="3468"
-          description="Hospital Rooms"
+          counter="14"
+          description="Labs"
         />
         <FunFactItem
           iconClass="icofont icofont-user-alt-3"
-          counter="557"
-          description="Specialist Doctors"
+          counter="50"
+          description="Doctors"
+        />
+        <FunFactItem
+          iconClass="icofont icofont-user-alt-3"
+          counter="70"
+          description="Assistants"
         />
         <FunFactItem
           iconClass="icofont-simple-smile"
-          counter="4379"
-          description="Happy Patients"
-        />
-        <FunFactItem
-          iconClass="icofont icofont-table"
-          counter="32"
-          description="Years of Experience"
+          counter="0"
+          description="Happy Students"
         />
       </div>
     </div>

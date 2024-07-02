@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function WhyChoose() {
   return (
@@ -7,9 +7,15 @@ function WhyChoose() {
         <div className="row">
           <div className="col-lg-12">
             <div className="section-title">
-              <h2>We Offer Different Services To Improve Your Health</h2>
-              <img src="img/section-img.png" alt="#" />
-              <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+              <h2>Why Choose the Archive System?</h2>
+              <img src="img/section-img.png" alt="Section Image" />
+              <p>
+                The Archive System offers innovative solutions to modernize your
+                communication processes. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. It streamlines the exchange of information,
+                reports, letters, and other essential documents, replacing
+                outdated methods with a user-friendly digital interface.
+              </p>
             </div>
           </div>
         </div>
@@ -17,33 +23,56 @@ function WhyChoose() {
           <div className="col-lg-6 col-12">
             <div className="choose-left">
               <h3>Who We Are</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra antege vel est lobortis, a commodo magna rhoncus. In quis nisi non emet quam pharetra commodo.</p>
-              <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+              <p>
+                We are committed to transforming traditional paper-based
+                communication into efficient digital processes. Our system
+                empowers organizations to securely send and receive vital
+                documents, enhancing operational efficiency and promoting
+                environmental sustainability.
+              </p>
+              <p>
+                With a focus on user-friendly interfaces and robust features, we
+                facilitate seamless transitions from paper to digital
+                communication, ensuring faster access to information and
+                improved collaboration.
+              </p>
               <div className="row">
                 <div className="col-lg-6">
                   <ul className="list">
-                    <li><i className="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-                    <li><i className="fa fa-caret-right"></i>Duis massa massa.</li>
-                    <li><i className="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
+                    <li>
+                      <i className="fa fa-caret-right"></i>Streamlined document
+                      exchange
+                    </li>
+                    <li>
+                      <i className="fa fa-caret-right"></i>User-friendly
+                      interfaces
+                    </li>
+                    <li>
+                      <i className="fa fa-caret-right"></i>Enhanced
+                      collaboration
+                    </li>
                   </ul>
                 </div>
                 <div className="col-lg-6">
                   <ul className="list">
-                    <li><i className="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-                    <li><i className="fa fa-caret-right"></i>Duis massa massa.</li>
-                    <li><i className="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
+                    <li>
+                      <i className="fa fa-caret-right"></i>Improved operational
+                      efficiency
+                    </li>
+                    <li>
+                      <i className="fa fa-caret-right"></i>Reduced environmental
+                      impact
+                    </li>
+                    <li>
+                      <i className="fa fa-caret-right"></i>Secure document
+                      handling
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-lg-6 col-12">
-            <div className="choose-right">
-              <div className="video-image">
-                <a href="https://www.youtube.com/watch?v=RFVXy6CRVR4" className="video video-popup mfp-iframe"><i className="fa fa-play"></i></a>
-              </div>
-            </div>
-          </div>
+          <div className="col-lg-6 col-12"></div>
         </div>
       </div>
     </section>

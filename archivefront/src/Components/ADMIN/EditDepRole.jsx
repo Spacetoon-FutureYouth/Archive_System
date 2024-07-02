@@ -149,31 +149,17 @@ const EditDepRole = () => {
           marginBottom: "50px",
           color: "grey",
         }}
-      >
-        Edit{" "}
-        <span
-          className={`clickable-header ${
-            currentOption === "department" ? "active" : ""
-          }`}
-          onClick={() => setCurrentOption("department")}
-        >
-          Department
-        </span>
-      </h1>
+      ></h1>
       <div className="department-role-component-section">
-        <div className="section-left" style={{ marginLeft: "100px" }}>
+        <div
+          className="section-left"
+          style={{ marginLeft: "100px", marginTop: "-50px" }}
+        >
           <h2 className="department-role-component-h2">
             Edit{" "}
             {currentOption.charAt(0).toUpperCase() + currentOption.slice(1)}
           </h2>
           <br />
-          <select
-            className="department-role-component-select"
-            value={currentOption}
-            onChange={handleOptionChange}
-          >
-            <option value="department">Department</option>
-          </select>
           <br />
           <select
             className="department-role-component-select"
