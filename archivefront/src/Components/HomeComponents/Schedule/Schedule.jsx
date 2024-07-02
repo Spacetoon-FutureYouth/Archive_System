@@ -4,6 +4,7 @@ import axios from "axios";
 
 const Schedule = ({ userId }) => {
   const [meetings, setMeetings] = useState([]);
+  const [loading, setLoading] = useState(true); // Track loading state
 
   useEffect(() => {
     fetchUserMeetings();
@@ -29,8 +30,10 @@ const Schedule = ({ userId }) => {
       } else {
         console.error("Unexpected API response:", response.data);
       }
+      setLoading(false); // Set loading state to false after fetching
     } catch (error) {
       console.error("Error fetching meetings:", error);
+      setLoading(false); // Set loading state to false on error
     }
   };
 
@@ -54,8 +57,27 @@ const Schedule = ({ userId }) => {
     }
   };
 
+  // Render a nice header if there are no meetings
+  if (loading) {
+    return <p>Loading...</p>; // Optionally show a loading indicator
+  }
+
+  if (meetings.length === 0) {
+    return (
+      <section className="schedule" style={{ marginTop: "-100px" }}>
+        <div className="container">
+          <div className="schedule-inner">
+            <h2 style={{ textAlign: "center", marginBottom: "50px" }}>
+              No upcoming meetings
+            </h2>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
-    <section className="schedule">
+    <section className="schedule" style={{ marginTop: "-100px" }}>
       <div className="container">
         <div className="schedule-inner">
           <div className="row">

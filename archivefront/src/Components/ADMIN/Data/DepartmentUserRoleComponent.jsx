@@ -4,8 +4,6 @@ import axios from "axios";
 const DepartmentRoleComponent = () => {
   const [enterName, setEnterName] = useState("");
   const [departmentOptions, setDepartmentOptions] = useState([]);
-  const [currentSelection, setCurrentSelection] = useState("");
-  const [currentOption, setCurrentOption] = useState("department");
 
   useEffect(() => {
     const fetchDepartments = async () => {
@@ -78,15 +76,7 @@ const DepartmentRoleComponent = () => {
           color: "grey",
         }}
       >
-        Add{" "}
-        <span
-          className={`clickable-header ${
-            currentOption === "department" ? "active" : ""
-          }`}
-          onClick={() => setCurrentOption("department")}
-        >
-          Department
-        </span>
+        Add New Department
       </h1>
       <div className="department-role-component-section">
         <div className="section-right">

@@ -17,7 +17,7 @@ function UserFeature() {
   };
 
   return (
-    <section className="Feautes section">
+    <section className="Feautes section" style={{ marginTop: "-60px" }}>
       <div className="container">
         <div className="section-title">
           <h2>Services</h2>

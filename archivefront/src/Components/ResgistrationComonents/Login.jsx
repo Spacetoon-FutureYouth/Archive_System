@@ -6,8 +6,10 @@ const LoginForm = ({ onLoginSuccess }) => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  // Handling login in LoginForm component
   const handleLogin = async () => {
     try {
+      // Fetch login data
       const response = await fetch("https://localhost:7103/api/Users/Login", {
         method: "POST",
         headers: {
@@ -21,25 +23,24 @@ const LoginForm = ({ onLoginSuccess }) => {
 
       if (response.ok) {
         const data = await response.json();
-        const { userId, username, userAutho } = data;
-        console.log("User Autho:", userAutho);
+        const { userId, username, email, image, userAutho } = data; // Retrieve email from response
 
-        onLoginSuccess(userId, username);
-
+        // Call onLoginSuccess from props to pass userId, username, and email to App component
+        onLoginSuccess(userId, username, email);
+        console.log("USER AUTHO", userAutho);
         if (userAutho === 1) {
           navigate("/Home");
         } else if (userAutho === 0) {
           navigate("/HomePage");
         } else {
-          // Handle other cases or unexpected values
+          // Handle other cases
         }
       } else {
-        const errorText = await response.text();
-        alert(`Login failed: ${response.status} - ${errorText}`);
+        // Handle login failure
       }
     } catch (error) {
       console.error("Login error:", error);
-      alert("An error occurred during login.");
+      // Handle login error
     }
   };
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import Header from "./Components/SharedComponents/Header";
+import Header from "./Components/SharedComponents/Header/Header";
 import Footer from "./Components/SharedComponents/Footer";
 import Slider from "./Components/HomeComponents/Slider/Slider";
 import Schedule from "./Components/HomeComponents/Schedule/Schedule";
@@ -13,7 +13,6 @@ import Service from "./Components/HomeComponents/Service/Service";
 import ShowUsers from "./Components/ADMIN/Data/ShowUsers";
 import Breadcrumbs from "./Components/SharedComponents/Breadcrumbs";
 import AddUser from "./Components/ResgistrationComonents/AddUser";
-import SendMessage from "./Components/MessageComponents/SendFormasset/MsgForm";
 import Profile from "./Components/ResgistrationComonents/Profile";
 import Message from "./Components/MessageComponents/Message";
 import ShowAttendance from "./Components/MeetingComponents/ShowAttendance";
@@ -28,32 +27,43 @@ import UserFeatures from "./Components/HomeComponents/UserFeatures";
 import AppointmentRequestForm from "./Components/MeetingComponents/MeetingForm/MeetingForm";
 import ShowMeetings from "./Components/HomeComponents/ShowMeetings";
 import EditMeeting from "./Components/MeetingComponents/MeetingForm/EditMeeting";
+import MesgForm from "./Components/MessageComponents/SendForm/MesgForm";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setUserId] = useState(null);
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState(""); // State for email
   const navigate = useNavigate();
 
   // Check localStorage on component mount
   useEffect(() => {
     const storedUserId = localStorage.getItem("userId");
     const storedUsername = localStorage.getItem("username");
+    const storedUserEmail = localStorage.getItem("userEmail"); // Retrieve email
     const storedIsLoggedIn = localStorage.getItem("isLoggedIn");
 
-    if (storedIsLoggedIn === "true" && storedUserId && storedUsername) {
+    if (
+      storedIsLoggedIn === "true" &&
+      storedUserId &&
+      storedUsername &&
+      storedUserEmail
+    ) {
       setIsLoggedIn(true);
       setUserId(storedUserId);
       setUsername(storedUsername);
+      setEmail(storedUserEmail); // Set email if available
     }
   }, []);
 
-  const handleLoginSuccess = (id, name) => {
+  const handleLoginSuccess = (id, name, userEmail) => {
     localStorage.setItem("userId", id);
     localStorage.setItem("username", name);
+    localStorage.setItem("userEmail", userEmail); // Store email in localStorage
     localStorage.setItem("isLoggedIn", "true");
     setUserId(id);
     setUsername(name);
+    setEmail(userEmail); // Set email in state
     setIsLoggedIn(true);
     navigate("/Home");
   };
@@ -61,10 +71,12 @@ function App() {
   const handleLogout = () => {
     localStorage.removeItem("userId");
     localStorage.removeItem("username");
+    localStorage.removeItem("userEmail"); // Remove email from localStorage
     localStorage.removeItem("isLoggedIn");
     setIsLoggedIn(false);
     setUserId(null);
     setUsername("");
+    setEmail(""); // Clear email from state
     navigate("/");
   };
 
@@ -100,9 +112,9 @@ function App() {
             isLoggedIn ? (
               <>
                 <Slider />
-                <Schedule userId={userId} />
                 <Bubble />
                 <UserFeatures />
+                <Schedule userId={userId} />
                 <FunFacts />
                 <WhyChoose />
                 <CallSection />
@@ -114,7 +126,6 @@ function App() {
           }
         />
         <Route path="/Feature" element={<Feature />} />
-        <Route path="/SendMessage" element={<SendMessage />} />
         <Route path="/Profile" element={<Profile userId={userId} />} />
         <Route path="/Import" element={<Message />} />
         <Route
@@ -148,6 +159,15 @@ function App() {
             <>
               <Breadcrumbs currentPage="meetingStatus" />
               <ShowAttendance />
+            </>
+          }
+        />
+        <Route
+          path="/SendMessage"
+          element={
+            <>
+              <Breadcrumbs currentPage="sendmessage" />
+              <MesgForm userId={userId} email={email} />
             </>
           }
         />
