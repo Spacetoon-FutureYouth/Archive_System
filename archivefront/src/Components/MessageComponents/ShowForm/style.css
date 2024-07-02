@@ -1,0 +1,310 @@
+:root {
+    --msg-primary-color: #010712;
+    --msg-secondary-color: #818386;
+    --msg-bg-color: #FCFDFD;
+    --msg-button-color: #3B3636;
+    --msg-h1-color: #3F444C;
+}
+
+[data-theme="dark"] {
+    --msg-primary-color: #FCFDFD;
+    --msg-secondary-color: #818386;
+    --msg-bg-color: #010712;
+    --msg-button-color: #818386;
+    --msg-h1-color: #FCFDFD;
+}
+
+.contact-container-custom {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: var(--msg-bg-color);
+}
+
+.left-col-custom {
+    width: 45vw;
+    height: 90vh;
+    /* Adjust height as needed */
+    background-color: #ffffff;
+    /* Black background color */
+    /* background-image: url("https://images.pexels.com/photos/931018/pexels-photo-931018.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"); */
+    background-size: cover;
+    /* Ensure the background image covers the container */
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Center the background image */
+    border-radius: 10px;
+    /* Soft border radius */
+    margin-top: 2rem;
+    /* Space between the header */
+    margin-left: 2rem;
+    /* Space from the left edge of the screen */
+    padding: 1rem;
+    /* Padding inside the container */
+}
+
+.left-col-custom img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    /* Apply border-radius to the image */
+}
+
+.right-col-custom {
+    background: var(--msg-bg-color);
+    width: 50vw;
+    height: 80vh;
+    /* Adjust height as needed */
+    padding: 2rem 3.5rem;
+    /* Adjust padding as needed */
+    margin-top: 2vh;
+    /* Move the right column up */
+}
+
+
+h1.msg-title,
+label.msg-label,
+button.msg-button,
+.description-msg {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+}
+
+h1.msg-title {
+    color: var(--msg-h1-color);
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+    font-weight: 300;
+}
+
+label.msg-label,
+.description-msg {
+    color: var(--msg-secondary-color);
+    text-transform: uppercase;
+    font-size: 0.625rem;
+}
+
+form.msg-form {
+    width: 31.25rem;
+    position: relative;
+    margin-top: 1rem;
+    padding: 1rem 0;
+}
+
+input.msg-input,
+textarea.msg-textarea,
+label.msg-label {
+    width: 40vw;
+    display: block;
+}
+
+input.msg-input::placeholder,
+textarea.msg-textarea::placeholder {
+    color: var(--msg-primary-color);
+}
+
+input.msg-input,
+textarea.msg-textarea {
+    color: var(--msg-primary-color);
+    font-weight: 500;
+    background: var(--msg-bg-color);
+    border: none;
+    border-bottom: 1px solid var(--msg-secondary-color);
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+textarea.msg-textarea {
+    resize: none;
+}
+
+button.msg-button {
+    text-transform: uppercase;
+    font-weight: 300;
+    background: var(--msg-button-color);
+    color: var(--msg-bg-color);
+    width: 10rem;
+    height: 2.25rem;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+input.msg-input:hover,
+textarea.msg-textarea:hover,
+button.msg-button:hover {
+    opacity: 0.5;
+}
+
+button.msg-button:active {
+    opacity: 0.8;
+}
+
+/* Toggle Switch */
+
+.theme-switch-wrapper-msg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Add this line to horizontally center the content */
+    text-align: center;
+    width: 160px;
+    position: absolute;
+    top: 25%;
+    /* Position it 50% from the top */
+    transform: translateY(-50%);
+    /* Center it vertically using translateY */
+    right: 0;
+}
+
+.description-msg {
+    margin-left: 1.25rem;
+}
+
+.theme-switch-msg {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+.theme-switch-msg input {
+    display: none;
+}
+
+.slider-msg {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.slider-msg:before {
+    background-color: #fff;
+    bottom: 0.25rem;
+    content: "";
+    width: 26px;
+    height: 26px;
+    left: 0.25rem;
+    position: absolute;
+    transition: .4s;
+}
+
+.slider-msg.round {
+    border-radius: 34px;
+}
+
+.slider-msg.round:before {
+    border-radius: 50%;
+}
+
+.slider-msg.custom-slider {
+    background-color: var(--msg-button-color);
+}
+
+.slider-msg.custom-slider:before {
+    background-color: var(--msg-bg-color);
+}
+
+input:checked+.slider-msg {
+    background-color: var(--msg-button-color);
+}
+
+input:checked+.slider-msg:before {
+    transform: translateX(26px);
+}
+
+.slider-msg.round {
+    border-radius: 34px;
+}
+
+.slider-msg.round:before {
+    border-radius: 50%;
+}
+
+#error-msg,
+#success-msg {
+    width: 40vw;
+    margin: 0.125rem 0;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-family: 'Jost';
+    color: var(--msg-secondary-color);
+}
+
+#success-msg {
+    transition-delay: 3s;
+}
+
+@media only screen and (max-width: 950px) {
+    .logo-custom {
+        width: 8rem;
+    }
+
+    h1.msg-title {
+        font-size: 1.75rem;
+    }
+
+    p {
+        font-size: 0.7rem;
+    }
+
+    input.msg-input,
+    textarea.msg-textarea,
+    button.msg-button {
+        font-size: 0.65rem;
+    }
+
+    .description-msg {
+        font-size: 0.3rem;
+        margin-left: 0.4rem;
+    }
+
+    button.msg-button {
+        width: 7rem;
+    }
+
+    .theme-switch-wrapper-msg {
+        width: 120px;
+    }
+
+    .theme-switch-msg {
+        height: 28px;
+        width: 50px;
+    }
+
+    .theme-switch-msg input {
+        display: none;
+    }
+
+    .slider-msg:before {
+        background-color: #fff;
+        bottom: 0.25rem;
+        content: "";
+        width: 20px;
+        height: 20px;
+        left: 0.25rem;
+        position: absolute;
+        transition: .4s;
+    }
+
+    input:checked+.slider-msg:before {
+        transform: translateX(16px);
+    }
+
+    .slider-msg.round {
+        border-radius: 15px;
+    }
+
+    .slider-msg.round:before {
+        border-radius: 50%;
+    }
+}

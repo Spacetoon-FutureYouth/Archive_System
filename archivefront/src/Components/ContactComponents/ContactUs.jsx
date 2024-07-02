@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const ContactMap = () => (
   <div className="contact-us-left">
@@ -29,17 +29,28 @@ const ContactForm = () => (
         </div>
         <div className="col-lg-6">
           <div className="form-group">
-            <input type="text" name="subject" placeholder="Subject" required="" />
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              required=""
+            />
           </div>
         </div>
         <div className="col-lg-12">
           <div className="form-group">
-            <textarea name="message" placeholder="Your Message" required=""></textarea>
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              required=""
+            ></textarea>
           </div>
         </div>
         <div className="col-12">
           <div className="form-group login-btn">
-            <button className="btn" type="submit">Send</button>
+            <button className="btn" type="submit">
+              Send
+            </button>
           </div>
           <div className="checkbox">
             <label className="checkbox-inline" htmlFor="2">
@@ -75,13 +86,13 @@ const ContactInfo = () => (
       />
       <SingleInfo
         icon="icofont-google-map"
-        title="2 Fire Brigade Road"
-        description="Chittagonj, Lakshmipur"
+        title="شارع المكتبات "
+        description="El Fateh, Assiut Governorate 71515"
       />
       <SingleInfo
         icon="icofont icofont-wall-clock"
-        title="Mon - Sat: 8am - 5pm"
-        description="Sunday Closed"
+        title="Mon - Sat: 6am - 5pm"
+        description="Friday Closed"
       />
     </div>
   </div>

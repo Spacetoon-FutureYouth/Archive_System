@@ -1,23 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const CallSectionButton = ({ href, className, children }) => (
-  <a href={href} className={`btn ${className}`}>
+const CallSectionButton = ({ to, className, children }) => (
+  <Link to={to} className={`btn ${className}`}>
     {children}
-  </a>
+  </Link>
 );
 
 const CallSectionContent = () => (
   <div className="content">
     <h2>Do You Have Any Problems?</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-      porttitor dictum turpis nec gravida.
-    </p>
+    <p>Our team is ready to assist you with any challenges you may face.</p>
     <div className="button">
-      <CallSectionButton href="#" className="">
+      <CallSectionButton to="/ContactUs" className="">
         Contact Now
       </CallSectionButton>
-      <CallSectionButton href="#" className="second">
+      <CallSectionButton to="#" className="second">
         Learn More<i className="fa fa-long-arrow-right"></i>
       </CallSectionButton>
     </div>

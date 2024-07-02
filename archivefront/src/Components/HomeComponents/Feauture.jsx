@@ -24,7 +24,7 @@ function Feature() {
       <div className="container">
         <div className="section-title">
           <h2>Services</h2>
-          <p>You can Send Report, Create Meeting</p>
+          <p>Explore our comprehensive services:</p>
         </div>
         <div className="features-row">
           <div className="single-features" onClick={handleAddUserClick}>
@@ -33,8 +33,7 @@ function Feature() {
             </div>
             <h3>Add User</h3>
             <p>
-              Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam
-              vulputate.
+              Effortlessly add new users to your system and streamline access.
             </p>
           </div>
           <div className="single-features" onClick={handleShowUsersClick}>
@@ -43,8 +42,7 @@ function Feature() {
             </div>
             <h3>Show All Users</h3>
             <p>
-              Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam
-              vulputate.
+              Explore all registered users at a glance for effective management.
             </p>
           </div>
           <div className="single-features" onClick={handleAddDepartmentClick}>
@@ -53,8 +51,8 @@ function Feature() {
             </div>
             <h3>Add Department</h3>
             <p>
-              Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam
-              vulputate.
+              Integrate new departments seamlessly into your organizational
+              structure.
             </p>
           </div>
           <div className="single-features" onClick={handleEditDepartmentClick}>
@@ -63,8 +61,8 @@ function Feature() {
             </div>
             <h3>Edit Department</h3>
             <p>
-              Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam
-              vulputate.
+              Modify department details easily to adapt to evolving
+              organizational needs.
             </p>
           </div>
         </div>

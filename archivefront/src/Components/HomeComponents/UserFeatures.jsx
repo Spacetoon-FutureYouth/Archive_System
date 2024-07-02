@@ -21,7 +21,7 @@ function UserFeature() {
       <div className="container">
         <div className="section-title">
           <h2>Services</h2>
-          <p>You can Send Report, Create Meeting</p>
+          <p>Explore our comprehensive services:</p>
         </div>
         <div className="features-row">
           <div className="single-features" onClick={handleAddUserClick}>

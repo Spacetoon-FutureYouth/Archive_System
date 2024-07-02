@@ -11,8 +11,8 @@ const DepartmentRoleComponent = () => {
         const response = await axios.get(
           "https://localhost:7103/api/Department"
         );
+        console.log(response.data); // Debug: log the response data
 
-        // Check if $values array exists in the response
         if (response.data.$values && Array.isArray(response.data.$values)) {
           const departments = response.data.$values.map((department) => ({
             value: department.departmentId,
@@ -21,7 +21,6 @@ const DepartmentRoleComponent = () => {
           setDepartmentOptions(departments);
         } else {
           console.error("No $values array found in response:", response.data);
-          // Handle the case where $values array is missing or not an array
         }
       } catch (error) {
         console.error("There was an error fetching the departments!", error);
@@ -43,10 +42,20 @@ const DepartmentRoleComponent = () => {
 
       if (!exists) {
         try {
+          const formData = new FormData();
+          formData.append("DepartmentName", enterName);
+
           const response = await axios.post(
             "https://localhost:7103/api/Department",
-            { DepartmentName: enterName }
+            formData,
+            {
+              headers: {
+                "Content-Type": "multipart/form-data",
+              },
+            }
           );
+          console.log(response.data); // Debug: log the response data
+
           const newDepartment = response.data;
           const newOption = {
             value: newDepartment.departmentId,
@@ -68,27 +77,20 @@ const DepartmentRoleComponent = () => {
 
   return (
     <div className="department-role-component-container">
-      <h1
-        style={{
-          textAlign: "center",
-          marginTop: "10px",
-          marginBottom: "50px",
-          color: "grey",
-        }}
-      >
-        Add New Department
-      </h1>
       <div className="department-role-component-section">
         <div className="section-right">
-          <h2 className="department-role-component-h2">Existing Departments</h2>
+          <h2 className="department-role-component-h2">Add Department</h2>
           <br />
+
           <select className="department-role-component-select">
+            <option value="">Current Departments </option>
             {departmentOptions.map((option) => (
               <option key={option.value} value={option.value}>
                 {option.label}
               </option>
             ))}
           </select>
+          <br />
         </div>
         <div className="section-left" style={{ marginLeft: "100px" }}>
           <br />

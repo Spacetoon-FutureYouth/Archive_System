@@ -17,7 +17,7 @@ function Breadcrumbs({ currentPage }) {
       case "editUser":
         return "Edit User";
       case "editDepartment":
-        return "Edit Department-Role";
+        return "Edit Department";
       case "meetingStatus":
         return "Meeting Status";
       case "showMeetings":
