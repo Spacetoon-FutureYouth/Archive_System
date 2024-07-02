@@ -24,6 +24,8 @@ function Breadcrumbs({ currentPage }) {
         return "Show Meetings";
       case "editMeeting":
         return "Edit Meeting";
+      case "sendmessage":
+        return "Send Message";
       default:
         return "Unknown Page";
     }

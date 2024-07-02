@@ -15,7 +15,28 @@ const ShowMeetings = ({ userId }) => {
           `https://localhost:7103/api/Meeting/user/${userId}`
         );
         // Assuming response.data is structured as { $values: [...] }
-        setMeetings(response.data.$values || []);
+        const meetingsData = response.data.$values || [];
+
+        // Fetch creator usernames for each meeting
+        const meetingsWithUsernames = await Promise.all(
+          meetingsData.map(async (meeting) => {
+            try {
+              const creatorResponse = await axios.get(
+                `https://localhost:7103/api/Admin/${meeting.creatorUserId}`
+              );
+              meeting.creatorUserName = creatorResponse.data.username;
+              return meeting;
+            } catch (error) {
+              console.error(
+                `Error fetching creator details for meeting ${meeting.meetingId}:`,
+                error
+              );
+              return meeting; // Return meeting without creatorUserName if error
+            }
+          })
+        );
+
+        setMeetings(meetingsWithUsernames);
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching meetings:", error);
@@ -40,7 +61,17 @@ const ShowMeetings = ({ userId }) => {
   }
 
   if (meetings.length === 0) {
-    return <div>No meetings found.</div>;
+    return (
+      <h3
+        style={{
+          textAlign: "center",
+          marginTop: "100px",
+          marginBottom: "100px",
+        }}
+      >
+        No meetings found.
+      </h3>
+    );
   }
 
   return (
